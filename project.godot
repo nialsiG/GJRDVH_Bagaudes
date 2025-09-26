@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="GJRDVH_Bagaudes"
+run/main_scene="uid://bk7rklt41thfd"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
-signal_manager="*res://scenes/global/signal_manager.gd"
-enums="*res://scenes/global/enums.gd"
+SignalManager="*res://scenes/global/signal_manager.gd"
+Enums="*res://scenes/global/enums.gd"
 
 [display]
 

@@ -1,7 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=13 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://lm3epfr78djn" path="res://scenes/District/district.tscn" id="3_k2fmo"]
+[ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
+[ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="4_l3cfh"]
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
+[ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
+
+[sub_resource type="Gradient" id="Gradient_k2fmo"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3cfh"]
+gradient = SubResource("Gradient_k2fmo")
+fill_to = Vector2(0, 1)
 
 [sub_resource type="Gradient" id="Gradient_hyk8p"]
 colors = PackedColorArray(0.4, 0.4, 0.4, 1, 1, 1, 1, 1)
@@ -19,9 +30,112 @@ script = ExtResource("1_hyk8p")
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")
 
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+position = Vector2(175, 592)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="EventScreen" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_6q06x")
+events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg")])
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/EventScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.0
+offset_top = -281.0
+offset_right = 569.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_l3cfh")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="EventTitleLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "TITRE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EventDescriptionLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "C'est la description de l'évènement"
+
+[node name="EventTextureRect" type="TextureRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_l3cfh")
+stretch_mode = 5
+
+[node name="EventChoiceButton1" type="Button" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="EventChoice1Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Premier choix (effet)"
+
+[node name="EventChoiceButton2" type="Button" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="EventChoice2Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Deuxième choix (effet)"
+
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -65,7 +179,7 @@ label_settings = SubResource("LabelSettings_hyk8p")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -92,3 +206,7 @@ Game design : Wilson
 Artistes : Anne-Laure, Julie
 Sound design : Sebastien
 Développement : Charlie, Ghislain"
+
+[connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
