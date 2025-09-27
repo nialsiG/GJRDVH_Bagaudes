@@ -35,6 +35,10 @@ initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg")])
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")
+title_music = "uid://cdxkto4ejkq0e"
+title_music_with_intro = "uid://deoboabn4u07g"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -219,6 +223,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("8_yyfjg")
 
+[connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
