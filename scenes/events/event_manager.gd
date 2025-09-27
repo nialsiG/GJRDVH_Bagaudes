@@ -19,4 +19,4 @@ func SendEvent(popup: PopupEvent):
 	popup.SetCurrentEvent(event)
 	await get_tree().create_timer(0.5).timeout
 	event_list.erase(event)
-	print("sent event:", event.name, " to ", popup)
+ 

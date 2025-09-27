@@ -10,7 +10,10 @@ var popupPosition : Vector2 = Vector2(10,10)
 
 func _ready():
 	popup = load(PopupPrefab)
-	SignalManager.spawn_popup_requested.connect(PopupSpawn)
+	SignalManager.spawn_popup_requested.connect(NewPopup)
+	
+func NewPopup():
+	PopupSpawn(Vector2(10,10))
 	
 
 func _gui_input(event):
@@ -20,16 +23,16 @@ func _gui_input(event):
 func Init():
 	health = health_bar.max_value
 	health_bar.value = health_bar.max_value
-	# test for the popup 
-	await get_tree().create_timer(3).timeout
-	PopupSpawn(Vector2(10, 10))
+	## test for the popup 
+	#await get_tree().create_timer(3).timeout
+	#PopupSpawn(Vector2(10, 10))
 
 
 func AddHealth(amount: float):
 	health += amount
 	health_bar.value = health
 
-func PopupSpawn(position:Vector2):
+func PopupSpawn(origin:Vector2):
 	var instance : PopupEvent = popup.instantiate()
 	add_child(instance)
 	instance.position = popupPosition
