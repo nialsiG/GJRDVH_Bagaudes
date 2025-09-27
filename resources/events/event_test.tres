@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://c5bcsxc0tal8q"]
 
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_0jjfx"]
-[ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="2_48djl"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_48djl"]
 
 [resource]
 script = ExtResource("1_0jjfx")

@@ -11,3 +11,12 @@ enum DistrictType {
 	PRESQUILE,
 	NONE
 }
+
+enum Sound {
+	CROWD,
+	COUGH,
+	POPUP,
+	VALIDATE,
+	SELECT_INGAME,
+	SELECT_TITLESCREEN
+}
