@@ -75,6 +75,8 @@ func UpdateContentement():
 
 func AddContentement(amount: float):
 	current_contentement += amount
+	if current_contentement <= 0:
+		SignalManager.RevolutionEnding.emit()
 	UpdateContentement()
 #endregion
 
@@ -92,6 +94,9 @@ func UpdateYear():
 
 func AddYear(amount: float):
 	current_year += amount
+	if current_year >= 100:
+		SignalManager.GoodEnding.emit()
+		
 	UpdateYear()
 	if current_year >= final_year:
 		print("VICTORY")
