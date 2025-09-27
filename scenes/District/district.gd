@@ -12,6 +12,7 @@ func _ready():
 	popup = load(PopupPrefab)
 	SignalManager.spawn_popup_requested.connect(PopupSpawn)
 	
+
 func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		pass
@@ -19,6 +20,10 @@ func _gui_input(event):
 func Init():
 	health = health_bar.max_value
 	health_bar.value = health_bar.max_value
+	# test for the popup 
+	await get_tree().create_timer(3).timeout
+	PopupSpawn(Vector2(10, 10))
+
 
 func AddHealth(amount: float):
 	health += amount

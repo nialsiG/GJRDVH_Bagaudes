@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=15 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://lm3epfr78djn" path="res://scenes/District/district.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
@@ -27,6 +28,10 @@ font_size = 60
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
+
+[node name="EventManager" type="Node" parent="."]
+script = ExtResource("2_b1x3f")
+initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg")])
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")
