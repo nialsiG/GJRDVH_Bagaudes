@@ -7,9 +7,9 @@ class_name EventScreen
 @onready var event_title_label: Label = %EventTitleLabel
 @onready var event_description_label: Label = %EventDescriptionLabel
 @onready var event_texture_rect: TextureRect = %EventTextureRect
-@onready var event_choice_button_1: Button = %EventChoiceButton1
+@onready var event_choice_button_1: TextureButton = %EventChoiceButton1
 @onready var event_choice_1_label: Label = %EventChoice1Label
-@onready var event_choice_button_2: Button = %EventChoiceButton2
+@onready var event_choice_button_2: TextureButton = %EventChoiceButton2
 @onready var event_choice_2_label: Label = %EventChoice2Label
 
 var current_event_resource: EventResource
@@ -27,12 +27,30 @@ func OpenEvent(event: EventResource, district: District):
 	show()
 
 func UpdateEvent(event_resource: EventResource):
+	current_event_resource = event_resource
 	event_title_label.text = event_resource.name
 	event_description_label.text = event_resource.description
 	event_texture_rect.texture = event_resource.texture
+	# choice 1
 	event_choice_1_label.text = event_resource.choice_1
+	if event_resource.choice_1_health > 0.0:
+		event_choice_1_label.text = str(event_choice_1_label.text, "(+", event_resource.choice_1_health, " santé)")
+	elif event_resource.choice_1_health < 0.0:
+		event_choice_1_label.text = str(event_choice_1_label.text, "(", event_resource.choice_1_health, " santé)")
+	elif event_resource.choice_1_contentement > 0.0:
+		event_choice_1_label.text = str(event_choice_1_label.text, "(+", event_resource.choice_1_contentement, " contentement)")
+	elif event_resource.choice_1_contentement < 0.0:
+		event_choice_1_label.text = str(event_choice_1_label.text, "(", event_resource.choice_1_contentement, " contentement)")
+	# choice 2
 	event_choice_2_label.text = event_resource.choice_2
-	current_event_resource = event_resource
+	if event_resource.choice_2_health > 0.0:
+		event_choice_2_label.text = str(event_choice_2_label.text, "(+", event_resource.choice_2_health, " santé)")
+	elif event_resource.choice_2_health < 0.0:
+		event_choice_2_label.text = str(event_choice_2_label.text, "(", event_resource.choice_2_health, " santé)")
+	elif event_resource.choice_2_contentement > 0.0:
+		event_choice_2_label.text = str(event_choice_2_label.text, "(+", event_resource.choice_2_contentement, " contentement)")
+	elif event_resource.choice_2_contentement < 0.0:
+		event_choice_2_label.text = str(event_choice_2_label.text, "(", event_resource.choice_2_contentement, " contentement)")
 	show()
 
 
