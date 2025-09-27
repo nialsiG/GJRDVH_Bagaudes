@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btktthbmc6ao7"]
 
 [ext_resource type="Script" uid="uid://b4tgvr4vrmyw" path="res://scenes/District/popup.gd" id="1_y4lwk"]
-[ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="2_kb6ot"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_kb6ot"]
 
 [node name="Popup" type="Control"]
 layout_mode = 3
