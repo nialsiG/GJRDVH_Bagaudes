@@ -11,7 +11,9 @@ var popupPosition : Vector2 = Vector2(10,10)
 func _ready():
 	popup = load(PopupPrefab)
 	SignalManager.spawn_popup_requested.connect(NewPopup)
-	
+
+
+			
 func NewPopup():
 	PopupSpawn(Vector2(10,10))
 	
@@ -31,6 +33,9 @@ func Init():
 func AddHealth(amount: float):
 	health += amount
 	health_bar.value = health
+	if health <= 0 :
+		SignalManager.EpidemicEnding.emit()
+		$"../../CanvasLayer/GameOver/PandemicEndingScreen".visible = true
 
 func PopupSpawn(origin:Vector2):
 	var instance : PopupEvent = popup.instantiate()
