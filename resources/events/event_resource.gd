@@ -9,7 +9,10 @@ class_name EventResource
 @export_multiline var choice_1: String
 @export var choice_1_contentement: float
 @export var choice_1_health: float
+@export var choice_1_time: int
+
 
 @export_multiline var choice_2: String
 @export var choice_2_contentement: float
 @export var choice_2_health: float
+@export var choice_2_time: int

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=14 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="4_l3cfh"]
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
+[ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
 
 [sub_resource type="Gradient" id="Gradient_k2fmo"]
 
@@ -206,6 +207,12 @@ Game design : Wilson
 Artistes : Anne-Laure, Julie
 Sound design : Sebastien
 Développement : Charlie, Ghislain"
+
+[node name="YearCounter" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("8_yyfjg")
 
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
