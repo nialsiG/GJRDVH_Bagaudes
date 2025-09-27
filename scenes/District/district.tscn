@@ -5,6 +5,7 @@
 
 [node name="District" type="Node2D"]
 script = ExtResource("1_ienuk")
+PopupPrefab = "uid://btktthbmc6ao7"
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_right = 280.0
@@ -13,3 +14,4 @@ max_value = 10.0
 value = 5.0
 
 [node name="Popup" parent="." instance=ExtResource("2_lb4lf")]
+visible = false

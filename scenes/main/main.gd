@@ -12,13 +12,11 @@ var current_contentement: float
 
 func _ready():
 	title_screen.show()
+	SignalManager.AddContentement.connect(AddContentement)
 
 func Init():
 	current_contentement = initial_contentement
 	district_1.Init()
-	# for the test, generate event after 3 sec
-	await get_tree().create_timer(3.0).timeout
-	event_screen.TriggerNewEvent()
 	year_counter.YearCounterUpdater()
 	# initial load of event
 	event_manager.Init()
@@ -32,3 +30,7 @@ func TriggerNewEvent():
 func _on_start_button_pressed():
 	Init()
 	title_screen.hide()
+
+func AddContentement(amount: float):
+	current_contentement += amount
+	print("contentement: ", current_contentement)

@@ -17,6 +17,14 @@ var current_district: District
 
 func _ready():
 	hide()
+	SignalManager.OpenEvent.connect(OpenEvent)
+
+func OpenEvent(event: EventResource, district: District):
+	print("district: ", district)
+	print("event: ", event.name)
+	UpdateEvent(event)
+	current_district = district
+	show()
 
 func UpdateEvent(event_resource: EventResource):
 	event_title_label.text = event_resource.name
@@ -33,6 +41,7 @@ func ChooseFirstEvent(district: District):
 
 func CloseEvent():
 	hide()
+	#TODO: Remove event from event list in EventManager
 	#TODO: sound
 
 func _on_event_choice_button_1_pressed():
