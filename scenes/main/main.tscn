@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=23 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -7,9 +7,16 @@
 [ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
 [ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="4_l3cfh"]
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
+[ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
+[ext_resource type="Texture2D" uid="uid://tmaj66ugmk57" path="res://assets/sprites/riviere_campagne.png" id="7_hxu8e"]
+[ext_resource type="Texture2D" uid="uid://bt86ld0x4a3uq" path="res://assets/sprites/croixrousse.png" id="8_th5th"]
 [ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://cr1wde06qd4tg" path="res://assets/icones/button choix.png" id="9_ouso4"]
+[ext_resource type="Texture2D" uid="uid://5vr63k281d11" path="res://assets/sprites/guillotiere.png" id="9_raeie"]
+[ext_resource type="Texture2D" uid="uid://8o1lfr6nnrhr" path="res://assets/sprites/Brotteaux.png" id="10_hxu8e"]
+[ext_resource type="Texture2D" uid="uid://d7vgdntk84ui" path="res://assets/sprites/presquile.png" id="11_nvumn"]
+[ext_resource type="Texture2D" uid="uid://dec1lg735bfo5" path="res://assets/icones/button choix selection.png" id="13_nvumn"]
 
 [sub_resource type="Gradient" id="Gradient_k2fmo"]
 
@@ -40,71 +47,147 @@ title_music = "uid://cdxkto4ejkq0e"
 title_music_with_intro = "uid://deoboabn4u07g"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
-volume_db = -10.0
+volume_db = -20.0
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="BGSprite2D" type="Sprite2D" parent="Environment"]
+position = Vector2(960, 540)
+texture = ExtResource("6_blune")
+
+[node name="RiverSprite2D" type="Sprite2D" parent="Environment"]
+position = Vector2(960, 540)
+texture = ExtResource("7_hxu8e")
+
+[node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" parent="Environment/District1" index="0"]
+modulate = Color(1, 0.39, 0.39, 1)
+position = Vector2(960, 540)
+texture = ExtResource("8_th5th")
+
+[node name="CollisionPolygon2D" parent="Environment/District1/Area2D" index="0"]
+polygon = PackedVector2Array(1349, 1, 1469, 140, 1417, 460, 1289, 531, 1651, 641, 1919, 817, 1918, -3)
+
+[node name="Label" parent="Environment/District1" index="2"]
+offset_left = 1477.0
+offset_top = 242.0
+offset_right = 1894.0
+offset_bottom = 323.0
+text = "CROIX-ROUSSE"
+
+[node name="HealthBar" parent="Environment/District1" index="3"]
+offset_left = 1535.0
+offset_top = 316.0
+offset_right = 1815.0
+offset_bottom = 378.0
+
+[node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" parent="Environment/District2" index="0"]
+modulate = Color(0.35000002, 1, 0.45833325, 1)
+position = Vector2(960, 540)
+texture = ExtResource("9_raeie")
+
+[node name="CollisionPolygon2D" parent="Environment/District2/Area2D" index="0"]
+polygon = PackedVector2Array(-1, 405, 687, 608, 863, 608, 832, 1080, -4, 1080)
+
+[node name="Label" parent="Environment/District2" index="2"]
+offset_left = 201.0
+offset_top = 713.0
+offset_right = 618.0
+offset_bottom = 794.0
+text = "GUILLOTIERE"
+
+[node name="HealthBar" parent="Environment/District2" index="3"]
+offset_left = 276.0
+offset_top = 790.0
+offset_right = 556.0
+offset_bottom = 852.0
+
+[node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" parent="Environment/District3" index="0"]
+modulate = Color(1, 0.6085, 0.19, 1)
+position = Vector2(960, 540)
+texture = ExtResource("10_hxu8e")
+
+[node name="CollisionPolygon2D" parent="Environment/District3/Area2D" index="0"]
+polygon = PackedVector2Array(863, 612, 835, 1078, 1213, 1077, 1291, 976, 1338, 847, 1454, 755, 1498, 674, 1336, 617)
+
+[node name="Label" parent="Environment/District3" index="2"]
+offset_left = 909.0
+offset_top = 708.0
+offset_right = 1326.0
+offset_bottom = 789.0
+text = "BROTTEAUX"
+
+[node name="HealthBar" parent="Environment/District3" index="3"]
+offset_left = 961.0
+offset_top = 790.0
+offset_right = 1241.0
+offset_bottom = 852.0
+
+[node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" parent="Environment/District4" index="0"]
+modulate = Color(0.47000003, 0.57600003, 1, 1)
+position = Vector2(960, 540)
+texture = ExtResource("11_nvumn")
+
+[node name="CollisionPolygon2D" parent="Environment/District4/Area2D" index="0"]
+polygon = PackedVector2Array(131, 0, 149, 32, 397, 156, 667, 276, 908, 329, 1052, 308, 1116, 249, 1112, 122, 1076, -4, 1344, 0, 1462, 138, 1414, 463, 1205, 536, 737, 538, 407, 450, -1, 272, -1, 0)
+
+[node name="Label" parent="Environment/District4" index="2"]
+offset_left = 819.0
+offset_top = 372.0
+offset_right = 1236.0
+offset_bottom = 453.0
+text = "PRESQUILE"
+
+[node name="HealthBar" parent="Environment/District4" index="3"]
+offset_left = 894.0
+offset_top = 442.0
+offset_right = 1174.0
+offset_bottom = 504.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Districts" type="Control" parent="CanvasLayer"]
+[node name="TimeBar" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 266.0
+offset_top = 2.0
+offset_right = 1031.0
+offset_bottom = 252.0
+mouse_filter = 2
 
-[node name="District1" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
-unique_name_in_owner = true
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/TimeBar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 17.0
+offset_bottom = 78.0
+grow_horizontal = 2
+value = 10.0
+nine_patch_stretch = true
+texture_under = ExtResource("13_nvumn")
+texture_progress = ExtResource("13_nvumn")
+tint_under = Color(0.32, 0.32, 0.32, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TimeBar/TextureProgressBar"]
 layout_mode = 0
-offset_left = 543.0
-offset_top = 278.0
-offset_right = 543.0
-offset_bottom = 278.0
-
-[node name="Sprite2D" parent="CanvasLayer/Districts/District1" index="0"]
-modulate = Color(1, 0.39, 0.39, 1)
-
-[node name="Label" parent="CanvasLayer/Districts/District1" index="1"]
-text = "CROIX-ROUSSE"
-
-[node name="District2" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1244.0
-offset_top = 292.0
-offset_right = 1244.0
-offset_bottom = 292.0
-
-[node name="Sprite2D" parent="CanvasLayer/Districts/District2" index="0"]
-modulate = Color(0.35000002, 1, 0.45833325, 1)
-
-[node name="Label" parent="CanvasLayer/Districts/District2" index="1"]
-text = "GUILLOTIERE"
-
-[node name="District3" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1390.0
-offset_top = 761.0
-offset_right = 1390.0
-offset_bottom = 761.0
-
-[node name="Sprite2D" parent="CanvasLayer/Districts/District3" index="0"]
-modulate = Color(1, 0.6085, 0.19, 1)
-
-[node name="Label" parent="CanvasLayer/Districts/District3" index="1"]
-text = "BROTTEAUX"
-
-[node name="District4" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 689.0
-offset_top = 753.0
-offset_right = 689.0
-offset_bottom = 753.0
-
-[node name="Sprite2D" parent="CanvasLayer/Districts/District4" index="0"]
-modulate = Color(0.47000003, 0.57600003, 1, 1)
-
-[node name="Label" parent="CanvasLayer/Districts/District4" index="1"]
-text = "PRESQUILE"
+offset_left = 63.0
+offset_top = 58.0
+offset_right = 91.0
+offset_bottom = 88.0
+texture = ExtResource("4_l3cfh")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -310,7 +393,7 @@ script = ExtResource("8_yyfjg")
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 
-[editable path="CanvasLayer/Districts/District1"]
-[editable path="CanvasLayer/Districts/District2"]
-[editable path="CanvasLayer/Districts/District3"]
-[editable path="CanvasLayer/Districts/District4"]
+[editable path="Environment/District1"]
+[editable path="Environment/District2"]
+[editable path="Environment/District3"]
+[editable path="Environment/District4"]

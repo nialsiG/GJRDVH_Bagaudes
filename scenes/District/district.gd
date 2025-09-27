@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 class_name District
 @export_file("*.tscn") var PopupPrefab : String
 
@@ -17,12 +17,12 @@ func NewPopup():
 	PopupSpawn(Vector2(10,10))
 	
 
-func _gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		for district in get_tree().get_nodes_in_group("district"):
-			district.HideInfo()
-		await get_tree().create_timer(0.2).timeout
-		DisplayInfo()
+#func _gui_input(event):
+	#if event is InputEventMouseButton and event.pressed:
+		#for district in get_tree().get_nodes_in_group("district"):
+			#district.HideInfo()
+		#await get_tree().create_timer(0.2).timeout
+		#DisplayInfo()
 
 func Init():
 	health = health_bar.max_value
@@ -51,6 +51,9 @@ func PopupSpawn(origin:Vector2):
 	add_child(instance)
 	instance.position = popupPosition
 	instance.init()
-	
-	
-   
+
+
+func _on_area_2d_mouse_entered():
+	for district in get_tree().get_nodes_in_group("district"):
+		district.HideInfo()
+		DisplayInfo()
