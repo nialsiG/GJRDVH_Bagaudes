@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=18 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -9,9 +9,12 @@
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
 [ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
+[ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://tmaj66ugmk57" path="res://assets/sprites/riviere_campagne.png" id="7_hxu8e"]
 [ext_resource type="Texture2D" uid="uid://bt86ld0x4a3uq" path="res://assets/sprites/croixrousse.png" id="8_th5th"]
 [ext_resource type="Texture2D" uid="uid://cr1wde06qd4tg" path="res://assets/icones/button choix.png" id="9_ouso4"]
+[ext_resource type="Texture2D" uid="uid://dyrfohag10b07" path="res://scenes/main/defaite.png" id="11_ouso4"]
+[ext_resource type="Script" uid="uid://d4devl1s68j4y" path="res://scenes/main/pandemic_ending_screen.gd" id="12_blune"]
 [ext_resource type="Texture2D" uid="uid://5vr63k281d11" path="res://assets/sprites/guillotiere.png" id="9_raeie"]
 [ext_resource type="Texture2D" uid="uid://8o1lfr6nnrhr" path="res://assets/sprites/Brotteaux.png" id="10_hxu8e"]
 [ext_resource type="Texture2D" uid="uid://d7vgdntk84ui" path="res://assets/sprites/presquile.png" id="11_nvumn"]
@@ -302,25 +305,29 @@ custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_ouso4")
+patch_margin_left = 60
+patch_margin_top = 60
+patch_margin_right = 60
+patch_margin_bottom = 60
 
-[node name="EventChoice1Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1/NinePatchRect"]
+layout_mode = 0
+offset_right = 1098.0
+offset_bottom = 81.0
+theme_override_constants/margin_left = 40
+
+[node name="EventChoice1Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 61.5
-offset_bottom = 61.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Premier choix (effet)"
 
 [node name="EventChoiceButton2" type="Button" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
@@ -328,7 +335,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -336,16 +343,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_ouso4")
+patch_margin_left = 60
+patch_margin_top = 60
+patch_margin_right = 60
+patch_margin_bottom = 60
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 50
 
-[node name="EventChoice2Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2/TextureRect/MarginContainer"]
+[node name="EventChoice2Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Deuxième choix (effet)"
@@ -422,6 +434,26 @@ Game design : Wilson
 Artistes : Anne-Laure, Julie
 Sound design : Sebastien
 Développement : Charlie, Ghislain"
+
+[node name="YearCounter" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("8_yyfjg")
+
+[node name="GameOver" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PandemicEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_ouso4")
+script = ExtResource("12_blune")
 
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
