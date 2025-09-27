@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://hbojaky2bmbx" path="res://scenes/District/district.gd" id="1_ienuk"]
 [ext_resource type="LabelSettings" uid="uid://d27uf53ssqg6f" path="res://resources/labels/district_name_label.tres" id="3_28yhn"]
 
-[node name="District" type="Node2D"]
+[node name="District" type="Node2D" node_paths=PackedStringArray("spawn_position")]
 script = ExtResource("1_ienuk")
 PopupPrefab = "uid://btktthbmc6ao7"
+spawn_position = [NodePath("SpawnPositions/SpawnPosition1"), NodePath("SpawnPositions/SpawnPosition2"), NodePath("SpawnPositions/SpawnPosition3")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -48,5 +49,13 @@ grow_vertical = 2
 text = "SANTE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SpawnPositions" type="Node2D" parent="."]
+
+[node name="SpawnPosition1" type="Marker2D" parent="SpawnPositions"]
+
+[node name="SpawnPosition2" type="Marker2D" parent="SpawnPositions"]
+
+[node name="SpawnPosition3" type="Marker2D" parent="SpawnPositions"]
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

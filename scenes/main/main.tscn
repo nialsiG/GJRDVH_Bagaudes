@@ -44,12 +44,24 @@ initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg"), ExtResou
 script = ExtResource("2_iuonh")
 title_music = "uid://cdxkto4ejkq0e"
 title_music_with_intro = "uid://deoboabn4u07g"
+main_music = "uid://dklfhxlhfa0p7"
+main_music_with_intro = "uid://xb60a3jbrcn5"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
 volume_db = -20.0
 
 [node name="SoundManager" type="Node" parent="."]
 script = ExtResource("6_62atk")
+angry_crowd_1 = "uid://ckpwjdwundxu1"
+cough_1 = "uid://dx7mxv4m2m08q"
+cough_2 = "uid://b6anutay5j6a8"
+popup_1 = "uid://2fm1rv5gqlyu"
+popup_2 = "uid://5i3jqxhy5ixc"
+click_validate = "uid://bo0ysmjr5dy8r"
+ui_selection_ingame = "uid://c61lj0yqjbb35"
+ui_selection_titlescreen = "uid://brr4nv85bl0fa"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager"]
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -85,8 +97,18 @@ offset_top = 316.0
 offset_right = 1815.0
 offset_bottom = 378.0
 
+[node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
+position = Vector2(1567, 139)
+
+[node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
+position = Vector2(1745, 184)
+
+[node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
+position = Vector2(1611, 462)
+
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_type = 1
 
 [node name="Sprite2D" parent="Environment/District2" index="0"]
 modulate = Color(0.35000002, 1, 0.45833325, 1)
@@ -109,8 +131,18 @@ offset_top = 790.0
 offset_right = 556.0
 offset_bottom = 852.0
 
+[node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
+position = Vector2(229, 652)
+
+[node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
+position = Vector2(478, 695)
+
+[node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
+position = Vector2(502, 930)
+
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_type = 2
 
 [node name="Sprite2D" parent="Environment/District3" index="0"]
 modulate = Color(1, 0.6085, 0.19, 1)
@@ -133,8 +165,18 @@ offset_top = 790.0
 offset_right = 1241.0
 offset_bottom = 852.0
 
+[node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
+position = Vector2(989, 705)
+
+[node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
+position = Vector2(1314, 752)
+
+[node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
+position = Vector2(1052, 924)
+
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_type = 3
 
 [node name="Sprite2D" parent="Environment/District4" index="0"]
 modulate = Color(0.47000003, 0.57600003, 1, 1)
@@ -156,6 +198,15 @@ offset_left = 894.0
 offset_top = 442.0
 offset_right = 1174.0
 offset_bottom = 504.0
+
+[node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
+position = Vector2(188, 277)
+
+[node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
+position = Vector2(525, 308)
+
+[node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
+position = Vector2(1237, 319)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -302,6 +353,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "C'est la description de l'évènement"
 label_settings = ExtResource("19_s17dp")
+autowrap_mode = 2
 
 [node name="EventTextureRect" type="TextureRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -344,6 +396,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Premier choix (effet)"
 label_settings = ExtResource("19_s17dp")
+autowrap_mode = 2
 
 [node name="EventChoiceButton2" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -378,6 +431,21 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Deuxième choix (effet)"
 label_settings = ExtResource("19_s17dp")
+autowrap_mode = 2
+
+[node name="GameOver" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PandemicEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_ouso4")
+script = ExtResource("12_blune")
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -453,23 +521,10 @@ Développement : Charlie, Ghislain"
 autowrap_mode = 2
 
 [node name="YearCounter" type="Label" parent="CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("8_yyfjg")
-
-[node name="GameOver" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PandemicEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("11_ouso4")
-script = ExtResource("12_blune")
 
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]

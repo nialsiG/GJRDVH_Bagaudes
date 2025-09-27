@@ -20,8 +20,9 @@ func _ready():
 	SignalManager.OpenEvent.connect(OpenEvent)
 
 func OpenEvent(event: EventResource, district: District):
-	print("district: ", district)
-	print("event: ", event.name)
+	#print("district: ", district)
+	#print("event: ", event.name)
+	SignalManager.PlaySound.emit(event.event_sound)
 	UpdateEvent(event)
 	current_district = district
 	show()
@@ -54,12 +55,13 @@ func UpdateEvent(event_resource: EventResource):
 	show()
 
 
-func CloseEvent():
+func CloseEvent(years: int):
+	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
 	hide()
 	SignalManager.RemoveEvent.emit(current_event_resource)
-	await get_tree().create_timer(1.0).timeout
-	SignalManager.AddYear.emit(1)
-	#TODO: sound
+	for year in years:
+		await get_tree().create_timer(0.2).timeout
+		SignalManager.AddYear.emit(1)
 
 func _on_event_choice_button_1_pressed():
 	if current_event_resource.choice_1_contentement:
@@ -69,7 +71,7 @@ func _on_event_choice_button_1_pressed():
 	if current_event_resource.choice_1_unlockable_events.size() > 0:
 		for event in current_event_resource.choice_1_unlockable_events:
 			SignalManager.UnlockEvent.emit(event)
-	CloseEvent()
+	CloseEvent(current_event_resource.choice_1_time)
 
 
 func _on_event_choice_button_2_pressed():
@@ -80,4 +82,4 @@ func _on_event_choice_button_2_pressed():
 	if current_event_resource.choice_2_unlockable_events.size() > 0:
 		for event in current_event_resource.choice__unlockable_events:
 			SignalManager.UnlockEvent.emit(event)
-	CloseEvent()
+	CloseEvent(current_event_resource.choice_2_time)
