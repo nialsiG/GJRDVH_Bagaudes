@@ -19,6 +19,12 @@ func Init():
 	await get_tree().create_timer(3.0).timeout
 	event_screen.ChooseFirstEvent(district_1)
 	year_counter.YearCounterUpdater()
+	
+	
+	
+func _input(event):
+		if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+			SignalManager.spawn_popup_requested.emit()
 
 
 func _on_start_button_pressed():

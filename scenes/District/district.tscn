@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://lm3epfr78djn"]
+[gd_scene load_steps=3 format=3 uid="uid://lm3epfr78djn"]
 
 [ext_resource type="Script" uid="uid://hbojaky2bmbx" path="res://scenes/District/district.gd" id="1_ienuk"]
+[ext_resource type="PackedScene" uid="uid://btktthbmc6ao7" path="res://scenes/District/popup.tscn" id="2_lb4lf"]
 
 [node name="District" type="Node2D"]
 script = ExtResource("1_ienuk")
@@ -10,3 +11,5 @@ offset_right = 280.0
 offset_bottom = 27.0
 max_value = 10.0
 value = 5.0
+
+[node name="Popup" parent="." instance=ExtResource("2_lb4lf")]
