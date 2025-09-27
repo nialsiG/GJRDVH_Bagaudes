@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=31 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://lm3epfr78djn" path="res://scenes/District/district.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
+[ext_resource type="Resource" uid="uid://qle2n3ixf4mh" path="res://resources/events/rue_imperiale.tres" id="5_i7in8"]
 [ext_resource type="Script" uid="uid://bl24mserlgric" path="res://scenes/music/sound_manager.gd" id="6_62atk"]
 [ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
@@ -37,7 +38,7 @@ final_year = 1840
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
-initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg")])
+initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg"), ExtResource("5_i7in8")])
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")
