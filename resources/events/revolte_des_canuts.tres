@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://btvbgskc7xvyt"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_0j1qx"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_kcvx6"]
+
+[resource]
+script = ExtResource("1_0j1qx")
+name = "Révolte des Canuts"
+description = "Depuis la fin des corporations et l'apparition des métiers à tisser Jacquard, la production de tissu reste dense mais les prix ont bien chuté et, avec eux, les salaires. Les révoltés prennent la rue et les armes."
+available_on_start = false
+district = 0
+year = 1831
+texture = ExtResource("2_kcvx6")
+choice_1 = "Envoyons l'armée, c'est ce que préconise l'Etat. "
+choice_1_contentement = -6.0
+choice_1_health = 8.0
+choice_1_time = 6
+choice_2 = "Laissez les faire. Ce n'est pas à nous de gérer cela. "
+choice_2_contentement = 8.0
+choice_2_health = -8.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

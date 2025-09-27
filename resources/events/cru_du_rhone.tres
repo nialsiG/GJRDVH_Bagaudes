@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://bsefvxqnqbmie"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_csclk"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_qyl5l"]
+
+[resource]
+script = ExtResource("1_csclk")
+name = "Crue du Rhône"
+description = "La crue a emporté la morgue flottante. Les débris et les corps se sont échoués sur la rive."
+available_on_start = false
+district = 3
+year = 1852
+texture = ExtResource("2_qyl5l")
+event_sound = 1
+choice_1 = "Ça suffit, ça a échoué une fois et ce n'est pas aussi hygiénique qu'on l'aurait cru/ Faisons une vrai morgue à la fac de médecine."
+choice_1_contentement = 4.0
+choice_1_health = 6.0
+choice_1_time = 6
+choice_2 = "Il nous faut une nouvelle morgue flottante. On n'a  rien d'autre et le temps presse ! Bien solidifiée, elle tiendra 60 ans ! "
+choice_2_contentement = -4.0
+choice_2_health = 6.0
+choice_2_time = 4
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

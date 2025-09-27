@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=4 format=3 uid="uid://dn378h12aslsf"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_lb4vy"]
+[ext_resource type="Resource" uid="uid://bsefvxqnqbmie" path="res://resources/events/cru_du_rhone.tres" id="2_8two1"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_ox1nd"]
+
+[resource]
+script = ExtResource("1_lb4vy")
+name = "Création de la Morgue Flottante"
+description = "Le dépot mortuaire de l'Hotel Dieu est plein et ne dispose pas de systeme de refroidissement. Ça empeste! En plus il n'est pas ouvert au public, comment peuvent faire les familles pour retrouver les disparus? Il existe bien un bateau lavoir qui pourrait remplir la fonction de morgue."
+available_on_start = false
+district = 3
+year = 1850
+texture = ExtResource("2_ox1nd")
+event_sound = 1
+choice_1 = "Autorisons la création de la morgue flottante. "
+choice_1_contentement = 6.0
+choice_1_health = 4.0
+choice_1_time = 6
+choice_1_unlockable_events = Array[ExtResource("1_lb4vy")]([ExtResource("2_8two1")])
+choice_2 = "Vous n'y pensez pas ! "
+choice_2_contentement = 8.0
+choice_2_health = -6.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

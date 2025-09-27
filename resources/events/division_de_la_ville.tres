@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://bbbmqpyteds14"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_d6xa0"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_7qxy1"]
+
+[resource]
+script = ExtResource("1_d6xa0")
+name = "Division de la ville"
+description = "Le choléra apparait partout dans les villes de France et d'Europe. La municipalité et la préfecture doivent organiser la ville pour y faire face. Il est proposé de la diviser en 7 secteurs sanitaires autonomes."
+texture = ExtResource("2_7qxy1")
+event_sound = 1
+choice_1 = "Nous devons impérativement régler cette vague de choléra dans nos rues ! Nous devons mettre le budget et le temps nécessaire. "
+choice_1_contentement = -8.0
+choice_1_health = 10.0
+choice_1_time = 6
+choice_2 = "Nous devons effectivement régler cette vague de choléra dans nos rues, mais les dépenses seront revues au strict minimum."
+choice_2_contentement = 8.0
+choice_2_health = -10.0
+choice_2_time = 2
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

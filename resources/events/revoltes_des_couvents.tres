@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://trd6eh0j0c6g"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_kkuws"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_jihtr"]
+
+[resource]
+script = ExtResource("1_kkuws")
+name = "Révolte dans les couvents soyeux"
+description = "Les congrégations religieuses féminines de la Providence emploient des jeunes filles pour tisser la soie. Cependant avec la crise dans le secteurs, les employées sont peu payées et les canuts y voient une concurrence déloyale de l'Eglise."
+available_on_start = false
+district = 0
+year = 1847
+texture = ExtResource("2_jihtr")
+choice_1 = "Il faut empécher l'Eglise d'avoir la mainmise sur le travail, c'est de la concurrence déloyale."
+choice_1_contentement = -8.0
+choice_1_time = 5
+choice_2 = "Ces jeunes filles ne trouverons pas forcément de travail ailleurs, laissons l'Eglise s'occuper d'elles."
+choice_2_contentement = 4.0
+choice_2_health = 2.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"
