@@ -30,6 +30,7 @@ func _input(event):
 		if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
 			SignalManager.spawn_popup_requested.emit()
 			
+			
 func TriggerNewEvent():
 	event_manager.SelectRandomEvent()
 

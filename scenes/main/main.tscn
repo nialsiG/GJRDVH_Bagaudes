@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=18 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://cr1wde06qd4tg" path="res://assets/icones/button choix.png" id="9_ouso4"]
 [ext_resource type="Texture2D" uid="uid://dyrfohag10b07" path="res://scenes/main/defaite.png" id="11_ouso4"]
+[ext_resource type="Script" uid="uid://d4devl1s68j4y" path="res://scenes/main/pandemic_ending_screen.gd" id="12_blune"]
 
 [sub_resource type="Gradient" id="Gradient_k2fmo"]
 
@@ -269,6 +270,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("11_ouso4")
+script = ExtResource("12_blune")
 
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]

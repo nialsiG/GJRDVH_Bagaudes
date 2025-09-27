@@ -4,6 +4,7 @@ class_name District
 
 @onready var health_bar: ProgressBar = $HealthBar
 
+
 var health: float = 10
 var popup: PackedScene
 var popupPosition : Vector2 = Vector2(10,10)
@@ -18,9 +19,10 @@ func NewPopup():
 	PopupSpawn(Vector2(10,10))
 	
 
-func _gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		pass
+func input(event):
+			if event is InputEventKey and event.pressed and event.keycode == KEY_CAPSLOCK :
+				AddHealth(-10)
+
 
 func Init():
 	health = health_bar.max_value
@@ -35,7 +37,6 @@ func AddHealth(amount: float):
 	health_bar.value = health
 	if health <= 0 :
 		SignalManager.EpidemicEnding.emit()
-		$"../../CanvasLayer/GameOver/PandemicEndingScreen".visible = true
 
 func PopupSpawn(origin:Vector2):
 	var instance : PopupEvent = popup.instantiate()
