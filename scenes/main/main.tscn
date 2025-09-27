@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=22 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -11,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://tmaj66ugmk57" path="res://assets/sprites/riviere_campagne.png" id="7_hxu8e"]
 [ext_resource type="Texture2D" uid="uid://bt86ld0x4a3uq" path="res://assets/sprites/croixrousse.png" id="8_th5th"]
-[ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://cr1wde06qd4tg" path="res://assets/icones/button choix.png" id="9_ouso4"]
 [ext_resource type="Texture2D" uid="uid://5vr63k281d11" path="res://assets/sprites/guillotiere.png" id="9_raeie"]
 [ext_resource type="Texture2D" uid="uid://8o1lfr6nnrhr" path="res://assets/sprites/Brotteaux.png" id="10_hxu8e"]
@@ -157,7 +156,7 @@ offset_bottom = 504.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TimeBar" type="Control" parent="CanvasLayer"]
+[node name="TimeOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 266.0
@@ -166,7 +165,8 @@ offset_right = 1031.0
 offset_bottom = 252.0
 mouse_filter = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/TimeBar"]
+[node name="TimeTextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/TimeOverlay"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -179,15 +179,25 @@ texture_under = ExtResource("13_nvumn")
 texture_progress = ExtResource("13_nvumn")
 tint_under = Color(0.32, 0.32, 0.32, 1)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TimeBar/TextureProgressBar"]
+[node name="TimeTextureRect" type="TextureRect" parent="CanvasLayer/TimeOverlay/TimeTextureProgressBar"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 63.0
-offset_top = 58.0
-offset_right = 91.0
-offset_bottom = 88.0
+offset_left = 6.0
+offset_top = 55.0
+offset_right = 34.0
+offset_bottom = 85.0
 texture = ExtResource("4_l3cfh")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="YearCounter" type="Label" parent="CanvasLayer/TimeOverlay/TimeTextureProgressBar/TimeTextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 25.0
+offset_right = 35.0
+offset_bottom = 48.0
+text = "1800"
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -381,12 +391,6 @@ Game design : Wilson
 Artistes : Anne-Laure, Julie
 Sound design : Sebastien
 Développement : Charlie, Ghislain"
-
-[node name="YearCounter" type="Label" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("8_yyfjg")
 
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]

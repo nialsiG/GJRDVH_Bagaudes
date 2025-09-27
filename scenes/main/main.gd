@@ -1,10 +1,12 @@
 extends Node
 
 @export var initial_contentement: float = 1.0
+@export var initial_year: int = 1830
+@export var final_year: int = 1831
 
 @onready var title_screen = %TitleScreen
 @onready var event_screen: EventScreen = %EventScreen
-@onready var year_counter: YearCounter = %YearCounter
+@onready var year_counter: Label = %YearCounter
 @onready var event_manager: EventManager = $EventManager
 @onready var music_manager = $MusicManager
 
@@ -13,11 +15,16 @@ extends Node
 @onready var district_3: District = %District3
 @onready var district_4: District = %District4
 
+@onready var time_texture_progress_bar: TextureProgressBar = %TimeTextureProgressBar
+@onready var time_texture_rect: TextureRect = %TimeTextureRect
+
 var current_contentement: float
+var current_year: int
 
 func _ready():
 	LoadTitleScreen()
 	SignalManager.AddContentement.connect(AddContentement)
+	SignalManager.AddYear.connect(AddYear)
 
 func LoadTitleScreen():
 	title_screen.show()
@@ -25,12 +32,12 @@ func LoadTitleScreen():
 
 func Init():
 	current_contentement = initial_contentement
+	ResetYear()
 	# districts
 	district_1.Init()
 	district_2.Init()
 	district_3.Init()
 	district_4.Init()
-	year_counter.YearCounterUpdater()
 	# initial load of event
 	event_manager.Init() 
 
@@ -48,3 +55,23 @@ func _on_start_button_pressed():
 func AddContentement(amount: float):
 	current_contentement += amount
 	print("contentement: ", current_contentement)
+
+#region Time manager
+func ResetYear():
+	current_year = initial_year
+	time_texture_progress_bar.min_value = initial_year
+	time_texture_progress_bar.max_value = final_year
+	UpdateYear()
+
+func UpdateYear():
+	year_counter.text = str(current_year)
+	time_texture_progress_bar.value = current_year
+	time_texture_rect.position.x = (current_year - initial_year) * (time_texture_progress_bar.texture_under.get_width() / (final_year - initial_year))
+
+func AddYear(amount: float):
+	current_year += amount
+	UpdateYear()
+	if current_year >= final_year:
+		print("VICTORY")
+		SignalManager.Victory.emit()
+#endregion 
