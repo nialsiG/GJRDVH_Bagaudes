@@ -1,5 +1,5 @@
+[gd_scene load_steps=34 format=3 uid="uid://bk7rklt41thfd"]
 [gd_scene load_steps=40 format=3 uid="uid://bk7rklt41thfd"]
-
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
@@ -38,12 +38,15 @@
 [ext_resource type="Texture2D" uid="uid://dfpuin5devrla" path="res://assets/sprites/menu sans titre.png" id="22_37hlw"]
 [ext_resource type="Texture2D" uid="uid://cp3snlimnx8of" path="res://assets/icones/titre 2.png" id="23_6llfj"]
 [ext_resource type="Theme" uid="uid://ywumn8s5bsps" path="res://resources/buttons/menu_button_theme.tres" id="24_0bhws"]
+[ext_resource type="Texture2D" uid="uid://cmvmtbkh4ow0" path="res://assets/sprites/defaite revolte.png" id="27_gkmcc"]
+[ext_resource type="Script" uid="uid://co7o2oe1e5n86" path="res://scenes/main/insurection_ending_screen.gd" id="28_7nlll"]
+[ext_resource type="Texture2D" uid="uid://bgm4vbqllarub" path="res://assets/sprites/victoire.png" id="29_ii537"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0bhws"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
-final_year = 1840
+final_year = 1850
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
@@ -57,7 +60,7 @@ main_music = "uid://dklfhxlhfa0p7"
 main_music_with_intro = "uid://xb60a3jbrcn5"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
-volume_db = -20.0
+volume_db = -10.0
 
 [node name="SoundManager" type="Node" parent="."]
 script = ExtResource("6_62atk")
@@ -71,6 +74,7 @@ ui_selection_ingame = "uid://c61lj0yqjbb35"
 ui_selection_titlescreen = "uid://brr4nv85bl0fa"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager"]
+volume_db = -10.0
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -84,6 +88,8 @@ texture = ExtResource("7_hxu8e")
 
 [node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_color = Color(0.84, 0.3024, 0.46368012, 0.3137255)
+district_color_on_hover = Color(0.84, 0.3024, 0.46368012, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District1" index="0"]
 modulate = Color(1, 0.39, 0.39, 1)
@@ -118,6 +124,8 @@ position = Vector2(1611, 462)
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 1
+district_color = Color(0.81, 0.6264, 0.2592, 0.3137255)
+district_color_on_hover = Color(0.81, 0.6264, 0.2592, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District2" index="0"]
 modulate = Color(0.35000002, 1, 0.45833325, 1)
@@ -152,6 +160,8 @@ position = Vector2(502, 930)
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 2
+district_color = Color(0.3555, 0.79, 0.51481664, 0.3137255)
+district_color_on_hover = Color(0.3555, 0.79, 0.51481664, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District3" index="0"]
 modulate = Color(1, 0.6085, 0.19, 1)
@@ -186,6 +196,8 @@ position = Vector2(1052, 924)
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 3
+district_color = Color(0.23799998, 0.49300006, 0.85, 0.3137255)
+district_color_on_hover = Color(0.23799998, 0.49300006, 0.85, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District4" index="0"]
 modulate = Color(0.47000003, 0.57600003, 1, 1)
@@ -306,6 +318,7 @@ text = "1800"
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -444,17 +457,92 @@ autowrap_mode = 2
 
 [node name="GameOver" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="PandemicEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("11_ouso4")
 script = ExtResource("12_blune")
+
+[node name="BackToTitleButton" type="Button" parent="CanvasLayer/GameOver/PandemicEndingScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.5
+offset_top = -262.0
+offset_right = 272.5
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_0bhws")
+text = "Menu principal"
+
+[node name="InsurectionEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_gkmcc")
+script = ExtResource("28_7nlll")
+
+[node name="BackToTitleButton" type="Button" parent="CanvasLayer/GameOver/InsurectionEndingScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.5
+offset_top = -262.0
+offset_right = 272.5
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_0bhws")
+text = "Menu principal"
+
+[node name="VictoryScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_ii537")
+
+[node name="BackToTitleButton" type="Button" parent="CanvasLayer/GameOver/VictoryScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.5
+offset_top = -262.0
+offset_right = 272.5
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_0bhws")
+text = "Menu principal"
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -492,10 +580,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = -52.5
-offset_right = 291.0
-offset_bottom = 52.5
+offset_left = -272.5
+offset_top = 278.0
+offset_right = 309.5
+offset_bottom = 383.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -538,6 +626,9 @@ script = ExtResource("8_yyfjg")
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/PandemicEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/InsurectionEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/VictoryScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartButton" to="." method="_on_start_button_pressed"]
 
 [editable path="Environment/District1"]
