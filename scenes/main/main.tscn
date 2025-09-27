@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=29 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://lm3epfr78djn" path="res://scenes/District/district.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
-[ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="4_l3cfh"]
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
 [ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
@@ -18,25 +17,18 @@
 [ext_resource type="Texture2D" uid="uid://d7vgdntk84ui" path="res://assets/sprites/presquile.png" id="11_nvumn"]
 [ext_resource type="Texture2D" uid="uid://dyrfohag10b07" path="res://scenes/main/defaite.png" id="11_ouso4"]
 [ext_resource type="Script" uid="uid://d4devl1s68j4y" path="res://scenes/main/pandemic_ending_screen.gd" id="12_blune"]
-[ext_resource type="Texture2D" uid="uid://dec1lg735bfo5" path="res://assets/icones/button choix selection.png" id="13_nvumn"]
-[ext_resource type="Script" uid="uid://ny72rjm3ak3c" path="res://scenes/main/revolution_ending_screen.gd" id="20_r4lks"]
-[ext_resource type="Script" uid="uid://ddhbf576d2fqx" path="res://scenes/main/good_ending.gd" id="21_pg34l"]
+[ext_resource type="Texture2D" uid="uid://deeaa5ttqhg8n" path="res://assets/icones/barre progression base.png" id="13_pg34l"]
+[ext_resource type="Texture2D" uid="uid://j04yf6kf7dvu" path="res://assets/icones/barre progression remplie.png" id="14_m4h2d"]
+[ext_resource type="Texture2D" uid="uid://c07q7mk70nxxx" path="res://assets/icones/sablier.png" id="15_p8abn"]
+[ext_resource type="Texture2D" uid="uid://crepm7tu52ofi" path="res://assets/icones/ui window.png" id="17_m4h2d"]
+[ext_resource type="LabelSettings" uid="uid://6ar31ctqkd00" path="res://resources/labels/event_name_label.tres" id="18_p8abn"]
+[ext_resource type="LabelSettings" uid="uid://dkx4kwhpvio3m" path="res://resources/labels/event_text_label.tres" id="19_s17dp"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="20_s17dp"]
+[ext_resource type="Texture2D" uid="uid://dfpuin5devrla" path="res://assets/sprites/menu sans titre.png" id="22_37hlw"]
+[ext_resource type="Texture2D" uid="uid://cp3snlimnx8of" path="res://assets/icones/titre 2.png" id="23_6llfj"]
+[ext_resource type="Theme" uid="uid://ywumn8s5bsps" path="res://resources/buttons/menu_button_theme.tres" id="24_0bhws"]
 
-[sub_resource type="Gradient" id="Gradient_k2fmo"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3cfh"]
-gradient = SubResource("Gradient_k2fmo")
-fill_to = Vector2(0, 1)
-
-[sub_resource type="Gradient" id="Gradient_hyk8p"]
-colors = PackedColorArray(0.4, 0.4, 0.4, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iuonh"]
-gradient = SubResource("Gradient_hyk8p")
-fill_to = Vector2(0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_hyk8p"]
-font_size = 60
+[sub_resource type="LabelSettings" id="LabelSettings_0bhws"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
@@ -211,33 +203,43 @@ offset_bottom = 78.0
 grow_horizontal = 2
 value = 10.0
 nine_patch_stretch = true
-texture_under = ExtResource("13_nvumn")
-texture_progress = ExtResource("13_nvumn")
+texture_under = ExtResource("13_pg34l")
+texture_progress = ExtResource("14_m4h2d")
 tint_under = Color(0.32, 0.32, 0.32, 1)
 
 [node name="TimeTextureRect" type="TextureRect" parent="CanvasLayer/TimeOverlay/TimeTextureProgressBar"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 6.0
-offset_top = 55.0
-offset_right = 34.0
-offset_bottom = 85.0
-texture = ExtResource("4_l3cfh")
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -22.5
+offset_right = 45.0
+offset_bottom = 22.5
+grow_vertical = 2
+texture = ExtResource("15_p8abn")
 expand_mode = 1
 stretch_mode = 4
 
 [node name="YearCounter" type="Label" parent="CanvasLayer/TimeOverlay/TimeTextureProgressBar/TimeTextureRect"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -5.0
-offset_top = 25.0
-offset_right = 35.0
-offset_bottom = 48.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 20.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "1800"
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -248,20 +250,18 @@ mouse_filter = 2
 script = ExtResource("4_6q06x")
 events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg")])
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/EventScreen"]
+[node name="TextureRect" type="NinePatchRect" parent="CanvasLayer/EventScreen"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -569.0
-offset_top = -281.0
-offset_right = 569.0
-offset_bottom = 281.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_l3cfh")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -683.0
+offset_top = -643.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("17_m4h2d")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect"]
 layout_mode = 1
@@ -270,18 +270,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="EventTitleLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "TITRE"
+label_settings = ExtResource("18_p8abn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -293,49 +295,55 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "C'est la description de l'évènement"
+label_settings = ExtResource("19_s17dp")
 
 [node name="EventTextureRect" type="TextureRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("4_l3cfh")
+texture = ExtResource("20_s17dp")
+expand_mode = 1
 stretch_mode = 5
 
-[node name="EventChoiceButton1" type="Button" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+[node name="EventChoiceButton1" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_ouso4")
-patch_margin_left = 60
-patch_margin_top = 60
-patch_margin_right = 60
-patch_margin_bottom = 60
+patch_margin_left = 50
+patch_margin_top = 70
+patch_margin_right = 50
+patch_margin_bottom = 70
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1/NinePatchRect"]
-layout_mode = 0
-offset_right = 1098.0
-offset_bottom = 81.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 40
 
 [node name="EventChoice1Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Premier choix (effet)"
+label_settings = ExtResource("19_s17dp")
 
-[node name="EventChoiceButton2" type="Button" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+[node name="EventChoiceButton2" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2"]
 layout_mode = 1
@@ -345,10 +353,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_ouso4")
-patch_margin_left = 60
-patch_margin_top = 60
-patch_margin_right = 60
-patch_margin_bottom = 60
+patch_margin_left = 50
+patch_margin_top = 70
+patch_margin_right = 50
+patch_margin_bottom = 70
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2/NinePatchRect"]
 layout_mode = 1
@@ -363,6 +371,7 @@ theme_override_constants/margin_left = 50
 unique_name_in_owner = true
 layout_mode = 2
 text = "Deuxième choix (effet)"
+label_settings = ExtResource("19_s17dp")
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -376,58 +385,57 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TitleScreen"]
+[node name="BGTextureRect" type="TextureRect" parent="CanvasLayer/TitleScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_iuonh")
+texture = ExtResource("22_37hlw")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TitleScreen"]
+[node name="TitleTextureRect" type="TextureRect" parent="CanvasLayer/TitleScreen/BGTextureRect"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 74.0
+offset_right = 1431.0
+offset_bottom = 299.0
+texture = ExtResource("23_6llfj")
+
+[node name="StartButton" type="Button" parent="CanvasLayer/TitleScreen/BGTextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -742.0
-offset_top = -455.0
-offset_right = 742.0
-offset_bottom = 455.0
+offset_left = -291.0
+offset_top = -52.5
+offset_right = 291.0
+offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleScreen/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "TITRE DU JEU"
-label_settings = SubResource("LabelSettings_hyk8p")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StartButton" type="Button" parent="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("24_0bhws")
 text = "Nouvelle partie"
 
 [node name="Credits" type="Control" parent="CanvasLayer/TitleScreen"]
 anchors_preset = 0
-offset_right = 538.0
-offset_bottom = 517.0
+offset_left = 1716.0
+offset_top = 748.0
+offset_right = 1913.0
+offset_bottom = 975.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleScreen/Credits"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 191.0
+offset_bottom = 242.0
 
 [node name="TitleLabel" type="Label" parent="CanvasLayer/TitleScreen/Credits/VBoxContainer"]
 layout_mode = 2
 text = "CREDITS"
+label_settings = SubResource("LabelSettings_0bhws")
 
 [node name="CreditsLabel" type="Label" parent="CanvasLayer/TitleScreen/Credits/VBoxContainer"]
 layout_mode = 2
@@ -436,6 +444,7 @@ Game design : Wilson
 Artistes : Anne-Laure, Julie
 Sound design : Sebastien
 Développement : Charlie, Ghislain"
+autowrap_mode = 2
 
 [node name="YearCounter" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
@@ -456,22 +465,10 @@ offset_bottom = 40.0
 texture = ExtResource("11_ouso4")
 script = ExtResource("12_blune")
 
-[node name="RevolutionEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("20_r4lks")
-
-[node name="GoodEnding" type="TextureRect" parent="CanvasLayer/GameOver"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("21_pg34l")
-
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartButton" to="." method="_on_start_button_pressed"]
 
 [editable path="Environment/District1"]
 [editable path="Environment/District2"]
