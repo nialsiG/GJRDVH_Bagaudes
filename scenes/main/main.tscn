@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=27 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -9,16 +9,18 @@
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
 [ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
-[ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://tmaj66ugmk57" path="res://assets/sprites/riviere_campagne.png" id="7_hxu8e"]
 [ext_resource type="Texture2D" uid="uid://bt86ld0x4a3uq" path="res://assets/sprites/croixrousse.png" id="8_th5th"]
+[ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://cr1wde06qd4tg" path="res://assets/icones/button choix.png" id="9_ouso4"]
-[ext_resource type="Texture2D" uid="uid://dyrfohag10b07" path="res://scenes/main/defaite.png" id="11_ouso4"]
-[ext_resource type="Script" uid="uid://d4devl1s68j4y" path="res://scenes/main/pandemic_ending_screen.gd" id="12_blune"]
 [ext_resource type="Texture2D" uid="uid://5vr63k281d11" path="res://assets/sprites/guillotiere.png" id="9_raeie"]
 [ext_resource type="Texture2D" uid="uid://8o1lfr6nnrhr" path="res://assets/sprites/Brotteaux.png" id="10_hxu8e"]
 [ext_resource type="Texture2D" uid="uid://d7vgdntk84ui" path="res://assets/sprites/presquile.png" id="11_nvumn"]
+[ext_resource type="Texture2D" uid="uid://dyrfohag10b07" path="res://scenes/main/defaite.png" id="11_ouso4"]
+[ext_resource type="Script" uid="uid://d4devl1s68j4y" path="res://scenes/main/pandemic_ending_screen.gd" id="12_blune"]
 [ext_resource type="Texture2D" uid="uid://dec1lg735bfo5" path="res://assets/icones/button choix selection.png" id="13_nvumn"]
+[ext_resource type="Script" uid="uid://ny72rjm3ak3c" path="res://scenes/main/revolution_ending_screen.gd" id="20_r4lks"]
+[ext_resource type="Script" uid="uid://ddhbf576d2fqx" path="res://scenes/main/good_ending.gd" id="21_pg34l"]
 
 [sub_resource type="Gradient" id="Gradient_k2fmo"]
 
@@ -436,7 +438,6 @@ Sound design : Sebastien
 Développement : Charlie, Ghislain"
 
 [node name="YearCounter" type="Label" parent="CanvasLayer"]
-unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("8_yyfjg")
@@ -454,6 +455,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("11_ouso4")
 script = ExtResource("12_blune")
+
+[node name="RevolutionEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_r4lks")
+
+[node name="GoodEnding" type="TextureRect" parent="CanvasLayer/GameOver"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("21_pg34l")
 
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
