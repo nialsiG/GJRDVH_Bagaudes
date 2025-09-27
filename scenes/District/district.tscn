@@ -1,27 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://lm3epfr78djn"]
+[gd_scene load_steps=3 format=3 uid="uid://lm3epfr78djn"]
 
 [ext_resource type="Script" uid="uid://hbojaky2bmbx" path="res://scenes/District/district.gd" id="1_ienuk"]
-[ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="2_ktbl7"]
-[ext_resource type="PackedScene" uid="uid://btktthbmc6ao7" path="res://scenes/District/popup.tscn" id="2_lb4lf"]
 [ext_resource type="LabelSettings" uid="uid://d27uf53ssqg6f" path="res://resources/labels/district_name_label.tres" id="3_28yhn"]
 
-[node name="District" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="District" type="Node2D"]
 script = ExtResource("1_ienuk")
 PopupPrefab = "uid://btktthbmc6ao7"
 
-[node name="Sprite2D" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -208.0
-offset_top = -194.0
-offset_right = -80.0
-offset_bottom = -66.0
-scale = Vector2(3.234375, 3.1875)
-texture = ExtResource("2_ktbl7")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
 offset_left = -208.0
 offset_top = -194.0
 offset_right = 209.0
@@ -32,7 +24,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-layout_mode = 0
 offset_left = -140.0
 offset_top = -110.0
 offset_right = 140.0
@@ -40,6 +31,4 @@ offset_bottom = -48.0
 max_value = 10.0
 value = 5.0
 
-[node name="Popup" parent="." instance=ExtResource("2_lb4lf")]
-visible = false
-layout_mode = 0
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

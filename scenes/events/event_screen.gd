@@ -41,7 +41,6 @@ func CloseEvent():
 	SignalManager.RemoveEvent.emit(current_event_resource)
 	await get_tree().create_timer(1.0).timeout
 	SignalManager.AddYear.emit(1)
-	#TODO: Remove event from event list in EventManager
 	#TODO: sound
 
 func _on_event_choice_button_1_pressed():
