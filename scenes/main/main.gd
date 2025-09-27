@@ -1,6 +1,6 @@
 extends Node
 
-@export var initial_contentement: float = 1.0
+@export var initial_contentement: float = 100.0
 @export var initial_year: int = 1830
 @export var final_year: int = 1831
 
@@ -17,6 +17,7 @@ extends Node
 
 @onready var time_texture_progress_bar: TextureProgressBar = %TimeTextureProgressBar
 @onready var time_texture_rect: TextureRect = %TimeTextureRect
+@onready var contentement_progress_bar: ProgressBar = %ContentementProgressBar
 
 var current_contentement: float
 var current_year: int
@@ -31,8 +32,9 @@ func LoadTitleScreen():
 	music_manager.PlayMusic(Enums.Soundtrack.TITLE)
 
 func Init():
-	current_contentement = initial_contentement
+	#current_contentement = initial_contentement
 	ResetYear()
+	ResetContentement()
 	# districts
 	district_1.Init()
 	district_2.Init()
@@ -52,9 +54,28 @@ func _on_start_button_pressed():
 	Init()
 	title_screen.hide()
 
+#region Contentement manager
+func ResetContentement():
+	current_contentement = initial_contentement
+	contentement_progress_bar.min_value = 0.0
+	contentement_progress_bar.max_value = 100.0
+	contentement_progress_bar.value = current_contentement
+	UpdateContentement()
+
+func UpdateContentement():
+	contentement_progress_bar.value = current_contentement
+	var range = contentement_progress_bar.max_value - contentement_progress_bar.min_value
+	if current_contentement >= range / 2:
+		contentement_progress_bar.set_modulate(Color.PALE_GREEN)
+	elif current_contentement < range / 2 and current_contentement >= range / 4:
+		contentement_progress_bar.set_modulate(Color.ORANGE)
+	elif current_contentement < range / 4:
+		contentement_progress_bar.set_modulate(Color.INDIAN_RED)
+
 func AddContentement(amount: float):
 	current_contentement += amount
-	print("contentement: ", current_contentement)
+	UpdateContentement()
+#endregion
 
 #region Time manager
 func ResetYear():

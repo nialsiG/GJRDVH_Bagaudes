@@ -156,6 +156,37 @@ offset_bottom = 504.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="ContentementOverlay" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1032.0
+offset_bottom = 243.0
+
+[node name="ContentementProgressBar" type="ProgressBar" parent="CanvasLayer/ContentementOverlay"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 797.0
+offset_top = 108.0
+offset_right = 964.0
+offset_bottom = 136.0
+value = 50.0
+show_percentage = false
+
+[node name="ContentementLabel" type="Label" parent="CanvasLayer/ContentementOverlay/ContentementProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -11.5
+offset_right = 56.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Contentement"
+
 [node name="TimeOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
