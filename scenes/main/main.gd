@@ -4,10 +4,14 @@ extends Node
 
 @onready var title_screen = %TitleScreen
 @onready var event_screen: EventScreen = %EventScreen
-@onready var district_1: District = %District1
 @onready var year_counter: YearCounter = %YearCounter
 @onready var event_manager: EventManager = $EventManager
 @onready var music_manager = $MusicManager
+
+@onready var district_1: District = %District1
+@onready var district_2: District = %District2
+@onready var district_3: District = %District3
+@onready var district_4: District = %District4
 
 var current_contentement: float
 
@@ -21,7 +25,11 @@ func LoadTitleScreen():
 
 func Init():
 	current_contentement = initial_contentement
+	# districts
 	district_1.Init()
+	district_2.Init()
+	district_3.Init()
+	district_4.Init()
 	year_counter.YearCounterUpdater()
 	# initial load of event
 	event_manager.Init() 

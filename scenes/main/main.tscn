@@ -40,17 +40,75 @@ title_music = "uid://cdxkto4ejkq0e"
 title_music_with_intro = "uid://deoboabn4u07g"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
-
-[node name="Environment" type="Node2D" parent="."]
-
-[node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
-unique_name_in_owner = true
-position = Vector2(175, 592)
+volume_db = -10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Districts" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="District1" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 543.0
+offset_top = 278.0
+offset_right = 543.0
+offset_bottom = 278.0
+
+[node name="Sprite2D" parent="CanvasLayer/Districts/District1" index="0"]
+modulate = Color(1, 0.39, 0.39, 1)
+
+[node name="Label" parent="CanvasLayer/Districts/District1" index="1"]
+text = "CROIX-ROUSSE"
+
+[node name="District2" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1244.0
+offset_top = 292.0
+offset_right = 1244.0
+offset_bottom = 292.0
+
+[node name="Sprite2D" parent="CanvasLayer/Districts/District2" index="0"]
+modulate = Color(0.35000002, 1, 0.45833325, 1)
+
+[node name="Label" parent="CanvasLayer/Districts/District2" index="1"]
+text = "GUILLOTIERE"
+
+[node name="District3" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1390.0
+offset_top = 761.0
+offset_right = 1390.0
+offset_bottom = 761.0
+
+[node name="Sprite2D" parent="CanvasLayer/Districts/District3" index="0"]
+modulate = Color(1, 0.6085, 0.19, 1)
+
+[node name="Label" parent="CanvasLayer/Districts/District3" index="1"]
+text = "BROTTEAUX"
+
+[node name="District4" parent="CanvasLayer/Districts" instance=ExtResource("3_k2fmo")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 689.0
+offset_top = 753.0
+offset_right = 689.0
+offset_bottom = 753.0
+
+[node name="Sprite2D" parent="CanvasLayer/Districts/District4" index="0"]
+modulate = Color(0.47000003, 0.57600003, 1, 1)
+
+[node name="Label" parent="CanvasLayer/Districts/District4" index="1"]
+text = "PRESQUILE"
+
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,3 +309,8 @@ script = ExtResource("8_yyfjg")
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+
+[editable path="CanvasLayer/Districts/District1"]
+[editable path="CanvasLayer/Districts/District2"]
+[editable path="CanvasLayer/Districts/District3"]
+[editable path="CanvasLayer/Districts/District4"]
