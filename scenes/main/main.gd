@@ -41,17 +41,19 @@ func Init():
 	district_3.Init()
 	district_4.Init()
 	# initial load of event
-	event_manager.Init() 
+	await get_tree().create_timer(0.5).timeout
+	event_manager.Init(initial_year) 
 
-func _input(event):
-		if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
-			SignalManager.spawn_popup_requested.emit()
+#func _input(event):
+		#if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+			#SignalManager.spawn_popup_requested.emit()
+			#
 			
-			
-func TriggerNewEvent():
-	event_manager.SelectRandomEvent()
+#func TriggerNewEvent():
+	#event_manager.SelectRandomEvent()
 
 func _on_start_button_pressed():
+	SignalManager.PlaySound.emit(Enums.Sound.SELECT_TITLESCREEN)
 	Init()
 	title_screen.hide()
 

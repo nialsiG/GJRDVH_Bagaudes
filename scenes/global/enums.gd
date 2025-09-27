@@ -1,7 +1,8 @@
 extends Node
 
 enum Soundtrack {
-	TITLE
+	TITLE,
+	MAIN
 }
 
 enum DistrictType {

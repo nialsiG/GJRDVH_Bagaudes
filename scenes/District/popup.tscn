@@ -6,12 +6,20 @@
 [node name="Popup" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -72.0
+offset_top = -72.0
+offset_right = 73.0
+offset_bottom = 73.0
 script = ExtResource("1_y4lwk")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_kb6ot")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_right = 500.0
+offset_bottom = 500.0
+scale = Vector2(0.3, 0.3)
+max_value = 5.0
+value = 2.0
+fill_mode = 4
+texture_under = ExtResource("2_kb6ot")
+texture_progress = ExtResource("2_kb6ot")
+tint_progress = Color(0.21, 0.21, 0.21, 1)

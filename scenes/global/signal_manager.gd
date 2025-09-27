@@ -11,3 +11,4 @@ signal UnlockEvent(event: EventResource)
 signal RemoveEvent(event: EventResource)
 signal AddYear(amount: int)
 signal Victory
+signal PlaySound(sound: Enums.Sound)

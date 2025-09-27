@@ -40,11 +40,20 @@ func _ready():
 	click_validate_audiostream = load(click_validate)
 	ui_select_ingame_audiostream = load(ui_selection_ingame)
 	ui_select_titlescreen_audiostream = load(ui_selection_titlescreen)
+	SignalManager.PlaySound.connect(PlaySound)
 
 func PlaySound(sound: Enums.Sound):
 	match sound:
 		Enums.Sound.CROWD:
 			audio_stream_player.stream = angry_crowd_1_audiostream
+		Enums.Sound.COUGH:
+			audio_stream_player.stream = cough_1_audiostream
+		Enums.Sound.POPUP:
+			audio_stream_player.stream = popup_1_audiostream
+		Enums.Sound.VALIDATE:
+			audio_stream_player.stream = click_validate_audiostream
+		Enums.Sound.SELECT_INGAME:
+			audio_stream_player.stream = ui_select_ingame_audiostream
 		Enums.Sound.SELECT_TITLESCREEN:
 			audio_stream_player.stream = ui_select_titlescreen_audiostream
 	audio_stream_player.play()
