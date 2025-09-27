@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://dt0h3n2s83yob"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_w01fk"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_jippy"]
+
+[resource]
+script = ExtResource("1_w01fk")
+name = "Trouver des fonds !"
+description = "Demandez à la population de se laver et d'aérer son appartement ne suffit pas. Il nous faut nous organiser et trouver comment financer les dispositifs de santé mis en place. Demandons à ceux qui le peuvent de payer.  "
+available_on_start = false
+district = 3
+year = 1832
+texture = ExtResource("2_jippy")
+event_sound = 1
+choice_1 = "Oui, on fait la levée de fond ! Tous participeront à l'effort !"
+choice_1_contentement = -5.0
+choice_1_health = 6.0
+choice_1_time = 6
+choice_2 = "Non on fait pas la levée de fond. L'impôt suffira."
+choice_2_contentement = 4.0
+choice_2_health = -6.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

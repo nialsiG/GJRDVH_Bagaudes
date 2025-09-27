@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://b8ejf4qu0eykj"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_pj4bq"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_nppse"]
+
+[resource]
+script = ExtResource("1_pj4bq")
+name = "Eloignement des abattoires"
+description = "Certains bouchers viennent se plaindre, inquiets des rumeurs selon lesquelles ils n'auraient plus le droit d'abbatre leurs bêtes chez eux. Désormais ils devront utiliser les abbatoirs municipaux en périphérie de la ville. Leur mécontentement grandit, nourri par la peur de perdre leur travail"
+available_on_start = false
+year = 1858
+texture = ExtResource("2_nppse")
+choice_1 = "Messieurs ! Ces rumeurs sont infondées ! "
+choice_1_contentement = 6.0
+choice_1_health = -6.0
+choice_1_time = 6
+choice_2 = "Bien qu'impopulaire, j'assume cette décision et déclare que les abattoirs seront désormais hors du centre-ville ! "
+choice_2_contentement = -8.0
+choice_2_health = 6.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

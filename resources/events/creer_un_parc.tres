@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://cpqph0gnweck2"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_265qa"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_mjr8f"]
+
+[resource]
+script = ExtResource("1_265qa")
+name = "Créer un parc"
+description = "Cette ville manque d'espaces verts. Il faut que chaque lyonnais et lyonnaise ait accès à la nature. "
+available_on_start = false
+district = 2
+year = 1852
+texture = ExtResource("2_mjr8f")
+event_sound = 4
+choice_1 = "Oui, on fait le parc. A coté du quartier des Brotteaux il y a de la place ! Mais cela prendra du temps."
+choice_1_contentement = 8.0
+choice_1_health = 2.0
+choice_1_time = 6
+choice_2 = "Faire un parc en temps de crise ? Nous avons d'autres choses à faire de l'argent public. "
+choice_2_contentement = -8.0
+choice_2_health = 6.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

@@ -1,9 +1,23 @@
-[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://qle2n3ixf4mh"]
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://qle2n3ixf4mh"]
 
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_hqxnj"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_8beqx"]
 
 [resource]
 script = ExtResource("1_hqxnj")
 name = "Percer la rue impériale "
 description = "Une ville moderne est ville avec une grande rue centrale. Les anciennes rues médiévales sont étroites, elles n'offrent pas de lumière aux habitations. Cela permet  aussi d'assainir la ville et de mieux controler la population. Cela facilietera aussi les interventions de l'armée en cas de nouvelle révolte."
+available_on_start = false
+district = 3
+year = 1853
+texture = ExtResource("2_8beqx")
+event_sound = 4
+choice_1 = "Nous devons percer une grande rue centrale, la rue Impériale!  C’est essentiel pour aérer la ville"
+choice_1_contentement = -4.0
+choice_1_health = 10.0
+choice_1_time = 5
+choice_2 = "Ces rues sont très bien ainsi ! Les changer, c’est tuer nos commerces ! "
+choice_2_contentement = 8.0
+choice_2_health = -10.0
+choice_2_time = 4
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

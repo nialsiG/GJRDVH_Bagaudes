@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://b8p0m71h3q38l"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_uemie"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_1i1gp"]
+
+[resource]
+script = ExtResource("1_uemie")
+name = "S'occuper des fous"
+description = "Sous l'hôpital de l'Antiquaille, sur la colline de Fourvière sont géré les fous. L'espace est sombre, les malades restent beaucoup enfermés, et aucun médecin ne peut vraiment les prendre en charge.  "
+available_on_start = false
+district = 0
+year = 1876
+texture = ExtResource("2_1i1gp")
+choice_1 = "Sortons les aliénés d'ici, ce n'est pas sain. Il faut les soigner autrement et ailleurs !"
+choice_1_contentement = 8.0
+choice_1_health = 10.0
+choice_1_time = 5
+choice_2 = " Vous voulez faire sortir les fous dehors? Ou bien les envoyez au loin?"
+choice_2_contentement = -8.0
+choice_2_health = 5.0
+choice_2_time = 4
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

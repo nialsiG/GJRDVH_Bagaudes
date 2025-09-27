@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://bdvmhu0idtoa3"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_ubn8m"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_kvy2e"]
+
+[resource]
+script = ExtResource("1_ubn8m")
+name = "Bureau d'hygiène"
+description = "Ce qui se passe en France au sujet des épidémies est inquiétant. Nous en avons déja fait beaucoup et les gens souffrent de l'austérité. Devrions-nous encore renforcer la surveillance ? Nous pouvons créer un bureau d'hygiène de la ville, par exemple. "
+available_on_start = false
+year = 1879
+texture = ExtResource("2_kvy2e")
+event_sound = 1
+choice_1 = "Oui, créons ce bureau ! C’est un progrès administratif qui permettra d’anticiper les crises."
+choice_1_contentement = -4.0
+choice_1_health = 10.0
+choice_1_time = 6
+choice_2 = "Non ! Notre épidémie est passée et il l y a d'autres urgences à prioriser à présent."
+choice_2_contentement = 8.0
+choice_2_health = -10.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"
