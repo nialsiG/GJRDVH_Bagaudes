@@ -7,12 +7,17 @@ extends Node
 @onready var district_1: District = %District1
 @onready var year_counter: YearCounter = %YearCounter
 @onready var event_manager: EventManager = $EventManager
+@onready var music_manager = $MusicManager
 
 var current_contentement: float
 
 func _ready():
-	title_screen.show()
+	LoadTitleScreen()
 	SignalManager.AddContentement.connect(AddContentement)
+
+func LoadTitleScreen():
+	title_screen.show()
+	music_manager.PlayMusic(Enums.Soundtrack.TITLE)
 
 func Init():
 	current_contentement = initial_contentement
