@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=30 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://lm3epfr78djn" path="res://scenes/District/district.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
+[ext_resource type="Script" uid="uid://bl24mserlgric" path="res://scenes/music/sound_manager.gd" id="6_62atk"]
 [ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
 [ext_resource type="Texture2D" uid="uid://tmaj66ugmk57" path="res://assets/sprites/riviere_campagne.png" id="7_hxu8e"]
@@ -32,6 +33,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
+final_year = 1840
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
@@ -44,6 +46,9 @@ title_music_with_intro = "uid://deoboabn4u07g"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
 volume_db = -20.0
+
+[node name="SoundManager" type="Node" parent="."]
+script = ExtResource("6_62atk")
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -71,7 +76,7 @@ offset_left = 1477.0
 offset_top = 242.0
 offset_right = 1894.0
 offset_bottom = 323.0
-text = "CROIX-ROUSSE"
+text = "Croix-Rousse"
 
 [node name="HealthBar" parent="Environment/District1" index="3"]
 offset_left = 1535.0
@@ -95,7 +100,7 @@ offset_left = 201.0
 offset_top = 713.0
 offset_right = 618.0
 offset_bottom = 794.0
-text = "GUILLOTIERE"
+text = "Guillotière"
 
 [node name="HealthBar" parent="Environment/District2" index="3"]
 offset_left = 276.0
@@ -119,7 +124,7 @@ offset_left = 909.0
 offset_top = 708.0
 offset_right = 1326.0
 offset_bottom = 789.0
-text = "BROTTEAUX"
+text = "Les Brotteaux"
 
 [node name="HealthBar" parent="Environment/District3" index="3"]
 offset_left = 961.0
@@ -143,7 +148,7 @@ offset_left = 819.0
 offset_top = 372.0
 offset_right = 1236.0
 offset_bottom = 453.0
-text = "PRESQUILE"
+text = "Presqu'île"
 
 [node name="HealthBar" parent="Environment/District4" index="3"]
 offset_left = 894.0
