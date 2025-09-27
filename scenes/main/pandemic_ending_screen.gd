@@ -5,5 +5,6 @@ func _ready():
 	SignalManager.EpidemicEnding.connect(epidemicEnding)
 
 func epidemicEnding():
+	SignalManager.PlaySound.emit(Enums.Sound.COUGH)
 	pandemic_ending_screen.visible = true
 	

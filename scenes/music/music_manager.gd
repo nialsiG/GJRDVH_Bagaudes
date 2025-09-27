@@ -19,11 +19,15 @@ func _ready():
 	title_with_intro_audiostream = load(title_music_with_intro)
 
 func PlayMusic(soundtrack: Enums.Soundtrack):
+	audio_stream_player.stop()
+	print("test_outside")
+	
 	match soundtrack:
 		Enums.Soundtrack.TITLE:
 			audio_stream_player.stream = title_with_intro_audiostream
 		Enums.Soundtrack.MAIN:
 			audio_stream_player.stream = main_music_with_intro_audiostream
+			print("test_inside")
 	audio_stream_player.play()
 
 

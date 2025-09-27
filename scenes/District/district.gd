@@ -3,8 +3,11 @@ class_name District
 @export_file("*.tscn") var PopupPrefab : String
 @export var district_type: Enums.DistrictType
 @export var spawn_position: Array[Marker2D]
+@export var district_color: Color
+@export var district_color_on_hover: Color
 
 @onready var health_bar: ProgressBar = $HealthBar
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 var spawn_position_counter: int = 0
 var health: float = 10
@@ -34,9 +37,11 @@ func Init():
 
 func DisplayInfo():
 	health_bar.show()
+	sprite_2d.set_modulate(district_color_on_hover)
 
 func HideInfo():
 	health_bar.hide()
+	sprite_2d.set_modulate(district_color)
 
 func HideAll():
 	for district in get_tree().get_nodes_in_group("district"):

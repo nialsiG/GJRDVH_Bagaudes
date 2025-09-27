@@ -9,6 +9,7 @@ var can_be_clicked: bool = true
 
 func _ready():
 	SignalManager.AddYear.connect(AddYear)
+	add_to_group("popup")
 
 #func init():
 	#print("Popup ready at position: ", position)
