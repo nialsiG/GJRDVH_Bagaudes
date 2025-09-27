@@ -19,11 +19,12 @@ func Init():
 	district_1.Init()
 	year_counter.YearCounterUpdater()
 	# initial load of event
-	event_manager.Init()
+	event_manager.Init() 
 
 func _input(event):
 		if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
 			SignalManager.spawn_popup_requested.emit()
+			
 func TriggerNewEvent():
 	event_manager.SelectRandomEvent()
 
