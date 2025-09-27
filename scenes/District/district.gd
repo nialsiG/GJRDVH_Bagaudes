@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name District
 @export_file("*.tscn") var PopupPrefab : String
 
@@ -11,6 +11,7 @@ var popupPosition : Vector2 = Vector2(10,10)
 func _ready():
 	popup = load(PopupPrefab)
 	SignalManager.spawn_popup_requested.connect(NewPopup)
+	add_to_group("district")
 	
 func NewPopup():
 	PopupSpawn(Vector2(10,10))
@@ -18,7 +19,10 @@ func NewPopup():
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		pass
+		for district in get_tree().get_nodes_in_group("district"):
+			district.HideInfo()
+		await get_tree().create_timer(0.2).timeout
+		DisplayInfo()
 
 func Init():
 	health = health_bar.max_value
@@ -26,7 +30,17 @@ func Init():
 	## test for the popup 
 	#await get_tree().create_timer(3).timeout
 	#PopupSpawn(Vector2(10, 10))
+	HideInfo()
 
+func DisplayInfo():
+	health_bar.show()
+
+func HideInfo():
+	health_bar.hide()
+
+func HideAll():
+	for district in get_tree().get_nodes_in_group("district"):
+		district.HideInfo()
 
 func AddHealth(amount: float):
 	health += amount
