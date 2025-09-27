@@ -7,3 +7,7 @@ signal AskForEvent(popup: PopupEvent)
 signal EpidemicEnding
 signal RevolutionEnding
 signal GoodEnding
+signal UnlockEvent(event: EventResource)
+signal RemoveEvent(event: EventResource)
+signal AddYear(amount: int)
+signal Victory

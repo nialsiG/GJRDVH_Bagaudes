@@ -15,6 +15,8 @@ func _ready():
 
 
 			
+	add_to_group("district")
+	
 func NewPopup():
 	PopupSpawn(Vector2(10,10))
 	
@@ -30,7 +32,17 @@ func Init():
 	## test for the popup 
 	#await get_tree().create_timer(3).timeout
 	#PopupSpawn(Vector2(10, 10))
+	HideInfo()
 
+func DisplayInfo():
+	health_bar.show()
+
+func HideInfo():
+	health_bar.hide()
+
+func HideAll():
+	for district in get_tree().get_nodes_in_group("district"):
+		district.HideInfo()
 
 func AddHealth(amount: float):
 	health += amount
@@ -43,6 +55,9 @@ func PopupSpawn(origin:Vector2):
 	add_child(instance)
 	instance.position = popupPosition
 	instance.init()
-	
-	
-   
+
+
+func _on_area_2d_mouse_entered():
+	for district in get_tree().get_nodes_in_group("district"):
+		district.HideInfo()
+		DisplayInfo()
