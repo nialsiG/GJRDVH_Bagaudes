@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://c5bcsxc0tal8q"]
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://c5bcsxc0tal8q"]
 
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_0jjfx"]
+[ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="2_48djl"]
 
 [resource]
 script = ExtResource("1_0jjfx")
 name = "Epidémie"
 description = "C la maxi D partou chef"
+texture = ExtResource("2_48djl")
 choice_1 = "Brulé tou johnson"
 choice_1_contentement = -1.0
 choice_2 = "Soagnon lé malandrin"
