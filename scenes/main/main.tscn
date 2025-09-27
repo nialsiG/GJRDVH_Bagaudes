@@ -7,11 +7,18 @@
 [ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
 [ext_resource type="Texture2D" uid="uid://fa33sv7wsmjj" path="res://assets/icon.svg" id="4_l3cfh"]
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
+[ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
 [ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
+[ext_resource type="Texture2D" uid="uid://tmaj66ugmk57" path="res://assets/sprites/riviere_campagne.png" id="7_hxu8e"]
+[ext_resource type="Texture2D" uid="uid://bt86ld0x4a3uq" path="res://assets/sprites/croixrousse.png" id="8_th5th"]
 [ext_resource type="Texture2D" uid="uid://cr1wde06qd4tg" path="res://assets/icones/button choix.png" id="9_ouso4"]
 [ext_resource type="Texture2D" uid="uid://dyrfohag10b07" path="res://scenes/main/defaite.png" id="11_ouso4"]
 [ext_resource type="Script" uid="uid://d4devl1s68j4y" path="res://scenes/main/pandemic_ending_screen.gd" id="12_blune"]
+[ext_resource type="Texture2D" uid="uid://5vr63k281d11" path="res://assets/sprites/guillotiere.png" id="9_raeie"]
+[ext_resource type="Texture2D" uid="uid://8o1lfr6nnrhr" path="res://assets/sprites/Brotteaux.png" id="10_hxu8e"]
+[ext_resource type="Texture2D" uid="uid://d7vgdntk84ui" path="res://assets/sprites/presquile.png" id="11_nvumn"]
+[ext_resource type="Texture2D" uid="uid://dec1lg735bfo5" path="res://assets/icones/button choix selection.png" id="13_nvumn"]
 
 [sub_resource type="Gradient" id="Gradient_k2fmo"]
 
@@ -45,14 +52,97 @@ title_music_with_intro = "uid://deoboabn4u07g"
 
 [node name="Environment" type="Node2D" parent="."]
 
+[node name="BGSprite2D" type="Sprite2D" parent="Environment"]
+position = Vector2(960, 540)
+texture = ExtResource("6_blune")
+
+[node name="RiverSprite2D" type="Sprite2D" parent="Environment"]
+position = Vector2(960, 540)
+texture = ExtResource("7_hxu8e")
+
 [node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 position = Vector2(175, 592)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="ContentementOverlay" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1032.0
+offset_bottom = 243.0
+
+[node name="ContentementProgressBar" type="ProgressBar" parent="CanvasLayer/ContentementOverlay"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 797.0
+offset_top = 108.0
+offset_right = 964.0
+offset_bottom = 136.0
+value = 50.0
+show_percentage = false
+
+[node name="ContentementLabel" type="Label" parent="CanvasLayer/ContentementOverlay/ContentementProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -11.5
+offset_right = 56.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Contentement"
+
+[node name="TimeOverlay" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 266.0
+offset_top = 2.0
+offset_right = 1031.0
+offset_bottom = 252.0
+mouse_filter = 2
+
+[node name="TimeTextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/TimeOverlay"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 17.0
+offset_bottom = 78.0
+grow_horizontal = 2
+value = 10.0
+nine_patch_stretch = true
+texture_under = ExtResource("13_nvumn")
+texture_progress = ExtResource("13_nvumn")
+tint_under = Color(0.32, 0.32, 0.32, 1)
+
+[node name="TimeTextureRect" type="TextureRect" parent="CanvasLayer/TimeOverlay/TimeTextureProgressBar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 55.0
+offset_right = 34.0
+offset_bottom = 85.0
+texture = ExtResource("4_l3cfh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="YearCounter" type="Label" parent="CanvasLayer/TimeOverlay/TimeTextureProgressBar/TimeTextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 25.0
+offset_right = 35.0
+offset_bottom = 48.0
+text = "1800"
+
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -276,3 +366,8 @@ script = ExtResource("12_blune")
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+
+[editable path="Environment/District1"]
+[editable path="Environment/District2"]
+[editable path="Environment/District3"]
+[editable path="Environment/District4"]

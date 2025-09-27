@@ -9,6 +9,8 @@ var event_list: Array[EventResource]
 
 func _ready():
 	SignalManager.AskForEvent.connect(SendEvent)
+	SignalManager.UnlockEvent.connect(AddEventToList)
+	SignalManager.RemoveEvent.connect(RemoveEventFromList)
 
 func Init():
 	event_list.clear()
@@ -20,3 +22,8 @@ func SendEvent(popup: PopupEvent):
 	await get_tree().create_timer(0.5).timeout
 	event_list.erase(event)
  
+func AddEventToList(event: EventResource):
+	event_list.append(event)
+
+func RemoveEventFromList(event: EventResource):
+	event_list.erase(event)

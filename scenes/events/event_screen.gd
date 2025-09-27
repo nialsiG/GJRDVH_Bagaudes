@@ -35,13 +35,12 @@ func UpdateEvent(event_resource: EventResource):
 	current_event_resource = event_resource
 	show()
 
-func ChooseFirstEvent(district: District):
-	UpdateEvent(events[0])
-	current_district = district
 
 func CloseEvent():
 	hide()
-	#TODO: Remove event from event list in EventManager
+	SignalManager.RemoveEvent.emit(current_event_resource)
+	await get_tree().create_timer(1.0).timeout
+	SignalManager.AddYear.emit(1)
 	#TODO: sound
 
 func _on_event_choice_button_1_pressed():
@@ -49,6 +48,9 @@ func _on_event_choice_button_1_pressed():
 		SignalManager.AddContentement.emit(current_event_resource.choice_1_contentement)
 	if current_event_resource.choice_1_health:
 		current_district.AddHealth(current_event_resource.choice_1_health)
+	if current_event_resource.choice_1_unlockable_events.size() > 0:
+		for event in current_event_resource.choice_1_unlockable_events:
+			SignalManager.UnlockEvent.emit(event)
 	CloseEvent()
 
 
@@ -57,4 +59,7 @@ func _on_event_choice_button_2_pressed():
 		SignalManager.AddContentement.emit(current_event_resource.choice_2_contentement)
 	if current_event_resource.choice_2_health:
 		current_district.AddHealth(current_event_resource.choice_2_health)
+	if current_event_resource.choice_2_unlockable_events.size() > 0:
+		for event in current_event_resource.choice__unlockable_events:
+			SignalManager.UnlockEvent.emit(event)
 	CloseEvent()
