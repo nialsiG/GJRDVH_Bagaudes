@@ -17,6 +17,8 @@ var main_music_with_intro_audiostream: AudioStream
 func _ready():
 	title_audiostream = load(title_music)
 	title_with_intro_audiostream = load(title_music_with_intro)
+	main_music_audiostream = load(main_music)
+	main_music_with_intro_audiostream = load(main_music_with_intro)
 
 func PlayMusic(soundtrack: Enums.Soundtrack):
 	audio_stream_player.stop()
