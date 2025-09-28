@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=61 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -131,13 +131,11 @@ visible = false
 polygon = PackedVector2Array(1349, 1, 1469, 140, 1417, 460, 1289, 531, 1651, 641, 1919, 817, 1918, -3)
 
 [node name="Label" parent="Environment/District1" index="2"]
-
 offset_left = 1537.0
 offset_top = 51.0
 offset_right = 1954.0
 offset_bottom = 132.0
 text = "Croix-Rousse"
-
 
 [node name="HealthComponent" parent="Environment/District1" index="3"]
 offset_left = 1594.0
@@ -146,15 +144,12 @@ offset_right = 1898.0
 offset_bottom = 207.0
 
 [node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
-
 position = Vector2(1459, 27)
 
 [node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
-
 position = Vector2(1443, 511)
 
 [node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
-
 position = Vector2(1766, 531)
 
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
@@ -172,13 +167,11 @@ visible = false
 polygon = PackedVector2Array(-1, 405, 687, 608, 863, 608, 832, 1080, -4, 1080)
 
 [node name="Label" parent="Environment/District2" index="2"]
-
 offset_left = 265.0
 offset_top = 709.0
 offset_right = 682.0
 offset_bottom = 790.0
 text = "Guillotière"
-
 
 [node name="HealthComponent" parent="Environment/District2" index="3"]
 offset_left = 327.0
@@ -187,15 +180,12 @@ offset_right = 631.0
 offset_bottom = 861.0
 
 [node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
-
 position = Vector2(411, 548)
 
 [node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
-
 position = Vector2(36, 741)
 
 [node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
-
 position = Vector2(690, 703)
 
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
@@ -213,13 +203,11 @@ visible = false
 polygon = PackedVector2Array(863, 612, 835, 1078, 1213, 1077, 1291, 976, 1338, 847, 1454, 755, 1498, 674, 1336, 617)
 
 [node name="Label" parent="Environment/District3" index="2"]
-
 offset_left = 819.0
 offset_top = 903.0
 offset_right = 1236.0
 offset_bottom = 984.0
 text = "Les Brotteaux"
-
 
 [node name="HealthComponent" parent="Environment/District3" index="3"]
 offset_left = 877.0
@@ -228,15 +216,12 @@ offset_right = 1181.0
 offset_bottom = 1060.0
 
 [node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
-
 position = Vector2(946, 612)
 
 [node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
-
 position = Vector2(1273, 665)
 
 [node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
-
 position = Vector2(983, 762)
 
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
@@ -254,13 +239,11 @@ visible = false
 polygon = PackedVector2Array(131, 0, 149, 32, 397, 156, 667, 276, 908, 329, 1052, 308, 1116, 249, 1112, 122, 1076, -4, 1344, 0, 1462, 138, 1414, 463, 1205, 536, 737, 538, 407, 450, -1, 272, -1, 0)
 
 [node name="Label" parent="Environment/District4" index="2"]
-
 offset_left = 43.0
 offset_top = 204.0
 offset_right = 460.0
 offset_bottom = 285.0
 text = "Presqu'île"
-
 
 [node name="HealthComponent" parent="Environment/District4" index="3"]
 offset_left = 105.0
@@ -269,15 +252,12 @@ offset_right = 409.0
 offset_bottom = 360.0
 
 [node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
-
 position = Vector2(718, 464)
 
 [node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
-
 position = Vector2(1113, 473)
 
 [node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
-
 position = Vector2(1255, 136)
 
 [node name="Dechets" type="Sprite2D" parent="Environment"]
@@ -293,16 +273,13 @@ texture = ExtResource("32_qjyke")
 [node name="ContentementOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-
 offset_left = 601.0
 offset_top = 97.0
 offset_right = 894.0
 offset_bottom = 200.0
 
-
 [node name="ContentementProgressBar" type="TextureProgressBar" parent="CanvasLayer/ContentementOverlay"]
 unique_name_in_owner = true
-
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -316,7 +293,6 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 value = 50.0
-
 texture_under = SubResource("GradientTexture2D_7ahn0")
 texture_progress = SubResource("GradientTexture2D_8biwb")
 
@@ -327,7 +303,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-
 offset_left = -70.0
 offset_top = -14.0
 offset_right = 71.0
@@ -679,10 +654,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -272.5
-
 offset_top = -227.0
 offset_right = 272.5
-
 offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -968,20 +941,34 @@ offset_bottom = 23.0
 script = ExtResource("8_yyfjg")
 
 [node name="TutorialScreen" type="TextureRect" parent="CanvasLayer"]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("17_m4h2d")
 
 [node name="Label" type="Label" parent="CanvasLayer/TutorialScreen"]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 122.0
-offset_right = 378.0
-offset_bottom = 145.0
+offset_left = 67.0
+offset_top = 126.0
+offset_right = 1018.0
+offset_bottom = 828.0
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Là c'est le tuto qui te dit quoi faire"
+theme_override_font_sizes/font_size = 31
+text = "                        Comment jouer ?
+
+La ville de Lyon traverse une crise sanitaire majeure sans 
+précédent ! Les maladies se transmettent par l'eau usée et les 
+conditions de vie des ouvriers se dégradent !
+
+Des évènements vont apparaitre, cliquez dessus et vous devrez 
+choisir comment y répondre.
+
+Chaque évènement aura une influence sur la santé du 
+quartier dans lequel il advient mais aussi sur le contentement 
+général de la population.
+
+En tant que décisionnaire, vous devrez faire des choix 
+pour aider la ville à traverser cette crise."
 
 [node name="HideTutoButton" type="Button" parent="CanvasLayer/TutorialScreen"]
 layout_mode = 0
