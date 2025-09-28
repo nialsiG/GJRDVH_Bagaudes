@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=55 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -49,13 +49,16 @@
 [ext_resource type="Texture2D" uid="uid://cmvmtbkh4ow0" path="res://assets/sprites/defaite revolte.png" id="27_gkmcc"]
 [ext_resource type="Script" uid="uid://co7o2oe1e5n86" path="res://scenes/main/insurection_ending_screen.gd" id="28_7nlll"]
 [ext_resource type="Texture2D" uid="uid://bgm4vbqllarub" path="res://assets/sprites/victoire.png" id="29_ii537"]
+[ext_resource type="Texture2D" uid="uid://d8ru5d334mxh" path="res://assets/sprites/dechets.png" id="31_pd34m"]
+[ext_resource type="Texture2D" uid="uid://6angndigwpq7" path="res://assets/sprites/bateau_morgue.png" id="32_qjyke"]
 [ext_resource type="Script" uid="uid://n7b11n21rui6" path="res://scenes/main/title_screen.gd" id="47_jucdw"]
 [ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
 [ext_resource type="LabelSettings" uid="uid://8d8cwd8bgy3c" path="res://resources/labels/menu_text_label.tres" id="51_yisfj"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
-final_year = 1850
+initial_contentement = 50.0
+final_year = 1880
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
@@ -92,20 +95,21 @@ position = Vector2(960, 540)
 texture = ExtResource("6_blune")
 
 [node name="RiverSprite2D" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(960, 540)
 texture = ExtResource("7_hxu8e")
 
 [node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
-district_color = Color(0.84, 0.3024, 0.46368012, 0.3137255)
-district_color_on_hover = Color(0.84, 0.3024, 0.46368012, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.65882355, 0.5921569, 0.4392157, 1)
 
 [node name="Sprite2D" parent="Environment/District1" index="0"]
-modulate = Color(1, 0.39, 0.39, 1)
 position = Vector2(960, 540)
 texture = ExtResource("8_th5th")
 
 [node name="CollisionPolygon2D" parent="Environment/District1/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(1349, 1, 1469, 140, 1417, 460, 1289, 531, 1651, 641, 1919, 817, 1918, -3)
 
 [node name="Label" parent="Environment/District1" index="2"]
@@ -122,26 +126,26 @@ offset_right = 1815.0
 offset_bottom = 378.0
 
 [node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
-position = Vector2(1567, 139)
+position = Vector2(1507, 46)
 
 [node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
-position = Vector2(1745, 184)
+position = Vector2(1449, 469)
 
 [node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
-position = Vector2(1611, 462)
+position = Vector2(1699, 551)
 
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 1
-district_color = Color(0.81, 0.6264, 0.2592, 0.3137255)
-district_color_on_hover = Color(0.81, 0.6264, 0.2592, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.7921569, 0.58431375, 0.5372549, 1)
 
 [node name="Sprite2D" parent="Environment/District2" index="0"]
-modulate = Color(0.35000002, 1, 0.45833325, 1)
 position = Vector2(960, 540)
 texture = ExtResource("9_raeie")
 
 [node name="CollisionPolygon2D" parent="Environment/District2/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(-1, 405, 687, 608, 863, 608, 832, 1080, -4, 1080)
 
 [node name="Label" parent="Environment/District2" index="2"]
@@ -158,26 +162,26 @@ offset_right = 556.0
 offset_bottom = 852.0
 
 [node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
-position = Vector2(229, 652)
+position = Vector2(462, 562)
 
 [node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
-position = Vector2(478, 695)
+position = Vector2(40, 741)
 
 [node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
-position = Vector2(502, 930)
+position = Vector2(681, 695)
 
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 2
-district_color = Color(0.3555, 0.79, 0.51481664, 0.3137255)
-district_color_on_hover = Color(0.3555, 0.79, 0.51481664, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.8862745, 0.80784315, 0.5921569, 1)
 
 [node name="Sprite2D" parent="Environment/District3" index="0"]
-modulate = Color(1, 0.6085, 0.19, 1)
 position = Vector2(960, 540)
 texture = ExtResource("10_hxu8e")
 
 [node name="CollisionPolygon2D" parent="Environment/District3/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(863, 612, 835, 1078, 1213, 1077, 1291, 976, 1338, 847, 1454, 755, 1498, 674, 1336, 617)
 
 [node name="Label" parent="Environment/District3" index="2"]
@@ -194,26 +198,26 @@ offset_right = 1241.0
 offset_bottom = 852.0
 
 [node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
-position = Vector2(989, 705)
+position = Vector2(975, 594)
 
 [node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
-position = Vector2(1314, 752)
+position = Vector2(1279, 636)
 
 [node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
-position = Vector2(1052, 924)
+position = Vector2(1004, 902)
 
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 3
-district_color = Color(0.23799998, 0.49300006, 0.85, 0.3137255)
-district_color_on_hover = Color(0.23799998, 0.49300006, 0.85, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.8392157, 0.6666667, 0.56078434, 1)
 
 [node name="Sprite2D" parent="Environment/District4" index="0"]
-modulate = Color(0.47000003, 0.57600003, 1, 1)
 position = Vector2(960, 540)
 texture = ExtResource("11_nvumn")
 
 [node name="CollisionPolygon2D" parent="Environment/District4/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(131, 0, 149, 32, 397, 156, 667, 276, 908, 329, 1052, 308, 1116, 249, 1112, 122, 1076, -4, 1344, 0, 1462, 138, 1414, 463, 1205, 536, 737, 538, 407, 450, -1, 272, -1, 0)
 
 [node name="Label" parent="Environment/District4" index="2"]
@@ -230,13 +234,21 @@ offset_right = 1174.0
 offset_bottom = 504.0
 
 [node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
-position = Vector2(188, 277)
+position = Vector2(275, 308)
 
 [node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
-position = Vector2(525, 308)
+position = Vector2(726, 471)
 
 [node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
-position = Vector2(1237, 319)
+position = Vector2(1288, 186)
+
+[node name="Dechets" type="Sprite2D" parent="Environment"]
+position = Vector2(905, 494)
+texture = ExtResource("31_pd34m")
+
+[node name="BateauMorgue" type="Sprite2D" parent="Environment"]
+position = Vector2(621, 509)
+texture = ExtResource("32_qjyke")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -327,6 +339,7 @@ text = "1800"
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
