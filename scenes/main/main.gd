@@ -9,6 +9,9 @@ extends Node
 @onready var year_counter: Label = %YearCounter
 @onready var event_manager: EventManager = $EventManager
 @onready var music_manager = $MusicManager
+@onready var pandemic_ending_screen = $CanvasLayer/GameOver/PandemicEndingScreen
+@onready var insurection_ending_screen = $CanvasLayer/GameOver/InsurectionEndingScreen
+@onready var victory_screen = $CanvasLayer/GameOver/VictoryScreen
 
 @onready var district_1: District = %District1
 @onready var district_2: District = %District2
@@ -35,25 +38,42 @@ func Init():
 	#current_contentement = initial_contentement
 	ResetYear()
 	ResetContentement()
+	ResetPopup()
+	pandemic_ending_screen.hide()
+	insurection_ending_screen.hide()
+	victory_screen.hide()
 	# districts
 	district_1.Init()
 	district_2.Init()
 	district_3.Init()
 	district_4.Init()
 	# initial load of event
-	event_manager.Init() 
+	await get_tree().create_timer(0.5).timeout
+	event_manager.Init(initial_year) 
 
-func _input(event):
-		if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
-			SignalManager.spawn_popup_requested.emit()
+func ResetPopup():
+	for popup in get_tree().get_nodes_in_group("popup"):
+		popup.queue_free()
+
+#func _input(event):
+		#if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+			#SignalManager.spawn_popup_requested.emit()
+			#
 			
-			
-func TriggerNewEvent():
-	event_manager.SelectRandomEvent()
+#func TriggerNewEvent():
+	#event_manager.SelectRandomEvent()
 
 func _on_start_button_pressed():
+	SignalManager.PlaySound.emit(Enums.Sound.SELECT_TITLESCREEN)
+	music_manager.PlayMusic(Enums.Soundtrack.MAIN)
 	Init()
 	title_screen.hide()
+
+func _on_back_to_title_button_pressed():
+	SignalManager.PlaySound.emit(Enums.Sound.SELECT_INGAME)
+	music_manager.PlayMusic(Enums.Soundtrack.TITLE)
+	title_screen.show()
+
 
 #region Contentement manager
 func ResetContentement():
@@ -72,6 +92,8 @@ func UpdateContentement():
 		contentement_progress_bar.set_modulate(Color.ORANGE)
 	elif current_contentement < range / 4:
 		contentement_progress_bar.set_modulate(Color.INDIAN_RED)
+	elif current_contentement <= 0:
+		SignalManager.RevolutionEnding.emit()
 
 func AddContentement(amount: float):
 	current_contentement += amount
@@ -94,11 +116,12 @@ func UpdateYear():
 
 func AddYear(amount: float):
 	current_year += amount
-	if current_year >= 100:
-		SignalManager.GoodEnding.emit()
-		
+	#if current_year >= 100:
+		#SignalManager.GoodEnding.emit()
+		#
 	UpdateYear()
 	if current_year >= final_year:
 		print("VICTORY")
 		SignalManager.Victory.emit()
+		victory_screen.show()
 #endregion 

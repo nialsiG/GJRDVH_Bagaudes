@@ -1,5 +1,4 @@
 [gd_scene load_steps=48 format=3 uid="uid://bk7rklt41thfd"]
-
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
@@ -46,12 +45,15 @@
 [ext_resource type="Texture2D" uid="uid://dfpuin5devrla" path="res://assets/sprites/menu sans titre.png" id="22_37hlw"]
 [ext_resource type="Texture2D" uid="uid://cp3snlimnx8of" path="res://assets/icones/titre 2.png" id="23_6llfj"]
 [ext_resource type="Theme" uid="uid://ywumn8s5bsps" path="res://resources/buttons/menu_button_theme.tres" id="24_0bhws"]
+[ext_resource type="Texture2D" uid="uid://cmvmtbkh4ow0" path="res://assets/sprites/defaite revolte.png" id="27_gkmcc"]
+[ext_resource type="Script" uid="uid://co7o2oe1e5n86" path="res://scenes/main/insurection_ending_screen.gd" id="28_7nlll"]
+[ext_resource type="Texture2D" uid="uid://bgm4vbqllarub" path="res://assets/sprites/victoire.png" id="29_ii537"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0bhws"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
-final_year = 1840
+final_year = 1850
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
@@ -61,12 +63,25 @@ initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg"), ExtResou
 script = ExtResource("2_iuonh")
 title_music = "uid://cdxkto4ejkq0e"
 title_music_with_intro = "uid://deoboabn4u07g"
+main_music = "uid://dklfhxlhfa0p7"
+main_music_with_intro = "uid://xb60a3jbrcn5"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
-volume_db = -20.0
+volume_db = -10.0
 
 [node name="SoundManager" type="Node" parent="."]
 script = ExtResource("6_62atk")
+angry_crowd_1 = "uid://ckpwjdwundxu1"
+cough_1 = "uid://dx7mxv4m2m08q"
+cough_2 = "uid://b6anutay5j6a8"
+popup_1 = "uid://2fm1rv5gqlyu"
+popup_2 = "uid://5i3jqxhy5ixc"
+click_validate = "uid://bo0ysmjr5dy8r"
+ui_selection_ingame = "uid://c61lj0yqjbb35"
+ui_selection_titlescreen = "uid://brr4nv85bl0fa"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager"]
+volume_db = -10.0
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -80,6 +95,8 @@ texture = ExtResource("7_hxu8e")
 
 [node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_color = Color(0.84, 0.3024, 0.46368012, 0.3137255)
+district_color_on_hover = Color(0.84, 0.3024, 0.46368012, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District1" index="0"]
 modulate = Color(1, 0.39, 0.39, 1)
@@ -102,8 +119,20 @@ offset_top = 316.0
 offset_right = 1815.0
 offset_bottom = 378.0
 
+[node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
+position = Vector2(1567, 139)
+
+[node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
+position = Vector2(1745, 184)
+
+[node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
+position = Vector2(1611, 462)
+
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_type = 1
+district_color = Color(0.81, 0.6264, 0.2592, 0.3137255)
+district_color_on_hover = Color(0.81, 0.6264, 0.2592, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District2" index="0"]
 modulate = Color(0.35000002, 1, 0.45833325, 1)
@@ -126,8 +155,20 @@ offset_top = 790.0
 offset_right = 556.0
 offset_bottom = 852.0
 
+[node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
+position = Vector2(229, 652)
+
+[node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
+position = Vector2(478, 695)
+
+[node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
+position = Vector2(502, 930)
+
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_type = 2
+district_color = Color(0.3555, 0.79, 0.51481664, 0.3137255)
+district_color_on_hover = Color(0.3555, 0.79, 0.51481664, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District3" index="0"]
 modulate = Color(1, 0.6085, 0.19, 1)
@@ -150,8 +191,20 @@ offset_top = 790.0
 offset_right = 1241.0
 offset_bottom = 852.0
 
+[node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
+position = Vector2(989, 705)
+
+[node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
+position = Vector2(1314, 752)
+
+[node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
+position = Vector2(1052, 924)
+
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+district_type = 3
+district_color = Color(0.23799998, 0.49300006, 0.85, 0.3137255)
+district_color_on_hover = Color(0.23799998, 0.49300006, 0.85, 0.7058824)
 
 [node name="Sprite2D" parent="Environment/District4" index="0"]
 modulate = Color(0.47000003, 0.57600003, 1, 1)
@@ -173,6 +226,15 @@ offset_left = 894.0
 offset_top = 442.0
 offset_right = 1174.0
 offset_bottom = 504.0
+
+[node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
+position = Vector2(188, 277)
+
+[node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
+position = Vector2(525, 308)
+
+[node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
+position = Vector2(1237, 319)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -263,6 +325,7 @@ text = "1800"
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -319,6 +382,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "C'est la description de l'évènement"
 label_settings = ExtResource("19_s17dp")
+autowrap_mode = 2
 
 [node name="EventTextureRect" type="TextureRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -361,6 +425,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Premier choix (effet)"
 label_settings = ExtResource("19_s17dp")
+autowrap_mode = 2
 
 [node name="EventChoiceButton2" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -395,6 +460,96 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Deuxième choix (effet)"
 label_settings = ExtResource("19_s17dp")
+autowrap_mode = 2
+
+[node name="GameOver" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PandemicEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ouso4")
+script = ExtResource("12_blune")
+
+[node name="BackToTitleButton" type="Button" parent="CanvasLayer/GameOver/PandemicEndingScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.5
+offset_top = -262.0
+offset_right = 272.5
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_0bhws")
+text = "Menu principal"
+
+[node name="InsurectionEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_gkmcc")
+script = ExtResource("28_7nlll")
+
+[node name="BackToTitleButton" type="Button" parent="CanvasLayer/GameOver/InsurectionEndingScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.5
+offset_top = -262.0
+offset_right = 272.5
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_0bhws")
+text = "Menu principal"
+
+[node name="VictoryScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_ii537")
+
+[node name="BackToTitleButton" type="Button" parent="CanvasLayer/GameOver/VictoryScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.5
+offset_top = -262.0
+offset_right = 272.5
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_0bhws")
+text = "Menu principal"
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -432,10 +587,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = -52.5
-offset_right = 291.0
-offset_bottom = 52.5
+offset_left = -272.5
+offset_top = 278.0
+offset_right = 309.5
+offset_bottom = 383.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -470,27 +625,17 @@ Développement : Charlie, Ghislain"
 autowrap_mode = 2
 
 [node name="YearCounter" type="Label" parent="CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("8_yyfjg")
 
-[node name="GameOver" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PandemicEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("11_ouso4")
-script = ExtResource("12_blune")
-
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/PandemicEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/InsurectionEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/VictoryScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartButton" to="." method="_on_start_button_pressed"]
 
 [editable path="Environment/District1"]
