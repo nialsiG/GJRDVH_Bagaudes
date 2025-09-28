@@ -33,23 +33,25 @@ func _ready():
 
 func LoadTitleScreen():
 	title_screen.show()
+	title_screen.Reset()
 	music_manager.PlayMusic(Enums.Soundtrack.TITLE)
 
 func Init():
 	#current_contentement = initial_contentement
+	ResetPopup()
 	ResetYear()
 	ResetContentement()
-	ResetPopup()
 	pandemic_ending_screen.hide()
 	insurection_ending_screen.hide()
 	victory_screen.hide()
+	title_screen.Reset()
 	# districts
 	district_1.Init()
 	district_2.Init()
 	district_3.Init()
 	district_4.Init()
 	# initial load of event
-	await get_tree().create_timer(0.5).timeout
+	event_screen.Reset()
 	event_manager.Init(initial_year) 
 	tutorial_screen.visible=true
 
@@ -89,6 +91,7 @@ func ResetContentement():
 	UpdateContentement()
 
 func UpdateContentement():
+	print("update contentement...")
 	contentement_progress_bar.value = current_contentement
 	var range = contentement_progress_bar.max_value - contentement_progress_bar.min_value
 	if current_contentement >= range / 2:
@@ -126,7 +129,10 @@ func AddYear(amount: float):
 		#
 	UpdateYear()
 	if current_year >= final_year:
-		print("VICTORY")
-		SignalManager.Victory.emit()
+		SignalManager.GoodEnding.emit()
 		victory_screen.show()
 #endregion 
+
+
+func _on_option_button_toggled(toggled_on):
+	event_screen.help_to_decision = toggled_on

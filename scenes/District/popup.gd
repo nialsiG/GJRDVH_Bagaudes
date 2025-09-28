@@ -2,6 +2,8 @@ extends Control
 
 class_name PopupEvent
 
+@export var duration: int
+
 @onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
 
 var current_event: EventResource
@@ -19,21 +21,25 @@ func Init(event: EventResource):
 	current_event = event
 	texture_progress_bar.texture_under = event.texture
 	texture_progress_bar.texture_progress = event.texture
-	texture_progress_bar.max_value = 5
+	texture_progress_bar.max_value = duration
 	texture_progress_bar.value = 0
 
 func AddYear(amount: int):
-	texture_progress_bar.value += amount
+	var tween = get_tree().create_tween()
+	tween.tween_property(texture_progress_bar, "value", texture_progress_bar.value + amount, 1.0)
 	if texture_progress_bar.value >= texture_progress_bar.max_value:
-		can_be_clicked = false
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, "modulate", Color.TRANSPARENT, 2.0)
-		tween.tween_callback(queue_free)
+		Remove()
 #func SetCurrentEvent(event: EventResource):
 	#current_event = event
+
+func Remove():
+	can_be_clicked = false
+	var remove_tween = get_tree().create_tween()
+	remove_tween.tween_property(self, "modulate", Color.TRANSPARENT, 2.0)
+	remove_tween.tween_callback(queue_free)
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed and can_be_clicked:
 		print("Popup clicked !")
 		var district: District = get_parent()
-		SignalManager.OpenEvent.emit(current_event, district)
+		SignalManager.OpenEvent.emit(current_event, district, self)

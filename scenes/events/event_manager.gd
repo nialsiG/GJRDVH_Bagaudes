@@ -16,8 +16,9 @@ func _ready():
 
 func Init(starting_year: int):
 	event_list.clear()
-	event_list = initial_events
+	event_list.append_array(initial_events)
 	current_year = starting_year
+	await get_tree().create_timer(0.5).timeout
 	CheckEventByYear(0)
 
 #func SendEvent(popup: PopupEvent):

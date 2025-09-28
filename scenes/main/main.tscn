@@ -49,16 +49,20 @@
 [ext_resource type="Texture2D" uid="uid://cmvmtbkh4ow0" path="res://assets/sprites/defaite revolte.png" id="27_gkmcc"]
 [ext_resource type="Script" uid="uid://co7o2oe1e5n86" path="res://scenes/main/insurection_ending_screen.gd" id="28_7nlll"]
 [ext_resource type="Texture2D" uid="uid://bgm4vbqllarub" path="res://assets/sprites/victoire.png" id="29_ii537"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0bhws"]
+[ext_resource type="Texture2D" uid="uid://d8ru5d334mxh" path="res://assets/sprites/dechets.png" id="31_pd34m"]
+[ext_resource type="Texture2D" uid="uid://6angndigwpq7" path="res://assets/sprites/bateau_morgue.png" id="32_qjyke"]
+[ext_resource type="Script" uid="uid://n7b11n21rui6" path="res://scenes/main/title_screen.gd" id="47_jucdw"]
+[ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
+[ext_resource type="LabelSettings" uid="uid://8d8cwd8bgy3c" path="res://resources/labels/menu_text_label.tres" id="51_yisfj"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
-final_year = 1850
+initial_contentement = 50.0
+final_year = 1880
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
-initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg"), ExtResource("5_i7in8"), ExtResource("6_r1bmu"), ExtResource("7_6w6mm"), ExtResource("8_os81g"), ExtResource("9_1k3ck"), ExtResource("10_62f45"), ExtResource("11_6g32y"), ExtResource("12_6w6mm"), ExtResource("13_os81g"), ExtResource("14_1k3ck"), ExtResource("15_62f45"), ExtResource("16_6g32y"), ExtResource("17_5nwjq"), ExtResource("18_g2upo"), ExtResource("19_38d3o"), ExtResource("20_i6fjx"), ExtResource("21_7dg2i"), ExtResource("22_08tbl")])
+initial_events = Array[ExtResource("5_hujxm")]([ExtResource("5_i7in8"), ExtResource("6_r1bmu"), ExtResource("7_6w6mm"), ExtResource("8_os81g"), ExtResource("9_1k3ck"), ExtResource("10_62f45"), ExtResource("11_6g32y"), ExtResource("12_6w6mm"), ExtResource("13_os81g"), ExtResource("14_1k3ck"), ExtResource("15_62f45"), ExtResource("16_6g32y"), ExtResource("17_5nwjq"), ExtResource("18_g2upo"), ExtResource("19_38d3o"), ExtResource("20_i6fjx"), ExtResource("21_7dg2i"), ExtResource("22_08tbl")])
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")
@@ -91,20 +95,21 @@ position = Vector2(960, 540)
 texture = ExtResource("6_blune")
 
 [node name="RiverSprite2D" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(960, 540)
 texture = ExtResource("7_hxu8e")
 
 [node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
-district_color = Color(0.84, 0.3024, 0.46368012, 0.3137255)
-district_color_on_hover = Color(0.84, 0.3024, 0.46368012, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.65882355, 0.5921569, 0.4392157, 1)
 
 [node name="Sprite2D" parent="Environment/District1" index="0"]
-modulate = Color(1, 0.39, 0.39, 1)
 position = Vector2(960, 540)
 texture = ExtResource("8_th5th")
 
 [node name="CollisionPolygon2D" parent="Environment/District1/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(1349, 1, 1469, 140, 1417, 460, 1289, 531, 1651, 641, 1919, 817, 1918, -3)
 
 [node name="Label" parent="Environment/District1" index="2"]
@@ -121,26 +126,26 @@ offset_right = 1815.0
 offset_bottom = 378.0
 
 [node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
-position = Vector2(1567, 139)
+position = Vector2(1507, 46)
 
 [node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
-position = Vector2(1745, 184)
+position = Vector2(1449, 469)
 
 [node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
-position = Vector2(1611, 462)
+position = Vector2(1699, 551)
 
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 1
-district_color = Color(0.81, 0.6264, 0.2592, 0.3137255)
-district_color_on_hover = Color(0.81, 0.6264, 0.2592, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.7921569, 0.58431375, 0.5372549, 1)
 
 [node name="Sprite2D" parent="Environment/District2" index="0"]
-modulate = Color(0.35000002, 1, 0.45833325, 1)
 position = Vector2(960, 540)
 texture = ExtResource("9_raeie")
 
 [node name="CollisionPolygon2D" parent="Environment/District2/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(-1, 405, 687, 608, 863, 608, 832, 1080, -4, 1080)
 
 [node name="Label" parent="Environment/District2" index="2"]
@@ -157,26 +162,26 @@ offset_right = 556.0
 offset_bottom = 852.0
 
 [node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
-position = Vector2(229, 652)
+position = Vector2(462, 562)
 
 [node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
-position = Vector2(478, 695)
+position = Vector2(40, 741)
 
 [node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
-position = Vector2(502, 930)
+position = Vector2(681, 695)
 
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 2
-district_color = Color(0.3555, 0.79, 0.51481664, 0.3137255)
-district_color_on_hover = Color(0.3555, 0.79, 0.51481664, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.8862745, 0.80784315, 0.5921569, 1)
 
 [node name="Sprite2D" parent="Environment/District3" index="0"]
-modulate = Color(1, 0.6085, 0.19, 1)
 position = Vector2(960, 540)
 texture = ExtResource("10_hxu8e")
 
 [node name="CollisionPolygon2D" parent="Environment/District3/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(863, 612, 835, 1078, 1213, 1077, 1291, 976, 1338, 847, 1454, 755, 1498, 674, 1336, 617)
 
 [node name="Label" parent="Environment/District3" index="2"]
@@ -193,26 +198,26 @@ offset_right = 1241.0
 offset_bottom = 852.0
 
 [node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
-position = Vector2(989, 705)
+position = Vector2(975, 594)
 
 [node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
-position = Vector2(1314, 752)
+position = Vector2(1279, 636)
 
 [node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
-position = Vector2(1052, 924)
+position = Vector2(1004, 902)
 
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
 district_type = 3
-district_color = Color(0.23799998, 0.49300006, 0.85, 0.3137255)
-district_color_on_hover = Color(0.23799998, 0.49300006, 0.85, 0.7058824)
+district_color = Color(1, 1, 1, 1)
+district_color_on_hover = Color(0.8392157, 0.6666667, 0.56078434, 1)
 
 [node name="Sprite2D" parent="Environment/District4" index="0"]
-modulate = Color(0.47000003, 0.57600003, 1, 1)
 position = Vector2(960, 540)
 texture = ExtResource("11_nvumn")
 
 [node name="CollisionPolygon2D" parent="Environment/District4/Area2D" index="0"]
+visible = false
 polygon = PackedVector2Array(131, 0, 149, 32, 397, 156, 667, 276, 908, 329, 1052, 308, 1116, 249, 1112, 122, 1076, -4, 1344, 0, 1462, 138, 1414, 463, 1205, 536, 737, 538, 407, 450, -1, 272, -1, 0)
 
 [node name="Label" parent="Environment/District4" index="2"]
@@ -229,13 +234,21 @@ offset_right = 1174.0
 offset_bottom = 504.0
 
 [node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
-position = Vector2(188, 277)
+position = Vector2(275, 308)
 
 [node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
-position = Vector2(525, 308)
+position = Vector2(726, 471)
 
 [node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
-position = Vector2(1237, 319)
+position = Vector2(1288, 186)
+
+[node name="Dechets" type="Sprite2D" parent="Environment"]
+position = Vector2(905, 494)
+texture = ExtResource("31_pd34m")
+
+[node name="BateauMorgue" type="Sprite2D" parent="Environment"]
+position = Vector2(621, 509)
+texture = ExtResource("32_qjyke")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -337,6 +350,15 @@ mouse_filter = 2
 script = ExtResource("4_6q06x")
 events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg")])
 
+[node name="EventDeactivateClickPanel" type="Panel" parent="CanvasLayer/EventScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="TextureRect" type="NinePatchRect" parent="CanvasLayer/EventScreen"]
 layout_mode = 1
 anchors_preset = 3
@@ -357,7 +379,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 40
+theme_override_constants/margin_left = 45
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
@@ -371,6 +393,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "TITRE"
 label_settings = ExtResource("18_p8abn")
+autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -381,7 +404,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-text = "C'est la description de l'évènement"
+text = "Certains bouchers viennent se plaindre, inquiets des rumeurs selon lesquelles ils n'auraient plus le droit d'abbatre leurs bêtes chez eux. Désormais ils devront utiliser les abbatoirs municipaux en périphérie de la ville. Leur mécontentement grandit, nourri par la peur de perdre leur travail"
 label_settings = ExtResource("19_s17dp")
 autowrap_mode = 2
 
@@ -395,6 +418,7 @@ stretch_mode = 5
 
 [node name="EventChoiceButton1" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 3
@@ -420,16 +444,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 10
 
 [node name="EventChoice1Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Premier choix (effet)"
+text = "Ce n'est pas à l'Etat de prendre en charge la pauvreté mais aux individus entre eux. Laissons les oeuvres de bienfaisance s'en occuper."
 label_settings = ExtResource("19_s17dp")
 autowrap_mode = 2
 
 [node name="EventChoiceButton2" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 3
@@ -454,12 +482,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 10
 
 [node name="EventChoice2Label" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Deuxième choix (effet)"
+text = "Nous devons effectivement régler cette vague de choléra dans nos rues, mais les dépenses seront revues au strict minimum."
+label_settings = ExtResource("19_s17dp")
+autowrap_mode = 2
+
+[node name="FollowUpButton" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ouso4")
+patch_margin_left = 50
+patch_margin_top = 70
+patch_margin_right = 50
+patch_margin_bottom = 70
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 10
+
+[node name="FollowUpLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton/NinePatchRect/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "On circule mal dans certaines rues! Il faut faire quelque chose! / Pas un seul jet de déchets dans les rues ne sera tolléré en dehors des récipients adaptés. Imposer cela prend un temps fou. Les âniers sont très mécontents de cette décision. Certains crient au mépris de la classe paysanne, qui risque de perdre énormément d’engrais et de voir ses récoltes affectées"
 label_settings = ExtResource("19_s17dp")
 autowrap_mode = 2
 
@@ -622,6 +691,7 @@ offset_top = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("47_jucdw")
 
 [node name="BGTextureRect" type="TextureRect" parent="CanvasLayer/TitleScreen"]
 layout_mode = 1
@@ -640,49 +710,180 @@ offset_right = 1431.0
 offset_bottom = 299.0
 texture = ExtResource("23_6llfj")
 
-[node name="StartButton" type="Button" parent="CanvasLayer/TitleScreen/BGTextureRect"]
+[node name="OptionsMenu" type="Control" parent="CanvasLayer/TitleScreen/BGTextureRect"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -272.5
-offset_top = 278.0
-offset_right = 309.5
-offset_bottom = 383.0
+offset_left = -349.0
+offset_top = -203.5
+offset_right = 349.0
+offset_bottom = 203.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BGTextureRect" type="TextureRect" parent="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("50_6miv3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HelpLabel" type="Label" parent="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Activer l'aide à la décision"
+label_settings = ExtResource("51_yisfj")
+
+[node name="OptionButton" type="CheckButton" parent="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CloseOptionsButton" type="Button" parent="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
 theme = ExtResource("24_0bhws")
-text = "Nouvelle partie"
+text = "Fermer"
 
-[node name="Credits" type="Control" parent="CanvasLayer/TitleScreen"]
-anchors_preset = 0
-offset_left = 1716.0
-offset_top = 748.0
-offset_right = 1913.0
-offset_bottom = 975.0
+[node name="CreditsMenu" type="Control" parent="CanvasLayer/TitleScreen/BGTextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -204.0
+offset_right = 349.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleScreen/Credits"]
-layout_mode = 0
-offset_right = 191.0
-offset_bottom = 242.0
+[node name="BGTextureRect" type="TextureRect" parent="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("50_6miv3")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/TitleScreen/Credits/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "CREDITS"
-label_settings = SubResource("LabelSettings_0bhws")
+label_settings = ExtResource("51_yisfj")
+horizontal_alignment = 1
 
-[node name="CreditsLabel" type="Label" parent="CanvasLayer/TitleScreen/Credits/VBoxContainer"]
+[node name="CreditsLabel" type="Label" parent="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Professeure : Laetitia
 Game design : Wilson
 Artistes : Anne-Laure, Julie
 Sound design : Sebastien
 Développement : Charlie, Ghislain"
+label_settings = ExtResource("51_yisfj")
+horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="CloseOptionsButton" type="Button" parent="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("24_0bhws")
+text = "Fermer"
+
+[node name="StartMenu" type="Control" parent="CanvasLayer/TitleScreen/BGTextureRect"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -164.0
+offset_right = 252.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleScreen/BGTextureRect/StartMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("24_0bhws")
+text = "Nouvelle partie"
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("24_0bhws")
+text = "Crédits"
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("24_0bhws")
+text = "Options"
 
 [node name="YearCounter" type="Label" parent="CanvasLayer"]
 visible = false
@@ -718,11 +919,18 @@ text = "Compris !"
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton" to="CanvasLayer/EventScreen" method="_on_follow_up_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/PandemicEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/InsurectionEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/VictoryScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TutorialScreen/HideTutoButton" to="." method="_on_hide_tuto_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/CreditsButton" to="CanvasLayer/TitleScreen" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/OptionsButton" to="CanvasLayer/TitleScreen" method="_on_options_button_pressed"]
 
 [editable path="Environment/District1"]
 [editable path="Environment/District2"]
