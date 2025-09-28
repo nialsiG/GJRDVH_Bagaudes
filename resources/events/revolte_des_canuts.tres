@@ -17,6 +17,6 @@ choice_1_health = 8.0
 choice_1_time = 6
 choice_2 = "Nous devons négocier avec les Canuts."
 choice_2_contentement = 8.0
-choice_2_health = -8.0
+choice_2_health = -11.0
 choice_2_time = 5
 metadata/_custom_type_script = "uid://bnmy8nr103np7"
