@@ -1,5 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bk7rklt41thfd"]
-
+[gd_scene load_steps=61 format=3 uid="uid://bk7rklt41thfd"]
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
@@ -51,9 +50,27 @@
 [ext_resource type="Texture2D" uid="uid://bgm4vbqllarub" path="res://assets/sprites/victoire.png" id="29_ii537"]
 [ext_resource type="Texture2D" uid="uid://d8ru5d334mxh" path="res://assets/sprites/dechets.png" id="31_pd34m"]
 [ext_resource type="Texture2D" uid="uid://6angndigwpq7" path="res://assets/sprites/bateau_morgue.png" id="32_qjyke"]
+[ext_resource type="Texture2D" uid="uid://c4s4tdtyew2iq" path="res://assets/icones/barre contentement frame.png" id="34_o8kno"]
+[ext_resource type="LabelSettings" uid="uid://3pufyewnf6ej" path="res://resources/labels/progressbar_label.tres" id="35_7ahn0"]
 [ext_resource type="Script" uid="uid://n7b11n21rui6" path="res://scenes/main/title_screen.gd" id="47_jucdw"]
 [ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
 [ext_resource type="LabelSettings" uid="uid://8d8cwd8bgy3c" path="res://resources/labels/menu_text_label.tres" id="51_yisfj"]
+
+[sub_resource type="Gradient" id="Gradient_o8kno"]
+colors = PackedColorArray(0.49411765, 0.35686275, 0.3764706, 1, 0.49411765, 0.35686275, 0.3764706, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ahn0"]
+gradient = SubResource("Gradient_o8kno")
+width = 208
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_3ql0k"]
+colors = PackedColorArray(0.8666667, 0.6666667, 0.3882353, 1, 0.8666667, 0.6666667, 0.3882353, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8biwb"]
+gradient = SubResource("Gradient_3ql0k")
+width = 208
+height = 50
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
@@ -113,26 +130,31 @@ visible = false
 polygon = PackedVector2Array(1349, 1, 1469, 140, 1417, 460, 1289, 531, 1651, 641, 1919, 817, 1918, -3)
 
 [node name="Label" parent="Environment/District1" index="2"]
-offset_left = 1477.0
-offset_top = 242.0
-offset_right = 1894.0
-offset_bottom = 323.0
+
+offset_left = 1537.0
+offset_top = 51.0
+offset_right = 1954.0
+offset_bottom = 132.0
 text = "Croix-Rousse"
 
-[node name="HealthBar" parent="Environment/District1" index="3"]
-offset_left = 1535.0
-offset_top = 316.0
-offset_right = 1815.0
-offset_bottom = 378.0
+
+[node name="HealthComponent" parent="Environment/District1" index="3"]
+offset_left = 1594.0
+offset_top = 117.0
+offset_right = 1898.0
+offset_bottom = 207.0
 
 [node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
-position = Vector2(1507, 46)
+
+position = Vector2(1459, 27)
 
 [node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
-position = Vector2(1449, 469)
+
+position = Vector2(1443, 511)
 
 [node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
-position = Vector2(1699, 551)
+
+position = Vector2(1766, 531)
 
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
@@ -149,26 +171,31 @@ visible = false
 polygon = PackedVector2Array(-1, 405, 687, 608, 863, 608, 832, 1080, -4, 1080)
 
 [node name="Label" parent="Environment/District2" index="2"]
-offset_left = 201.0
-offset_top = 713.0
-offset_right = 618.0
-offset_bottom = 794.0
+
+offset_left = 265.0
+offset_top = 709.0
+offset_right = 682.0
+offset_bottom = 790.0
 text = "Guillotière"
 
-[node name="HealthBar" parent="Environment/District2" index="3"]
-offset_left = 276.0
-offset_top = 790.0
-offset_right = 556.0
-offset_bottom = 852.0
+
+[node name="HealthComponent" parent="Environment/District2" index="3"]
+offset_left = 327.0
+offset_top = 771.0
+offset_right = 631.0
+offset_bottom = 861.0
 
 [node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
-position = Vector2(462, 562)
+
+position = Vector2(411, 548)
 
 [node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
-position = Vector2(40, 741)
+
+position = Vector2(36, 741)
 
 [node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
-position = Vector2(681, 695)
+
+position = Vector2(690, 703)
 
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
@@ -185,26 +212,31 @@ visible = false
 polygon = PackedVector2Array(863, 612, 835, 1078, 1213, 1077, 1291, 976, 1338, 847, 1454, 755, 1498, 674, 1336, 617)
 
 [node name="Label" parent="Environment/District3" index="2"]
-offset_left = 909.0
-offset_top = 708.0
-offset_right = 1326.0
-offset_bottom = 789.0
+
+offset_left = 819.0
+offset_top = 903.0
+offset_right = 1236.0
+offset_bottom = 984.0
 text = "Les Brotteaux"
 
-[node name="HealthBar" parent="Environment/District3" index="3"]
-offset_left = 961.0
-offset_top = 790.0
-offset_right = 1241.0
-offset_bottom = 852.0
+
+[node name="HealthComponent" parent="Environment/District3" index="3"]
+offset_left = 877.0
+offset_top = 970.0
+offset_right = 1181.0
+offset_bottom = 1060.0
 
 [node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
-position = Vector2(975, 594)
+
+position = Vector2(946, 612)
 
 [node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
-position = Vector2(1279, 636)
+
+position = Vector2(1273, 665)
 
 [node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
-position = Vector2(1004, 902)
+
+position = Vector2(983, 762)
 
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
@@ -221,26 +253,31 @@ visible = false
 polygon = PackedVector2Array(131, 0, 149, 32, 397, 156, 667, 276, 908, 329, 1052, 308, 1116, 249, 1112, 122, 1076, -4, 1344, 0, 1462, 138, 1414, 463, 1205, 536, 737, 538, 407, 450, -1, 272, -1, 0)
 
 [node name="Label" parent="Environment/District4" index="2"]
-offset_left = 819.0
-offset_top = 372.0
-offset_right = 1236.0
-offset_bottom = 453.0
+
+offset_left = 43.0
+offset_top = 204.0
+offset_right = 460.0
+offset_bottom = 285.0
 text = "Presqu'île"
 
-[node name="HealthBar" parent="Environment/District4" index="3"]
-offset_left = 894.0
-offset_top = 442.0
-offset_right = 1174.0
-offset_bottom = 504.0
+
+[node name="HealthComponent" parent="Environment/District4" index="3"]
+offset_left = 105.0
+offset_top = 270.0
+offset_right = 409.0
+offset_bottom = 360.0
 
 [node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
-position = Vector2(275, 308)
+
+position = Vector2(718, 464)
 
 [node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
-position = Vector2(726, 471)
+
+position = Vector2(1113, 473)
 
 [node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
-position = Vector2(1288, 186)
+
+position = Vector2(1255, 136)
 
 [node name="Dechets" type="Sprite2D" parent="Environment"]
 position = Vector2(905, 494)
@@ -255,18 +292,32 @@ texture = ExtResource("32_qjyke")
 [node name="ContentementOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1032.0
-offset_bottom = 243.0
 
-[node name="ContentementProgressBar" type="ProgressBar" parent="CanvasLayer/ContentementOverlay"]
+offset_left = 601.0
+offset_top = 97.0
+offset_right = 894.0
+offset_bottom = 200.0
+
+
+[node name="ContentementProgressBar" type="TextureProgressBar" parent="CanvasLayer/ContentementOverlay"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 797.0
-offset_top = 108.0
-offset_right = 964.0
-offset_bottom = 136.0
+
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -25.0
+offset_right = 105.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 value = 50.0
-show_percentage = false
+
+texture_under = SubResource("GradientTexture2D_7ahn0")
+texture_progress = SubResource("GradientTexture2D_8biwb")
 
 [node name="ContentementLabel" type="Label" parent="CanvasLayer/ContentementOverlay/ContentementProgressBar"]
 layout_mode = 1
@@ -275,13 +326,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.5
-offset_top = -11.5
-offset_right = 56.5
-offset_bottom = 11.5
+
+offset_left = -70.0
+offset_top = -14.0
+offset_right = 71.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Contentement"
+label_settings = ExtResource("35_7ahn0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ContentementOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -31.5
+offset_right = 112.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("34_o8kno")
+stretch_mode = 5
 
 [node name="TimeOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -537,6 +608,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -605,8 +678,10 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -272.5
+
 offset_top = -227.0
 offset_right = 272.5
+
 offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0

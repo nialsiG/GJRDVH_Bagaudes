@@ -5,12 +5,14 @@ class_name District
 @export var spawn_position: Array[Marker2D]
 @export var district_color: Color
 @export var district_color_on_hover: Color
+@export var max_health: float = 100.0
+@export var initial_health: float = 25.0
 
-@onready var health_bar: ProgressBar = $HealthBar
+@onready var health_bar: TextureProgressBar = %HealthBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var spawn_position_counter: int = 0
-var health: float = 10
+var health: float
 var popup: PackedScene
 var popupPosition : Vector2 = Vector2(10,10)
 
@@ -28,16 +30,18 @@ func _ready():
 
 
 func Init():
-	health = health_bar.max_value
-	health_bar.value = health_bar.max_value
+	health = initial_health
+	health_bar.max_value = max_health
+	health_bar.value = health
 	## test for the popup 
 	#await get_tree().create_timer(3).timeout
 	#PopupSpawn(Vector2(10, 10))
-	HideInfo()
+	#HideInfo()
+	DisplayInfo()
 
 func DisplayInfo():
 	health_bar.show()
-	sprite_2d.set_modulate(district_color_on_hover)
+	#sprite_2d.set_modulate(district_color_on_hover)
 
 func HideInfo():
 	health_bar.hide()
@@ -50,8 +54,11 @@ func HideAll():
 func AddHealth(amount: float):
 	health += amount
 	health_bar.value = health
+	print("health = ", health, '/', max_health)
 	if health <= 0 :
 		SignalManager.EpidemicEnding.emit()
+	elif health >= max_health:
+		health = max_health
 
 #func PopupSpawn(origin:Vector2 = Vector2(0, 0)):
 func PopupSpawn(event: EventResource):
@@ -68,6 +75,7 @@ func PopupSpawn(event: EventResource):
 
 
 func _on_area_2d_mouse_entered():
-	for district in get_tree().get_nodes_in_group("district"):
-		district.HideInfo()
-		DisplayInfo()
+	pass
+	#for district in get_tree().get_nodes_in_group("district"):
+		#district.HideInfo()
+		#DisplayInfo()
