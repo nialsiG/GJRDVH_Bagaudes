@@ -1,9 +1,12 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://d27uf53ssqg6f"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d27uf53ssqg6f"]
+
+[ext_resource type="FontFile" uid="uid://c4h6wqs04mr0w" path="res://assets/fonts/Aladin-Regular.ttf" id="1_hmpyo"]
 
 [resource]
-font_size = 36
+font = ExtResource("1_hmpyo")
+font_size = 48
 outline_size = 12
-outline_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+outline_color = Color(0.24, 0.24, 0.24, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.8039216)
 shadow_offset = Vector2(4, 4)

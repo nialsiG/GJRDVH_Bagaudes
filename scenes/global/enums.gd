@@ -2,7 +2,10 @@ extends Node
 
 enum Soundtrack {
 	TITLE,
-	MAIN
+	MAIN,
+	VICTORY,
+	CHOLERA,
+	REVOLTE
 }
 
 enum DistrictType {
