@@ -8,7 +8,7 @@ extends Node
 @onready var event_screen: EventScreen = %EventScreen
 @onready var year_counter: Label = %YearCounter
 @onready var event_manager: EventManager = $EventManager
-@onready var music_manager = $MusicManager
+@onready var music_manager: MusicManager = $MusicManager
 @onready var pandemic_ending_screen = $CanvasLayer/GameOver/PandemicEndingScreen
 @onready var insurection_ending_screen = $CanvasLayer/GameOver/InsurectionEndingScreen
 @onready var victory_screen = $CanvasLayer/GameOver/VictoryScreen
@@ -20,6 +20,7 @@ extends Node
 
 @onready var time_texture_progress_bar: TextureProgressBar = %TimeTextureProgressBar
 @onready var time_texture_rect: TextureRect = %TimeTextureRect
+@onready var timer_h_slider = %TimerHSlider
 
 @onready var contentement_progress_bar: TextureProgressBar = %ContentementProgressBar
 @onready var tutorial_screen: TextureRect = $CanvasLayer/TutorialScreen
@@ -31,6 +32,7 @@ func _ready():
 	LoadTitleScreen()
 	SignalManager.AddContentement.connect(AddContentement)
 	SignalManager.AddYear.connect(AddYear)
+	SignalManager.EpidemicEnding.connect(music_manager.PlayMusic.bind(Enums.Soundtrack.CHOLERA))
 
 func LoadTitleScreen():
 	title_screen.show()
@@ -80,6 +82,7 @@ func _on_back_to_title_button_pressed():
 	title_screen.show()
 
 func _on_hide_tuto_button_pressed() -> void:
+		SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
 		tutorial_screen.visible=false
 
 
@@ -111,6 +114,7 @@ func AddContentement(amount: float):
 	current_contentement += amount
 	if current_contentement <= 0:
 		SignalManager.RevolutionEnding.emit()
+		music_manager.PlayMusic(Enums.Soundtrack.REVOLTE)
 	UpdateContentement()
 #endregion
 
@@ -123,8 +127,11 @@ func ResetYear():
 
 func UpdateYear():
 	year_counter.text = str(current_year)
-	time_texture_progress_bar.value = current_year
-	time_texture_rect.position.x = (current_year - initial_year) * (time_texture_progress_bar.texture_under.get_width() / (final_year - initial_year))
+	var tween = create_tween()
+	tween.tween_property(time_texture_progress_bar, "value", current_year, 1.0)
+	var destination = (current_year - initial_year) * (time_texture_progress_bar.texture_under.get_width() - 10) / (final_year - initial_year) - 15
+	var tween2 = create_tween()
+	tween2.tween_property(time_texture_rect, "position", Vector2(destination, time_texture_rect.position.y), 1.0)
 
 func AddYear(amount: float):
 	current_year += amount
@@ -134,10 +141,11 @@ func AddYear(amount: float):
 	UpdateYear()
 	if current_year >= final_year:
 		SignalManager.GoodEnding.emit()
+		music_manager.PlayMusic(Enums.Soundtrack.VICTORY)
 		victory_screen.show()
 #endregion 
 
 
 func _on_option_button_toggled(toggled_on):
-	pass
-	#event_screen.help_to_decision = toggled_on
+	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
+	event_screen.help_to_decision = toggled_on

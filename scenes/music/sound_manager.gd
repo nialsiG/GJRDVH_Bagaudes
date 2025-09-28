@@ -7,7 +7,6 @@ class_name SoundManager
 @export_file("*mp3") var angry_crowd_3: String
 @export_file("*mp3") var cough_1: String
 @export_file("*mp3") var cough_2: String
-@export_file("*mp3") var cough_3: String
 @export_file("*mp3") var popup_1: String
 @export_file("*mp3") var popup_2: String
 @export_file("*mp3") var click_validate: String
@@ -21,7 +20,6 @@ var angry_crowd_2_audiostream: AudioStream
 var angry_crowd_3_audiostream: AudioStream
 var cough_1_audiostream: AudioStream
 var cough_2_audiostream: AudioStream
-var cough_3_audiostream: AudioStream
 var popup_1_audiostream: AudioStream
 var popup_2_audiostream: AudioStream
 var click_validate_audiostream: AudioStream
@@ -34,7 +32,6 @@ func _ready():
 	angry_crowd_3_audiostream = load(angry_crowd_3)
 	cough_1_audiostream = load(cough_1)
 	cough_2_audiostream = load(cough_2)
-	cough_3_audiostream = load(cough_3)
 	popup_1_audiostream = load(popup_1)
 	popup_2_audiostream = load(popup_2)
 	click_validate_audiostream = load(click_validate)
@@ -45,11 +42,21 @@ func _ready():
 func PlaySound(sound: Enums.Sound):
 	match sound:
 		Enums.Sound.CROWD:
-			audio_stream_player.stream = angry_crowd_1_audiostream
+			var index = randi_range(0, 2)
+			match index:
+				0: audio_stream_player.stream = angry_crowd_1_audiostream
+				1: audio_stream_player.stream = angry_crowd_2_audiostream
+				2: audio_stream_player.stream = angry_crowd_3_audiostream
 		Enums.Sound.COUGH:
-			audio_stream_player.stream = cough_1_audiostream
+			var index = randi_range(0, 2)
+			match index:
+				0: audio_stream_player.stream = cough_1_audiostream
+				1: audio_stream_player.stream = cough_2_audiostream
 		Enums.Sound.POPUP:
-			audio_stream_player.stream = popup_1_audiostream
+			var index = randi_range(0, 2)
+			match index:
+				0: audio_stream_player.stream = popup_1_audiostream
+				1: audio_stream_player.stream = popup_2_audiostream
 		Enums.Sound.VALIDATE:
 			audio_stream_player.stream = click_validate_audiostream
 		Enums.Sound.SELECT_INGAME:

@@ -3,11 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b7ssy48kcm030"
-valid=false
+path="res://.godot/imported/angry_crowd_2.mp3-6258a635e9197da9fb243d61822e4086.mp3str"
 
 [deps]
 
 source_file="res://assets/sound/angry_crowd_2.mp3"
+dest_files=["res://.godot/imported/angry_crowd_2.mp3-6258a635e9197da9fb243d61822e4086.mp3str"]
 
 [params]
 

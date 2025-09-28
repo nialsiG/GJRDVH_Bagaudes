@@ -19,7 +19,7 @@ class_name EventScreen
 var current_event_resource: EventResource
 var current_district: District
 var time_on_close: int
-var help_to_decision: bool = true
+var help_to_decision: bool
 var current_popup: PopupEvent
 
 func _ready():
@@ -98,6 +98,7 @@ func FollowUp(follow_up_text: String, time: int):
 
 
 func _on_event_choice_button_1_pressed():
+	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
 	if current_event_resource.choice_1_contentement:
 		SignalManager.AddContentement.emit(current_event_resource.choice_1_contentement)
 	if current_event_resource.choice_1_health:
@@ -118,6 +119,7 @@ func _on_event_choice_button_1_pressed():
 
 
 func _on_event_choice_button_2_pressed():
+	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
 	if current_event_resource.choice_2_contentement:
 		SignalManager.AddContentement.emit(current_event_resource.choice_2_contentement)
 	if current_event_resource.choice_2_health:
@@ -138,4 +140,5 @@ func _on_event_choice_button_2_pressed():
 
 
 func _on_follow_up_button_pressed():
+	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
 	CloseEvent()

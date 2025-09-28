@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://lm3epfr78djn"]
 
 [ext_resource type="Script" uid="uid://hbojaky2bmbx" path="res://scenes/District/district.gd" id="1_ienuk"]
+[ext_resource type="LabelSettings" uid="uid://b57ijk46x630l" path="res://resources/labels/sante_progress_label.tres" id="3_4df7h"]
 [ext_resource type="LabelSettings" uid="uid://d27uf53ssqg6f" path="res://resources/labels/district_name_label.tres" id="3_28yhn"]
-[ext_resource type="LabelSettings" uid="uid://3pufyewnf6ej" path="res://resources/labels/progressbar_label.tres" id="5_4df7h"]
 [ext_resource type="Texture2D" uid="uid://dkcl3tkqo647j" path="res://assets/icones/barre santé frame.png" id="6_6q4tw"]
 
 [sub_resource type="Gradient" id="Gradient_4df7h"]
@@ -87,8 +87,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "SANTE"
-label_settings = ExtResource("5_4df7h")
+text = "Santé"
+label_settings = ExtResource("3_4df7h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
