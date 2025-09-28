@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=73 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -62,9 +62,11 @@
 [ext_resource type="Texture2D" uid="uid://c4s4tdtyew2iq" path="res://assets/icones/barre contentement frame.png" id="34_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://3pufyewnf6ej" path="res://resources/labels/progressbar_label.tres" id="35_7ahn0"]
 [ext_resource type="Script" uid="uid://n7b11n21rui6" path="res://scenes/main/title_screen.gd" id="47_jucdw"]
+[ext_resource type="LabelSettings" uid="uid://b83ddl08t83ma" path="res://resources/labels/year_label.tres" id="48_ae8n2"]
 [ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
 [ext_resource type="Texture2D" uid="uid://byn33jkhkkwfk" path="res://assets/sprites/victoiretourradio2.png" id="50_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://8d8cwd8bgy3c" path="res://resources/labels/menu_text_label.tres" id="51_yisfj"]
+[ext_resource type="LabelSettings" uid="uid://c8dia4w2x8mh0" path="res://resources/labels/menu_screen_label.tres" id="62_obdhw"]
 [ext_resource type="LabelSettings" uid="uid://dxog8bbkjr0ox" path="res://resources/labels/FollowUpButtonContinue.tres" id="55_ae8n2"]
 
 [sub_resource type="Gradient" id="Gradient_o8kno"]
@@ -149,26 +151,26 @@ visible = false
 polygon = PackedVector2Array(1349, 1, 1469, 140, 1417, 460, 1289, 531, 1651, 641, 1919, 817, 1918, -3)
 
 [node name="Label" parent="Environment/District1" index="2"]
-offset_left = 1537.0
-offset_top = 51.0
-offset_right = 1954.0
-offset_bottom = 132.0
+offset_left = 1475.0
+offset_top = 19.0
+offset_right = 1892.0
+offset_bottom = 100.0
 text = "Croix-Rousse"
 
 [node name="HealthComponent" parent="Environment/District1" index="3"]
-offset_left = 1594.0
-offset_top = 117.0
-offset_right = 1898.0
-offset_bottom = 207.0
+offset_left = 1543.0
+offset_top = 91.0
+offset_right = 1847.0
+offset_bottom = 181.0
 
 [node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
-position = Vector2(1459, 27)
+position = Vector2(1445, 257)
 
 [node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
-position = Vector2(1443, 511)
+position = Vector2(1406, 508)
 
 [node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
-position = Vector2(1766, 531)
+position = Vector2(1695, 512)
 
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
@@ -279,14 +281,31 @@ position = Vector2(1113, 473)
 position = Vector2(1255, 136)
 
 [node name="Dechets" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(905, 494)
 texture = ExtResource("31_pd34m")
 
 [node name="BateauMorgue" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(621, 509)
 texture = ExtResource("32_qjyke")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackToTitleButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -943.0
+offset_top = -1055.0
+offset_right = -741.0
+offset_bottom = -1005.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_0bhws")
+text = "Menu"
 
 [node name="ContentementOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -377,9 +396,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -22.5
-offset_right = 44.0
-offset_bottom = 22.5
+offset_left = -24.0
+offset_top = -46.5
+offset_right = 70.0
+offset_bottom = 49.636353
 grow_vertical = 2
 texture = ExtResource("15_p8abn")
 expand_mode = 1
@@ -399,7 +419,8 @@ offset_right = 20.0
 offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "1800"
+text = "An 1800"
+label_settings = ExtResource("48_ae8n2")
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -559,6 +580,7 @@ autowrap_mode = 2
 
 [node name="FollowUpButton" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
@@ -590,6 +612,7 @@ theme_override_constants/margin_bottom = 10
 [node name="FollowUpLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
 text = "continuer"
 label_settings = ExtResource("55_ae8n2")
 autowrap_mode = 2
@@ -633,22 +656,26 @@ theme = ExtResource("24_0bhws")
 text = "Menu principal"
 
 [node name="PandemicText" type="Label" parent="CanvasLayer/GameOver/PandemicEndingScreen"]
-layout_mode = 0
-offset_left = 299.0
-offset_top = 164.0
-offset_right = 1777.0
-offset_bottom = 701.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.5
+offset_top = -210.0
+offset_right = 346.5
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
-text = "                                     Epidémie
 
-La montée de l'épidémie de choléra n'a jamais pu être endiguée.
-Lyon est sous quarantaine et les ouvriers manquent de soins et 
-d'alternatives de vie qui les mettraient à l'abri.
-Bientôt, l'épidémie se transmettrait à la presqu'île et atteindrait les classes
-bourgeoises de la population.
- Il aura fallu une intervention de l'état et une mise sous quarantaine 
-            de la ville pour endiguer l'infection, 2 ans plus tard."
+text = "La montée de l'épidémie de choléra n'a jamais pu être endiguée. Lyon est sous quarantaine et les ouvriers manquent de soins et d'alternatives de vie qui les mettraient à l'abri. Bientôt, l'épidémie se transmettrait à la presqu'île et atteindrait les classes bourgeoises de la population. Il aura fallu une intervention de l'état et une mise sous quarantaine de la ville pour endiguer l'infection, 2 ans plus tard."
+label_settings = ExtResource("62_obdhw")
+horizontal_alignment = 1
+autowrap_mode = 2
+
 
 [node name="InsurectionEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
 visible = false
@@ -679,27 +706,19 @@ text = "Menu principal"
 
 [node name="InsurectionText" type="Label" parent="CanvasLayer/GameOver/InsurectionEndingScreen"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 64.0
-offset_right = 2846.0
+offset_left = 416.0
+offset_top = 285.0
+offset_right = 1420.0
 offset_bottom = 1021.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
-text = "
-                               Ignorer les besoins de sa force de travail principale  n'était, contre toute 
-                               attente, pas une bonne idée. 
 
-Malgré vos efforts pour moderniser la ville de Lyon, vous avez négligé l’importance de la 
-condition ouvrière. Privilégier uniquement la ville sans considérer suffisament l’aspect 
-humain a  créé une  rancune qui se transforme désormais en révolte. Alors 
-que les foules déferlent sur la préfecture en chantant l'Internationale, vous 
-avez la sensation pregnante d'assister à la fin d'une époque. 
-Votre unique option est d’appeler Paris afin que l’armée française 
+text = "Ignorer les besoins de sa force de travail principale  n'était, contre toute attente, pas une bonne idée. Malgré vos efforts pour moderniser la ville de Lyon, vous avez négligé l’importance de la condition ouvrière. Privilégier uniquement la ville sans considérer suffisament l’aspect humain a  créé une  rancune qui se transforme désormais en révolte. Alors que les foules déferlent sur la préfecture en chantant l'Internationale, vous avez la sensation pregnante d'assister à la fin d'une époque. Votre unique option est d’appeler Paris afin que l’armée française 
 intervienne.
-Mais tout cela est la conséquence de la déconnexion de l'état vis-à-vis de la 
-situation ouvrière. Qu'aurait-on pu faire de mieux ?
 
-"
+Mais tout cela est la conséquence de la déconnexion de l'état vis-à-vis de la situation ouvrière. Qu'aurait-on pu faire de mieux ?"
+label_settings = ExtResource("62_obdhw")
+autowrap_mode = 2
 
 [node name="VictoryScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
 visible = false
@@ -729,20 +748,51 @@ text = "Menu principal"
 
 [node name="Label" type="Label" parent="CanvasLayer/GameOver/VictoryScreen"]
 layout_mode = 0
-offset_left = 842.0
-offset_top = 43.0
-offset_right = 6423.0
-offset_bottom = 456.0
+offset_left = 1047.0
+offset_top = 75.0
+offset_right = 1800.0
+offset_bottom = 487.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
-text = "Vous venez de quitter le XIXᵉ siècle et d’entrer fièrement dans
- le XXᵉ. Bien que la ville ne soit pas encore parfaite, elle reste 
-  l’une des rares en France à avoir réussi à mettre en place une 
-véritable politique hygiéniste. Ainsi, en 1907, la ville de Lyon 
-  expose ses travaux dans une Exposition Internationale dont
-       le retentissement influencera les politiques sanitaires
-         du monde entier, retransmise dans tout le pays par
-                        la nouvelle tour radio"
+
+text = "Vous venez de quitter le XIXᵉ siècle et d’entrer fièrement dans le XXᵉ. Bien que la ville ne soit pas encore parfaite, elle reste l’une des rares en France à avoir réussi à mettre en place une véritable politique hygiéniste. Ainsi, en 1914, la ville de Lyon expose ses travaux dans une Exposition Internationale dont le retentissement influencera les politiques sanitaires du monde entier, retransmise dans tout le pays par la nouvelle tour radio"
+label_settings = ExtResource("62_obdhw")
+horizontal_alignment = 1
+autowrap_mode = 2
+[node name="TutorialScreen" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1082.0
+offset_bottom = 1080.0
+texture = ExtResource("17_m4h2d")
+
+[node name="Label" type="Label" parent="CanvasLayer/TutorialScreen"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 80.0
+offset_right = 985.0
+offset_bottom = 1017.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "
+Félicitations pour votre nomination monsieur/madame le préfet
+Votre réputation vous précède, je vous prédis une longue carrière
+dans le Rhône! A moins que….
+
+Sachez-le, la ville de Lyon est en grandes difficultés. Les scientifiques travaillent beaucoup sur les bactéries et nous ont fait comprendre qu’elles peuvent circuler facilement. L’état des rues de France laisse à croire que nous risquons une contamination massive. Surtout qu'avec le progrès qui se développe dans la ville, nous vivons une vraie Révolution industrielle. Des paysans affluent dans la ville et n’avons pas de quoi faire face à toute cette nouvelle population. De plus, la pauvreté est fortement présente.
+
+Mettez-vous à l’écart des grandes évolutions nationales et donnez une orientation politique à la ville. Les lyonnais et lyonnaises comptent sur vous !  Transformer cette ville et faites en LA ville moderne et saine du XIXème siècle! "
+label_settings = ExtResource("51_yisfj")
+autowrap_mode = 2
+
+[node name="HideTutoButton" type="Button" parent="CanvasLayer/TutorialScreen"]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 901.0
+offset_right = 942.0
+offset_bottom = 968.0
+theme = ExtResource("24_0bhws")
+text = "Compris !"
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -955,63 +1005,21 @@ offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("8_yyfjg")
 
-[node name="TutorialScreen" type="TextureRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("17_m4h2d")
-
-[node name="Label" type="Label" parent="CanvasLayer/TutorialScreen"]
-layout_mode = 0
-offset_left = 69.0
-offset_top = 80.0
-offset_right = 3952.0
-offset_bottom = 1017.0
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "
-Félicitations pour votre nomination monsieur/madame le préfet
-Votre réputation vous précède, je vous prédis une longue carrière
-dans le Rhône! A moins que….
-Sachez-le, la ville de Lyon est en grandes difficultés. Les 
-scientifiques travaillent beaucoup sur les bactéries et nous ont fait
-comprendre qu’elles peuvent circuler facilement. L’état des rues 
-de France laisse à croire que nous risquons une contamination 
-massive. 
-Surtout qu'avec le progrès qui se développe dans la ville, nous 
-vivons une vraie Révolution industrielle. Des paysans affluent 
-dans la ville et n’avons pas de quoi faire face à toute cette 
-nouvelle population. De plus, la pauvreté est fortement présente.
-
-Mettez-vous à l’écart des grandes évolutions nationales et donnez
-une orientation politique à la ville. Les lyonnais et lyonnaises
-comptent sur vous !  Transformer cette ville et faites en LA ville
-moderne et saine du XIXème siècle! 
-"
-
-[node name="HideTutoButton" type="Button" parent="CanvasLayer/TutorialScreen"]
-layout_mode = 0
-offset_left = 691.0
-offset_top = 901.0
-offset_right = 910.0
-offset_bottom = 968.0
-theme = ExtResource("24_0bhws")
-text = "Compris !"
-
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="CanvasLayer/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton" to="CanvasLayer/EventScreen" method="_on_follow_up_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/PandemicEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/InsurectionEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/VictoryScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TutorialScreen/HideTutoButton" to="." method="_on_hide_tuto_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/CreditsButton" to="CanvasLayer/TitleScreen" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/OptionsButton" to="CanvasLayer/TitleScreen" method="_on_options_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TutorialScreen/HideTutoButton" to="." method="_on_hide_tuto_button_pressed"]
 
 [editable path="Environment/District1"]
 [editable path="Environment/District2"]

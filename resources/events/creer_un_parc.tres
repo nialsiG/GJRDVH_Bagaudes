@@ -11,7 +11,6 @@ available_on_start = false
 district = 2
 year = 1852
 texture = ExtResource("2_mjr8f")
-event_sound = 4
 choice_1 = "Oui, on fait le parc. A coté du quartier des Brotteaux il y a de la place ! Mais cela prendra du temps."
 choice_1_contentement = 8.0
 choice_1_health = 2.0

@@ -1,4 +1,9 @@
-[gd_resource type="LabelSettings" load_steps=0 format=3 uid="uid://dkx4kwhpvio3m"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dkx4kwhpvio3m"]
+
+[ext_resource type="FontFile" uid="uid://bahcsfswb71bm" path="res://assets/fonts/Amarante-Regular.ttf" id="1_c4d5a"]
 
 [resource]
-font_color = Color(0, 0, 0, 1)
+font = ExtResource("1_c4d5a")
+font_size = 18
+font_color = Color(0.57, 0.41267997, 0.36479998, 1)
+shadow_color = Color(0, 0, 0, 0.6862745)
