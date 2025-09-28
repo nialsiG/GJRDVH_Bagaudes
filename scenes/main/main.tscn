@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=71 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -39,7 +39,6 @@
 [ext_resource type="LabelSettings" uid="uid://6ar31ctqkd00" path="res://resources/labels/event_name_label.tres" id="18_p8abn"]
 [ext_resource type="Resource" uid="uid://dydiamepsym2b" path="res://resources/events/reverberes.tres" id="19_38d3o"]
 [ext_resource type="LabelSettings" uid="uid://dkx4kwhpvio3m" path="res://resources/labels/event_text_label.tres" id="19_s17dp"]
-[ext_resource type="Resource" uid="uid://dvnh5kd78q1rx" path="res://resources/events/retour_des_canuts.tres" id="20_i6fjx"]
 [ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="20_s17dp"]
 [ext_resource type="Resource" uid="uid://d1dvrnp2nsn4n" path="res://resources/events/crue_du_rhone_saone.tres" id="21_7dg2i"]
 [ext_resource type="Resource" uid="uid://w215wbjxo3s5" path="res://resources/events/gentrification.tres" id="22_08tbl"]
@@ -91,7 +90,7 @@ final_year = 1880
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
-initial_events = Array[ExtResource("5_hujxm")]([ExtResource("5_i7in8"), ExtResource("6_r1bmu"), ExtResource("7_6w6mm"), ExtResource("8_os81g"), ExtResource("9_1k3ck"), ExtResource("10_62f45"), ExtResource("11_6g32y"), ExtResource("12_6w6mm"), ExtResource("13_os81g"), ExtResource("14_1k3ck"), ExtResource("15_62f45"), ExtResource("16_6g32y"), ExtResource("17_5nwjq"), ExtResource("18_g2upo"), ExtResource("19_38d3o"), ExtResource("20_i6fjx"), ExtResource("21_7dg2i"), ExtResource("22_08tbl")])
+initial_events = Array[ExtResource("5_hujxm")]([ExtResource("5_i7in8"), ExtResource("6_r1bmu"), ExtResource("7_6w6mm"), ExtResource("8_os81g"), ExtResource("9_1k3ck"), ExtResource("10_62f45"), ExtResource("11_6g32y"), ExtResource("12_6w6mm"), ExtResource("13_os81g"), ExtResource("14_1k3ck"), ExtResource("15_62f45"), ExtResource("16_6g32y"), ExtResource("17_5nwjq"), ExtResource("18_g2upo"), ExtResource("19_38d3o"), ExtResource("21_7dg2i"), ExtResource("22_08tbl")])
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")
