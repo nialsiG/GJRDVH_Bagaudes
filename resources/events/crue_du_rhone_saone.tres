@@ -14,8 +14,11 @@ choice_1 = "L'urgence est la reconstruction du barrage ! Encourageons la charit�
 choice_1_contentement = 1.0
 choice_1_health = -10.0
 choice_1_time = 6
+choice_1_follow_up = "La ville considère les travaux pour les barrages prioritaires et des bourgeois philanthropes, dirigés par Camille Rambaud, se mobilisent pour créer une résidence gratuite pour les vieillards à la Guillotière. Laissons le faire."
 choice_2 = "Il faut d'abord admettre que, si ces gens sont sous l'eau, c'est parce qu'ils habitaient des taudis. Essayons de construire des logement adaptés et  sécurisés."
 choice_2_contentement = 5.0
 choice_2_health = 15.0
 choice_2_time = 5
+choice_2_follow_up = "La situation est due à des constructeurs peu scrupuleux qui fournissent des logements fragiles et insalubres. Si en même temps, on leur avait concédé des baux plus longs..... Il faut faire respecter la loi de1850 contre les logements insalubres.
+        "
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_lb4vy")
 name = "Création de la Morgue Flottante"
-description = "Le dépot mortuaire de l'Hotel Dieu est plein et ne dispose pas de systeme de refroidissement. Ça empeste! En plus il n'est pas ouvert au public, comment peuvent faire les familles pour retrouver les disparus? Il existe bien un bateau lavoir qui pourrait remplir la fonction de morgue mais nos baignades dans le Rhône deviendraient étrange."
+description = "Le dépôt mortuaire de l'Hôtel Dieu est plein et ne dispose pas de système de refroidissement. Ça empeste! En plus il n'est pas ouvert au public, comment peuvent faire les familles pour retrouver les disparus? Il existe un bateau lavoir qui pourrait remplir la fonction de morgue."
 available_on_start = false
 district = 3
 year = 1850
@@ -18,8 +18,10 @@ choice_1_contentement = -6.0
 choice_1_health = 4.0
 choice_1_time = 6
 choice_1_unlockable_events = Array[ExtResource("1_lb4vy")]([ExtResource("2_8two1")])
+choice_1_follow_up = " Les corps seront conservés au frais par le fleuve, aérés et maintenus loin des habitations. En plus, on peut voir l'intérieur à travers les hublots!"
 choice_2 = "Vous n'y pensez pas ! "
 choice_2_contentement = 8.0
 choice_2_health = -10.0
 choice_2_time = 5
+choice_2_follow_up = "Mettre des corps à la vue de tous en pleine ville. Ce n'est pas un spectacle!  Et puis ce refroidissement à l'eau du fleuve... Les Lyonnais se baignent dedans!"
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

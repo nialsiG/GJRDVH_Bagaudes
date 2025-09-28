@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=55 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -923,14 +923,13 @@ text = "Compris !"
 [connection signal="pressed" from="CanvasLayer/GameOver/PandemicEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/InsurectionEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/VictoryScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TutorialScreen/HideTutoButton" to="." method="_on_hide_tuto_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/CreditsButton" to="CanvasLayer/TitleScreen" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/OptionsButton" to="CanvasLayer/TitleScreen" method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TutorialScreen/HideTutoButton" to="." method="_on_hide_tuto_button_pressed"]
 
 [editable path="Environment/District1"]
 [editable path="Environment/District2"]
