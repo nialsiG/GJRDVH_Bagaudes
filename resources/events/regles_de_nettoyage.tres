@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_5d248")
 name = "Nouvelles regles de nettoyage de la ville et de gestion des déchets"
-description = "Les bourgeois du centre lyonnais sont très mécontents. L’odeur de compost est pestilentielle dans les rues. Ils critiquent la capitale des Gaulles, qu’ils décrivent comme une ville souillée."
+description = "Les bourgeois du centre lyonnais sont très mécontents. L’odeur est pestilentielle dans les rues. Ils critiquent la capitale des Gaules, qu’ils décrivent comme une ville souillée. Mais beaucoup d'efforts ont déja été entrepris au début du siècle, en avance sur Paris."
 available_on_start = false
 district = 0
 texture = ExtResource("2_6s5vr")
@@ -15,8 +15,10 @@ choice_1 = "Ils ont raison ! La puanteur est infecte ! On circule mal dans certa
 choice_1_contentement = 2.0
 choice_1_health = 8.0
 choice_1_time = 6
+choice_1_follow_up = " Pas un seul jet de déchets dans les rues ne sera tolléré en dehors des récipients adaptés. Imposer cela prend un temps fou. Les âniers sont très mécontents de cette décision. Certains crient au mépris de la classe paysanne, qui risque de perdre énormément d’engrais et de voir ses récoltes affectées"
 choice_2 = "Ils oublient que les âniers ont besoin de ces déchets pour leurs récoltes ! Souhaitez-vous une famine ?! "
 choice_2_contentement = 8.0
 choice_2_health = -10.0
 choice_2_time = 5
+choice_2_follow_up = "C’est la réalité de la ville ! Cette odeur fait partie de la vie lyonnaise, et que les déchets servent d'engrais dans les campagnes. Les âniers sont contents que leur travail ne soit pas menacé. Cependant, l’état sanitaire et sécuritaire ne s’est pas amélioré…"
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

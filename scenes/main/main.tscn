@@ -1,4 +1,5 @@
 [gd_scene load_steps=61 format=3 uid="uid://bk7rklt41thfd"]
+
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
 [ext_resource type="Script" uid="uid://dvg5o1r6lcdk1" path="res://scenes/music/music_manager.gd" id="2_iuonh"]
@@ -47,13 +48,13 @@
 [ext_resource type="Theme" uid="uid://ywumn8s5bsps" path="res://resources/buttons/menu_button_theme.tres" id="24_0bhws"]
 [ext_resource type="Texture2D" uid="uid://cmvmtbkh4ow0" path="res://assets/sprites/defaite revolte.png" id="27_gkmcc"]
 [ext_resource type="Script" uid="uid://co7o2oe1e5n86" path="res://scenes/main/insurection_ending_screen.gd" id="28_7nlll"]
-[ext_resource type="Texture2D" uid="uid://bgm4vbqllarub" path="res://assets/sprites/victoire.png" id="29_ii537"]
 [ext_resource type="Texture2D" uid="uid://d8ru5d334mxh" path="res://assets/sprites/dechets.png" id="31_pd34m"]
 [ext_resource type="Texture2D" uid="uid://6angndigwpq7" path="res://assets/sprites/bateau_morgue.png" id="32_qjyke"]
 [ext_resource type="Texture2D" uid="uid://c4s4tdtyew2iq" path="res://assets/icones/barre contentement frame.png" id="34_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://3pufyewnf6ej" path="res://resources/labels/progressbar_label.tres" id="35_7ahn0"]
 [ext_resource type="Script" uid="uid://n7b11n21rui6" path="res://scenes/main/title_screen.gd" id="47_jucdw"]
 [ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
+[ext_resource type="Texture2D" uid="uid://byn33jkhkkwfk" path="res://assets/sprites/victoiretourradio2.png" id="50_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://8d8cwd8bgy3c" path="res://resources/labels/menu_text_label.tres" id="51_yisfj"]
 
 [sub_resource type="Gradient" id="Gradient_o8kno"]
@@ -130,13 +131,11 @@ visible = false
 polygon = PackedVector2Array(1349, 1, 1469, 140, 1417, 460, 1289, 531, 1651, 641, 1919, 817, 1918, -3)
 
 [node name="Label" parent="Environment/District1" index="2"]
-
 offset_left = 1537.0
 offset_top = 51.0
 offset_right = 1954.0
 offset_bottom = 132.0
 text = "Croix-Rousse"
-
 
 [node name="HealthComponent" parent="Environment/District1" index="3"]
 offset_left = 1594.0
@@ -145,15 +144,12 @@ offset_right = 1898.0
 offset_bottom = 207.0
 
 [node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
-
 position = Vector2(1459, 27)
 
 [node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
-
 position = Vector2(1443, 511)
 
 [node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
-
 position = Vector2(1766, 531)
 
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
@@ -171,13 +167,11 @@ visible = false
 polygon = PackedVector2Array(-1, 405, 687, 608, 863, 608, 832, 1080, -4, 1080)
 
 [node name="Label" parent="Environment/District2" index="2"]
-
 offset_left = 265.0
 offset_top = 709.0
 offset_right = 682.0
 offset_bottom = 790.0
 text = "Guillotière"
-
 
 [node name="HealthComponent" parent="Environment/District2" index="3"]
 offset_left = 327.0
@@ -186,15 +180,12 @@ offset_right = 631.0
 offset_bottom = 861.0
 
 [node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
-
 position = Vector2(411, 548)
 
 [node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
-
 position = Vector2(36, 741)
 
 [node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
-
 position = Vector2(690, 703)
 
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
@@ -212,13 +203,11 @@ visible = false
 polygon = PackedVector2Array(863, 612, 835, 1078, 1213, 1077, 1291, 976, 1338, 847, 1454, 755, 1498, 674, 1336, 617)
 
 [node name="Label" parent="Environment/District3" index="2"]
-
 offset_left = 819.0
 offset_top = 903.0
 offset_right = 1236.0
 offset_bottom = 984.0
 text = "Les Brotteaux"
-
 
 [node name="HealthComponent" parent="Environment/District3" index="3"]
 offset_left = 877.0
@@ -227,15 +216,12 @@ offset_right = 1181.0
 offset_bottom = 1060.0
 
 [node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
-
 position = Vector2(946, 612)
 
 [node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
-
 position = Vector2(1273, 665)
 
 [node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
-
 position = Vector2(983, 762)
 
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
@@ -253,13 +239,11 @@ visible = false
 polygon = PackedVector2Array(131, 0, 149, 32, 397, 156, 667, 276, 908, 329, 1052, 308, 1116, 249, 1112, 122, 1076, -4, 1344, 0, 1462, 138, 1414, 463, 1205, 536, 737, 538, 407, 450, -1, 272, -1, 0)
 
 [node name="Label" parent="Environment/District4" index="2"]
-
 offset_left = 43.0
 offset_top = 204.0
 offset_right = 460.0
 offset_bottom = 285.0
 text = "Presqu'île"
-
 
 [node name="HealthComponent" parent="Environment/District4" index="3"]
 offset_left = 105.0
@@ -268,15 +252,12 @@ offset_right = 409.0
 offset_bottom = 360.0
 
 [node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
-
 position = Vector2(718, 464)
 
 [node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
-
 position = Vector2(1113, 473)
 
 [node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
-
 position = Vector2(1255, 136)
 
 [node name="Dechets" type="Sprite2D" parent="Environment"]
@@ -292,16 +273,13 @@ texture = ExtResource("32_qjyke")
 [node name="ContentementOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-
 offset_left = 601.0
 offset_top = 97.0
 offset_right = 894.0
 offset_bottom = 200.0
 
-
 [node name="ContentementProgressBar" type="TextureProgressBar" parent="CanvasLayer/ContentementOverlay"]
 unique_name_in_owner = true
-
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -315,7 +293,6 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 value = 50.0
-
 texture_under = SubResource("GradientTexture2D_7ahn0")
 texture_progress = SubResource("GradientTexture2D_8biwb")
 
@@ -326,7 +303,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-
 offset_left = -70.0
 offset_top = -14.0
 offset_right = 71.0
@@ -678,10 +654,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -272.5
-
 offset_top = -227.0
 offset_right = 272.5
-
 offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -720,7 +694,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("29_ii537")
+texture = ExtResource("50_o8kno")
 
 [node name="BackToTitleButton" type="Button" parent="CanvasLayer/GameOver/VictoryScreen"]
 layout_mode = 1
@@ -967,27 +941,45 @@ offset_bottom = 23.0
 script = ExtResource("8_yyfjg")
 
 [node name="TutorialScreen" type="TextureRect" parent="CanvasLayer"]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("17_m4h2d")
 
 [node name="Label" type="Label" parent="CanvasLayer/TutorialScreen"]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 122.0
-offset_right = 378.0
-offset_bottom = 145.0
+offset_left = 69.0
+offset_top = 80.0
+offset_right = 3952.0
+offset_bottom = 1017.0
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Là c'est le tuto qui te dit quoi faire"
+theme_override_font_sizes/font_size = 30
+text = "
+Félicitations pour votre nomination monsieur/madame le préfet
+Votre réputation vous précède, je vous prédis une longue carrière
+dans le Rhône! A moins que….
+Sachez-le, la ville de Lyon est en grandes difficultés. Les 
+scientifiques travaillent beaucoup sur les bactéries et nous ont fait
+comprendre qu’elles peuvent circuler facilement. L’état des rues 
+de France laisse à croire que nous risquons une contamination 
+massive. 
+Surtout qu'avec le progrès qui se développe dans la ville, nous 
+vivons une vraie Révolution industrielle. Des paysans affluent 
+dans la ville et n’avons pas de quoi faire face à toute cette 
+nouvelle population. De plus, la pauvreté est fortement présente.
+
+Mettez-vous à l’écart des grandes évolutions nationales et donnez
+une orientation politique à la ville. Les lyonnais et lyonnaises
+comptent sur vous !  Transformer cette ville et faites en LA ville
+moderne et saine du XIXème siècle! 
+"
 
 [node name="HideTutoButton" type="Button" parent="CanvasLayer/TutorialScreen"]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 885.0
-offset_right = 573.0
-offset_bottom = 916.0
+offset_left = 691.0
+offset_top = 901.0
+offset_right = 910.0
+offset_bottom = 968.0
 theme = ExtResource("24_0bhws")
 text = "Compris !"
 
@@ -998,14 +990,13 @@ text = "Compris !"
 [connection signal="pressed" from="CanvasLayer/GameOver/PandemicEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/InsurectionEndingScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOver/VictoryScreen/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/TutorialScreen/HideTutoButton" to="." method="_on_hide_tuto_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/OptionsMenu/BGTextureRect/MarginContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer/CloseOptionsButton" to="CanvasLayer/TitleScreen" method="_on_close_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/CreditsButton" to="CanvasLayer/TitleScreen" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TitleScreen/BGTextureRect/StartMenu/VBoxContainer/OptionsButton" to="CanvasLayer/TitleScreen" method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TutorialScreen/HideTutoButton" to="." method="_on_hide_tuto_button_pressed"]
 
 [editable path="Environment/District1"]
 [editable path="Environment/District2"]

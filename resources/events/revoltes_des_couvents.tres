@@ -6,17 +6,19 @@
 [resource]
 script = ExtResource("1_kkuws")
 name = "Révolte dans les couvents soyeux"
-description = "Les congrégations religieuses féminines de la Providence emploient des jeunes filles pour tisser la soie. Cependant avec la crise dans le secteurs, les employées sont peu payées et les canuts y voient une concurrence déloyale de l'Eglise."
+description = "Les congrégations religieuses féminines de la Providence emploient des jeunes filles à bas coût pour tisser la soie. Cependant,  avec la crise dans le secteur, les canuts y voient une concurrence déloyale de l'Eglise."
 available_on_start = false
 district = 0
 year = 1847
 texture = ExtResource("2_jihtr")
-choice_1 = "Il faut empécher l'Eglise d'avoir la mainmise sur le travail, c'est de la concurrence déloyale."
+choice_1 = "Il faut empêcher l'Eglise d'avoir la mainmise sur le travail, c'est de la concurrence déloyale"
 choice_1_contentement = 8.0
 choice_1_health = -8.0
 choice_1_time = 5
+choice_1_follow_up = "En fermant ces établissements, ces femmes sont mises au chômage, mais au moins le travail est redistribué dans les ateliers lyonnais. "
 choice_2 = "Ces jeunes filles ne trouverons pas forcément de travail ailleurs, laissons l'Eglise s'occuper d'elles."
 choice_2_contentement = 2.0
 choice_2_health = 5.0
 choice_2_time = 5
+choice_2_follow_up = "Les jeunes filles gardent leur droit de travailler, mais des révoltes des canuts font pression et saccagent les ateliers des congrégations. Les couvents soyeux disparaissent rapidement."
 metadata/_custom_type_script = "uid://bnmy8nr103np7"
