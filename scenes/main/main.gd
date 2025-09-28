@@ -20,7 +20,8 @@ extends Node
 
 @onready var time_texture_progress_bar: TextureProgressBar = %TimeTextureProgressBar
 @onready var time_texture_rect: TextureRect = %TimeTextureRect
-@onready var contentement_progress_bar: ProgressBar = %ContentementProgressBar
+
+@onready var contentement_progress_bar: TextureProgressBar = %ContentementProgressBar
 @onready var tutorial_screen: TextureRect = $CanvasLayer/TutorialScreen
 
 var current_contentement: float
@@ -94,14 +95,17 @@ func UpdateContentement():
 	print("update contentement...")
 	contentement_progress_bar.value = current_contentement
 	var range = contentement_progress_bar.max_value - contentement_progress_bar.min_value
-	if current_contentement >= range / 2:
-		contentement_progress_bar.set_modulate(Color.PALE_GREEN)
-	elif current_contentement < range / 2 and current_contentement >= range / 4:
-		contentement_progress_bar.set_modulate(Color.ORANGE)
-	elif current_contentement < range / 4:
-		contentement_progress_bar.set_modulate(Color.INDIAN_RED)
-	elif current_contentement <= 0:
+
+	if current_contentement <= 0:
 		SignalManager.RevolutionEnding.emit()
+	#if current_contentement >= range / 2:
+		#contentement_progress_bar.set_modulate(Color.PALE_GREEN)
+	#elif current_contentement < range / 2 and current_contentement >= range / 4:
+		#contentement_progress_bar.set_modulate(Color.ORANGE)
+	#elif current_contentement < range / 4:
+		#contentement_progress_bar.set_modulate(Color.INDIAN_RED)
+	#elif current_contentement <= 0:
+		#SignalManager.RevolutionEnding.emit()
 
 func AddContentement(amount: float):
 	current_contentement += amount
@@ -135,4 +139,5 @@ func AddYear(amount: float):
 
 
 func _on_option_button_toggled(toggled_on):
-	event_screen.help_to_decision = toggled_on
+	pass
+	#event_screen.help_to_decision = toggled_on

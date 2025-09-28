@@ -19,7 +19,7 @@ class_name EventScreen
 var current_event_resource: EventResource
 var current_district: District
 var time_on_close: int
-var help_to_decision: bool
+var help_to_decision: bool = true
 var current_popup: PopupEvent
 
 func _ready():
@@ -110,7 +110,7 @@ func _on_event_choice_button_1_pressed():
 		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_1_health, " santé)")
 	elif current_event_resource.choice_1_health < 0.0:
 		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_1_health, " santé)")
-	elif current_event_resource.choice_1_contentement > 0.0:
+	if current_event_resource.choice_1_contentement > 0.0:
 		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_1_contentement, " contentement)")
 	elif current_event_resource.choice_1_contentement < 0.0:
 		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_1_contentement, " contentement)")
@@ -130,7 +130,7 @@ func _on_event_choice_button_2_pressed():
 		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_2_health, " santé)")
 	elif current_event_resource.choice_2_health < 0.0:
 		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_2_health, " santé)")
-	elif current_event_resource.choice_2_contentement > 0.0:
+	if current_event_resource.choice_2_contentement > 0.0:
 		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_2_contentement, " contentement)")
 	elif current_event_resource.choice_2_contentement < 0.0:
 		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_2_contentement, " contentement)")
