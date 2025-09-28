@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://dydiamepsym2b"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_rgehl"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_43qqa"]
+
+[resource]
+script = ExtResource("1_rgehl")
+name = "Des réverbères en ville"
+description = "Les réverbères à huile sont obsolètes. Faut-il installer un éclairage au gaz, plus moderne, mais coûteux ?"
+available_on_start = false
+year = 1836
+texture = ExtResource("2_43qqa")
+event_sound = 2
+choice_1 = "Oui, installons l'éclairage au gaz sur les grandes places et les rues !"
+choice_1_contentement = 6.0
+choice_1_time = 6
+choice_2 = "Les réverbères fonctionnent très bien en l'état."
+choice_2_contentement = 5.0
+choice_2_health = -8.0
+choice_2_time = 1
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

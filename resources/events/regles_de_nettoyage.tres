@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://d64l33tmdxu3"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_5d248"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_6s5vr"]
+
+[resource]
+script = ExtResource("1_5d248")
+name = "Nouvelles regles de nettoyage de la ville et de gestion des déchets"
+description = "Les bourgeois du centre lyonnais sont très mécontents. L’odeur de compost est pestilentielle dans les rues. Ils critiquent la capitale des Gaulles, qu’ils décrivent comme une ville souillée."
+available_on_start = false
+district = 0
+texture = ExtResource("2_6s5vr")
+event_sound = 1
+choice_1 = "Ils ont raison ! La puanteur est infecte ! On circule mal dans certaines rues ! Il faut faire quelque chose."
+choice_1_contentement = 8.0
+choice_1_health = 8.0
+choice_1_time = 6
+choice_2 = "Ils oublient que les âniers ont besoin de ces déchets pour leurs récoltes ! Souhaitez-vous une famine ?! "
+choice_2_contentement = 8.0
+choice_2_health = -10.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

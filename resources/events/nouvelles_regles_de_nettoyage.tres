@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://6p7xp4606j1q"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_litv7"]
+
+[resource]
+script = ExtResource("1_litv7")
+name = "Nouvelles regles de nettoyage de la ville et de gestion des déchets"
+description = "Les bourgeois du centre lyonnais sont très mécontents. L’odeur est pestilentielle dans les rues. Ils critiquent la capitale des Gaules, qu’ils décrivent comme une ville souillée."
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

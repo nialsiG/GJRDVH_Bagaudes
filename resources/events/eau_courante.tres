@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://fo8novgqncve"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_ynkjv"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_va28u"]
+
+[resource]
+script = ExtResource("1_ynkjv")
+name = "Accès à l'eau courante"
+description = "Le chantier de la Rue de la République permet d’installer un réseau moderne d’eau . Faut-il investir pour en élargir l’accès ?"
+available_on_start = false
+district = 3
+year = 1853
+texture = ExtResource("2_va28u")
+event_sound = 2
+choice_1 = "Oui, installons des canalisations modernes ! Imaginez,  des toilettes dans les appartements !"
+choice_1_contentement = -4.0
+choice_1_health = 10.0
+choice_1_time = 6
+choice_2 = "Faisons plutot en sorte de favoriser l'accès à l'eau dans toutes les cours d'immeubles"
+choice_2_contentement = 6.0
+choice_2_health = -10.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"
