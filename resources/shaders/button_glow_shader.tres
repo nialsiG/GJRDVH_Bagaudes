@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://gb4r6ey0jf2w"]
+
+[ext_resource type="Shader" uid="uid://b0rvm2ivn12ko" path="res://resources/shaders/button_glow_shader.gdshader" id="1_a7bld"]
+
+[resource]
+shader = ExtResource("1_a7bld")
+shader_parameter/glow_color = Color(1, 1, 1, 0.29411766)
+shader_parameter/glow_power = 0.0
+shader_parameter/glow_shift = 0.0
+shader_parameter/glow_radius = 0.0

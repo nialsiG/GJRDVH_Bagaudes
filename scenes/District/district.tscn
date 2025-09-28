@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://lm3epfr78djn"]
+[gd_scene load_steps=9 format=3 uid="uid://lm3epfr78djn"]
 
 [ext_resource type="Script" uid="uid://hbojaky2bmbx" path="res://scenes/District/district.gd" id="1_ienuk"]
 [ext_resource type="LabelSettings" uid="uid://d27uf53ssqg6f" path="res://resources/labels/district_name_label.tres" id="3_28yhn"]
+[ext_resource type="LabelSettings" uid="uid://3pufyewnf6ej" path="res://resources/labels/progressbar_label.tres" id="5_4df7h"]
+[ext_resource type="Texture2D" uid="uid://dkcl3tkqo647j" path="res://assets/icones/barre santé frame.png" id="6_6q4tw"]
+
+[sub_resource type="Gradient" id="Gradient_4df7h"]
+offsets = PackedFloat32Array(0.004008016, 1)
+colors = PackedColorArray(0.52156866, 0.3372549, 0.3647059, 1, 0.52156866, 0.3372549, 0.3647059, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6q4tw"]
+gradient = SubResource("Gradient_4df7h")
+width = 250
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_28yhn"]
+colors = PackedColorArray(0.5137255, 0.61960787, 0.46666667, 1, 0.5137255, 0.61960787, 0.46666667, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4df7h"]
+gradient = SubResource("Gradient_28yhn")
+width = 250
+height = 50
+use_hdr = true
 
 [node name="District" type="Node2D" node_paths=PackedStringArray("spawn_position")]
 script = ExtResource("1_ienuk")
@@ -15,6 +35,8 @@ spawn_position = [NodePath("SpawnPositions/SpawnPosition1"), NodePath("SpawnPosi
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 [node name="Label" type="Label" parent="."]
+z_index = 10
+z_as_relative = false
 offset_left = -208.0
 offset_top = -194.0
 offset_right = 209.0
@@ -24,30 +46,67 @@ label_settings = ExtResource("3_28yhn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -140.0
-offset_top = -110.0
-offset_right = 140.0
-offset_bottom = -48.0
-value = 50.0
-show_percentage = false
+[node name="HealthComponent" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -45.0
+offset_right = 152.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="HealthBar"]
+[node name="HealthBar" type="TextureProgressBar" parent="HealthComponent"]
+unique_name_in_owner = true
+z_index = 10
+z_as_relative = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -131.0
-offset_top = -21.0
-offset_right = 131.0
-offset_bottom = 21.0
+offset_left = -123.0
+offset_top = -25.0
+offset_right = 127.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+texture_under = SubResource("GradientTexture2D_6q4tw")
+texture_progress = SubResource("GradientTexture2D_4df7h")
+
+[node name="Label" type="Label" parent="HealthComponent/HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "SANTE"
+label_settings = ExtResource("5_4df7h")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BarOverlay" type="TextureRect" parent="HealthComponent"]
+z_index = 11
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = -19.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6q4tw")
+stretch_mode = 5
 
 [node name="SpawnPositions" type="Node2D" parent="."]
 
