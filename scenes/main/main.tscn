@@ -85,7 +85,7 @@ height = 50
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hyk8p")
-initial_contentement = 50.0
+initial_contentement = 30.0
 final_year = 1880
 
 [node name="EventManager" type="Node" parent="."]
@@ -738,7 +738,7 @@ theme_override_font_sizes/font_size = 35
 text = "Vous venez de quitter le XIXᵉ siècle et d’entrer fièrement dans
  le XXᵉ. Bien que la ville ne soit pas encore parfaite, elle reste 
   l’une des rares en France à avoir réussi à mettre en place une 
-véritable politique hygiéniste. Ainsi, en 1914, la ville de Lyon 
+véritable politique hygiéniste. Ainsi, en 1907, la ville de Lyon 
   expose ses travaux dans une Exposition Internationale dont
        le retentissement influencera les politiques sanitaires
          du monde entier, retransmise dans tout le pays par
