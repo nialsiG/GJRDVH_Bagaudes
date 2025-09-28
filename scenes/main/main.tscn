@@ -947,35 +947,39 @@ texture = ExtResource("17_m4h2d")
 
 [node name="Label" type="Label" parent="CanvasLayer/TutorialScreen"]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 126.0
-offset_right = 1018.0
-offset_bottom = 828.0
+offset_left = 69.0
+offset_top = 80.0
+offset_right = 3952.0
+offset_bottom = 1017.0
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 31
-text = "                        Comment jouer ?
+theme_override_font_sizes/font_size = 30
+text = "
+Félicitations pour votre nomination monsieur/madame le préfet
+Votre réputation vous précède, je vous prédis une longue carrière
+dans le Rhône! A moins que….
+Sachez-le, la ville de Lyon est en grandes difficultés. Les 
+scientifiques travaillent beaucoup sur les bactéries et nous ont fait
+comprendre qu’elles peuvent circuler facilement. L’état des rues 
+de France laisse à croire que nous risquons une contamination 
+massive. 
+Surtout qu'avec le progrès qui se développe dans la ville, nous 
+vivons une vraie Révolution industrielle. Des paysans affluent 
+dans la ville et n’avons pas de quoi faire face à toute cette 
+nouvelle population. De plus, la pauvreté est fortement présente.
 
-La ville de Lyon traverse une crise sanitaire majeure sans 
-précédent ! Les maladies se transmettent par l'eau usée et les 
-conditions de vie des ouvriers se dégradent !
-
-Des évènements vont apparaitre, cliquez dessus et vous devrez 
-choisir comment y répondre.
-
-Chaque évènement aura une influence sur la santé du 
-quartier dans lequel il advient mais aussi sur le contentement 
-général de la population.
-
-En tant que décisionnaire, vous devrez faire des choix 
-pour aider la ville à traverser cette crise."
+Mettez-vous à l’écart des grandes évolutions nationales et donnez
+une orientation politique à la ville. Les lyonnais et lyonnaises
+comptent sur vous !  Transformer cette ville et faites en LA ville
+moderne et saine du XIXème siècle! 
+"
 
 [node name="HideTutoButton" type="Button" parent="CanvasLayer/TutorialScreen"]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 885.0
-offset_right = 573.0
-offset_bottom = 916.0
+offset_left = 691.0
+offset_top = 901.0
+offset_right = 910.0
+offset_bottom = 968.0
 theme = ExtResource("24_0bhws")
 text = "Compris !"
 
