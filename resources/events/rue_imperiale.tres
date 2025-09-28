@@ -18,6 +18,6 @@ choice_1_health = 10.0
 choice_1_time = 5
 choice_2 = "Ces rues sont très bien ainsi ! Les changer, c’est tuer nos commerces ! "
 choice_2_contentement = 8.0
-choice_2_health = -10.0
+choice_2_health = -15.0
 choice_2_time = 4
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

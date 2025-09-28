@@ -21,6 +21,7 @@ extends Node
 @onready var time_texture_progress_bar: TextureProgressBar = %TimeTextureProgressBar
 @onready var time_texture_rect: TextureRect = %TimeTextureRect
 @onready var contentement_progress_bar: ProgressBar = %ContentementProgressBar
+@onready var tutorial_screen: TextureRect = $CanvasLayer/TutorialScreen
 
 var current_contentement: float
 var current_year: int
@@ -50,6 +51,7 @@ func Init():
 	# initial load of event
 	await get_tree().create_timer(0.5).timeout
 	event_manager.Init(initial_year) 
+	tutorial_screen.visible=true
 
 func ResetPopup():
 	for popup in get_tree().get_nodes_in_group("popup"):
@@ -73,6 +75,9 @@ func _on_back_to_title_button_pressed():
 	SignalManager.PlaySound.emit(Enums.Sound.SELECT_INGAME)
 	music_manager.PlayMusic(Enums.Soundtrack.TITLE)
 	title_screen.show()
+
+func _on_hide_tuto_button_pressed() -> void:
+		tutorial_screen.visible=false
 
 
 #region Contentement manager
