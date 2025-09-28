@@ -51,25 +51,25 @@ func UpdateEvent(event_resource: EventResource):
 	var choice_text_1: String = event_resource.choice_1
 	if help_to_decision:
 		if event_resource.choice_1_health > 0.0:
-			choice_text_1 = str(choice_text_1, "(+", event_resource.choice_1_health, " santé)")
+			choice_text_1 = str(choice_text_1, " (+", event_resource.choice_1_health, " santé)")
 		elif event_resource.choice_1_health < 0.0:
-			choice_text_1 = str(choice_text_1, "(", event_resource.choice_1_health, " santé)")
-		elif event_resource.choice_1_contentement > 0.0:
-			choice_text_1 = str(choice_text_1, "(+", event_resource.choice_1_contentement, " contentement)")
+			choice_text_1 = str(choice_text_1, " (", event_resource.choice_1_health, " santé)")
+		if event_resource.choice_1_contentement > 0.0:
+			choice_text_1 = str(choice_text_1, " (+", event_resource.choice_1_contentement, " contentement)")
 		elif event_resource.choice_1_contentement < 0.0:
-			choice_text_1 = str(choice_text_1, "(", event_resource.choice_1_contentement, " contentement)")
+			choice_text_1 = str(choice_text_1, " (", event_resource.choice_1_contentement, " contentement)")
 	event_choice_1_label.text = choice_text_1
 	# choice 2
 	var choice_text_2: String = event_resource.choice_2
 	if help_to_decision:
 		if event_resource.choice_2_health > 0.0:
-			choice_text_2 = str(choice_text_2, "(+", event_resource.choice_2_health, " santé)")
+			choice_text_2 = str(choice_text_2, " (+", event_resource.choice_2_health, " santé)")
 		elif event_resource.choice_2_health < 0.0:
-			choice_text_2 = str(choice_text_2, "(", event_resource.choice_2_health, " santé)")
+			choice_text_2 = str(choice_text_2, " (", event_resource.choice_2_health, " santé)")
 		if event_resource.choice_2_contentement > 0.0:
-			choice_text_2 = str(choice_text_2, "(+", event_resource.choice_2_contentement, " contentement)")
+			choice_text_2 = str(choice_text_2, " (+", event_resource.choice_2_contentement, " contentement)")
 		elif event_resource.choice_2_contentement < 0.0:
-			choice_text_2 = str(choice_text_2, "(", event_resource.choice_2_contentement, " contentement)")
+			choice_text_2 = str(choice_text_2, " (", event_resource.choice_2_contentement, " contentement)")
 	event_choice_2_label.text = choice_text_2
 	show()
 
@@ -105,7 +105,16 @@ func _on_event_choice_button_1_pressed():
 	if current_event_resource.choice_1_unlockable_events.size() > 0:
 		for event in current_event_resource.choice_1_unlockable_events:
 			SignalManager.UnlockEvent.emit(event)
-	FollowUp(current_event_resource.choice_1_follow_up, current_event_resource.choice_1_time)
+	var follow_up_text = current_event_resource.choice_1_follow_up
+	if current_event_resource.choice_1_health > 0.0:
+		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_1_health, " santé)")
+	elif current_event_resource.choice_1_health < 0.0:
+		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_1_health, " santé)")
+	elif current_event_resource.choice_1_contentement > 0.0:
+		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_1_contentement, " contentement)")
+	elif current_event_resource.choice_1_contentement < 0.0:
+		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_1_contentement, " contentement)")
+	FollowUp(follow_up_text, current_event_resource.choice_1_time)
 
 
 func _on_event_choice_button_2_pressed():
@@ -116,6 +125,15 @@ func _on_event_choice_button_2_pressed():
 	if current_event_resource.choice_2_unlockable_events.size() > 0:
 		for event in current_event_resource.choice__unlockable_events:
 			SignalManager.UnlockEvent.emit(event)
+	var follow_up_text = current_event_resource.choice_2_follow_up
+	if current_event_resource.choice_2_health > 0.0:
+		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_2_health, " santé)")
+	elif current_event_resource.choice_2_health < 0.0:
+		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_2_health, " santé)")
+	elif current_event_resource.choice_2_contentement > 0.0:
+		follow_up_text = str(follow_up_text, " (+", current_event_resource.choice_2_contentement, " contentement)")
+	elif current_event_resource.choice_2_contentement < 0.0:
+		follow_up_text = str(follow_up_text, " (", current_event_resource.choice_2_contentement, " contentement)")
 	FollowUp(current_event_resource.choice_2_follow_up, current_event_resource.choice_2_time)
 
 
