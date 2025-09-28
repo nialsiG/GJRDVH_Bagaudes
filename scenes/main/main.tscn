@@ -1,5 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bk7rklt41thfd"]
-
+[gd_scene load_steps=72 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -67,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
 [ext_resource type="Texture2D" uid="uid://byn33jkhkkwfk" path="res://assets/sprites/victoiretourradio2.png" id="50_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://8d8cwd8bgy3c" path="res://resources/labels/menu_text_label.tres" id="51_yisfj"]
+[ext_resource type="LabelSettings" uid="uid://dxog8bbkjr0ox" path="res://resources/labels/FollowUpButtonContinue.tres" id="55_ae8n2"]
 
 [sub_resource type="Gradient" id="Gradient_o8kno"]
 colors = PackedColorArray(0.49411765, 0.35686275, 0.3764706, 1, 0.49411765, 0.35686275, 0.3764706, 1)
@@ -404,7 +404,6 @@ text = "1800"
 
 [node name="EventScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -561,9 +560,8 @@ autowrap_mode = 2
 
 [node name="FollowUpButton" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton"]
 layout_mode = 1
@@ -593,8 +591,8 @@ theme_override_constants/margin_bottom = 10
 [node name="FollowUpLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "On circule mal dans certaines rues! Il faut faire quelque chose! / Pas un seul jet de déchets dans les rues ne sera tolléré en dehors des récipients adaptés. Imposer cela prend un temps fou. Les âniers sont très mécontents de cette décision. Certains crient au mépris de la classe paysanne, qui risque de perdre énormément d’engrais et de voir ses récoltes affectées"
-label_settings = ExtResource("19_s17dp")
+text = "continuer"
+label_settings = ExtResource("55_ae8n2")
 autowrap_mode = 2
 
 [node name="GameOver" type="Control" parent="CanvasLayer"]
