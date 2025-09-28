@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://d1dvrnp2nsn4n"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_ssqeb"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_7trja"]
+
+[resource]
+script = ExtResource("1_ssqeb")
+name = "Crue du Rhone et de la Saone "
+description = "Le barrage a cédé! Une bonne partie de Lyon est sous l'eau. Beaucoup d'habitations précaires aux Brotteaux et de la Guillotière ont été gravement touchées. Les dégâts sont immenses."
+available_on_start = false
+year = 1856
+texture = ExtResource("2_7trja")
+choice_1 = "Encourageons la charité des bourgeois pour la population. L'urgence est la reconstruction du barrage! "
+choice_1_contentement = -2.0
+choice_1_health = 2.0
+choice_1_time = 2
+choice_2 = "Il faut d'abord admettre que, si ces gens sont sous l'eau, c'est parce qu'ils habitaient des taudis. Essayons de construire des logement adaptés et  sécurisés."
+choice_2_contentement = 6.0
+choice_2_health = 6.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

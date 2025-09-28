@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://dvnh5kd78q1rx"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_jjh7f"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_7yywt"]
+
+[resource]
+script = ExtResource("1_jjh7f")
+name = "Révolte des Canuts (2ème round)"
+description = "Le risque de baisse des salaires remet les canuts en grève. Cette fois ils decendent de la Croix Rousse et déferlent en armes sur la Presqu'Ile."
+available_on_start = false
+district = 3
+year = 1834
+texture = ExtResource("2_7yywt")
+choice_1 = "Nous devons céder à leurs exigences,  augmentons les tarifs."
+choice_1_contentement = 6.0
+choice_1_time = 6
+choice_2 = "Nous ne devons pas céder à leur exigence, envoyez l'armée."
+choice_2_contentement = -8.0
+choice_2_time = 2
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://bw2jujjc18lji"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_86uwq"]
+[ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_2wbpo"]
+
+[resource]
+script = ExtResource("1_86uwq")
+name = "Prendre en charge la pauvreté"
+description = "Lyon est la ville la plus ouvrière de France. La crise entraîne du chômage et crée de la pauvreté."
+available_on_start = false
+year = 1838
+texture = ExtResource("2_2wbpo")
+choice_1 = "Ce n'est pas à l'Etat de prendre cela en charge mais aux individus entre eux. Laissons les oeuvres de bienfaisance s'en occuper."
+choice_1_contentement = -8.0
+choice_1_health = 8.0
+choice_1_time = 6
+choice_2 = "Les ouvriers affluent chaque jours en ville, mais il n'y a pas plus de travail. "
+choice_2_contentement = 6.0
+choice_2_health = -4.0
+choice_2_time = 5
+metadata/_custom_type_script = "uid://bnmy8nr103np7"

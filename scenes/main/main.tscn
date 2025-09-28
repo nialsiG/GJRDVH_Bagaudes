@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=48 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c8r0muwy0kraw" path="res://scenes/events/event_screen.gd" id="4_6q06x"]
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="5_hujxm"]
 [ext_resource type="Resource" uid="uid://qle2n3ixf4mh" path="res://resources/events/rue_imperiale.tres" id="5_i7in8"]
-[ext_resource type="Script" path="res://scenes/music/sound_manager.gd" id="6_62atk"]
+[ext_resource type="Script" uid="uid://bl24mserlgric" path="res://scenes/music/sound_manager.gd" id="6_62atk"]
 [ext_resource type="Texture2D" uid="uid://3m8yv0tuy7wo" path="res://assets/sprites/1e_ebauchecarte.png" id="6_blune"]
 [ext_resource type="Resource" uid="uid://b8p0m71h3q38l" path="res://resources/events/soccuper_des_fous.tres" id="6_r1bmu"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
@@ -30,11 +30,19 @@
 [ext_resource type="Texture2D" uid="uid://deeaa5ttqhg8n" path="res://assets/icones/barre progression base.png" id="13_pg34l"]
 [ext_resource type="Resource" uid="uid://bdvmhu0idtoa3" path="res://resources/events/bureau_d_hygiene.tres" id="14_1k3ck"]
 [ext_resource type="Texture2D" uid="uid://j04yf6kf7dvu" path="res://assets/icones/barre progression remplie.png" id="14_m4h2d"]
+[ext_resource type="Resource" uid="uid://fo8novgqncve" path="res://resources/events/eau_courante.tres" id="15_62f45"]
 [ext_resource type="Texture2D" uid="uid://c07q7mk70nxxx" path="res://assets/icones/sablier.png" id="15_p8abn"]
+[ext_resource type="Resource" uid="uid://bw2jujjc18lji" path="res://resources/events/pauvrete.tres" id="16_6g32y"]
+[ext_resource type="Resource" uid="uid://d64l33tmdxu3" path="res://resources/events/regles_de_nettoyage.tres" id="17_5nwjq"]
 [ext_resource type="Texture2D" uid="uid://crepm7tu52ofi" path="res://assets/icones/ui window.png" id="17_m4h2d"]
+[ext_resource type="Resource" uid="uid://botaebyd6o1ov" path="res://resources/events/usines.tres" id="18_g2upo"]
 [ext_resource type="LabelSettings" uid="uid://6ar31ctqkd00" path="res://resources/labels/event_name_label.tres" id="18_p8abn"]
+[ext_resource type="Resource" uid="uid://dydiamepsym2b" path="res://resources/events/reverberes.tres" id="19_38d3o"]
 [ext_resource type="LabelSettings" uid="uid://dkx4kwhpvio3m" path="res://resources/labels/event_text_label.tres" id="19_s17dp"]
+[ext_resource type="Resource" uid="uid://dvnh5kd78q1rx" path="res://resources/events/retour_des_canuts.tres" id="20_i6fjx"]
 [ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="20_s17dp"]
+[ext_resource type="Resource" uid="uid://d1dvrnp2nsn4n" path="res://resources/events/crue_du_rhone_saone.tres" id="21_7dg2i"]
+[ext_resource type="Resource" uid="uid://w215wbjxo3s5" path="res://resources/events/gentrification.tres" id="22_08tbl"]
 [ext_resource type="Texture2D" uid="uid://dfpuin5devrla" path="res://assets/sprites/menu sans titre.png" id="22_37hlw"]
 [ext_resource type="Texture2D" uid="uid://cp3snlimnx8of" path="res://assets/icones/titre 2.png" id="23_6llfj"]
 [ext_resource type="Theme" uid="uid://ywumn8s5bsps" path="res://resources/buttons/menu_button_theme.tres" id="24_0bhws"]
@@ -47,7 +55,7 @@ final_year = 1840
 
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource("2_b1x3f")
-initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg"), ExtResource("5_i7in8"), ExtResource("6_r1bmu"), ExtResource("7_6w6mm"), ExtResource("8_os81g"), ExtResource("9_1k3ck"), ExtResource("10_62f45"), ExtResource("11_6g32y"), ExtResource("12_6w6mm"), ExtResource("13_os81g"), ExtResource("14_1k3ck"), null])
+initial_events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg"), ExtResource("5_i7in8"), ExtResource("6_r1bmu"), ExtResource("7_6w6mm"), ExtResource("8_os81g"), ExtResource("9_1k3ck"), ExtResource("10_62f45"), ExtResource("11_6g32y"), ExtResource("12_6w6mm"), ExtResource("13_os81g"), ExtResource("14_1k3ck"), ExtResource("15_62f45"), ExtResource("16_6g32y"), ExtResource("17_5nwjq"), ExtResource("18_g2upo"), ExtResource("19_38d3o"), ExtResource("20_i6fjx"), ExtResource("21_7dg2i"), ExtResource("22_08tbl")])
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")

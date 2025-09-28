@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://botaebyd6o1ov"]
+
+[ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_n3of3"]
+[ext_resource type="Texture2D" uid="uid://cc5awd54btv0d" path="res://assets/icones/icon 2.png" id="2_48hly"]
+
+[resource]
+script = ExtResource("1_n3of3")
+name = "Des usines aux portes de la ville"
+description = "Un arrété d'Etat permet de faire interdire aux usines aux bord des villes de rejeter de la fumées noirs denses et épaisses. Mais toutes les villes ne l'appliquent pas."
+available_on_start = false
+year = 1833
+texture = ExtResource("2_48hly")
+event_sound = 1
+choice_1 = "Déplacons les usines loin des villes/ Il est important de favoriser un bon air en villle"
+choice_1_contentement = 6.0
+choice_1_health = 6.0
+choice_1_time = 6
+choice_2 = "Gardons les usines, nous en avons besoin!"
+choice_2_contentement = -3.0
+choice_2_health = -8.0
+choice_2_time = 1
+metadata/_custom_type_script = "uid://bnmy8nr103np7"
