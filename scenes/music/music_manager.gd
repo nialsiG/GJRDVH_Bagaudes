@@ -2,41 +2,45 @@ extends Node
 class_name MusicManager
 
 @export_group("Music")
-@export_file("*mp3") var title_music: String
-@export_file("*mp3") var title_music_with_intro: String
-@export_file("*mp3") var main_music: String
-@export_file("*mp3") var main_music_with_intro: String
+@export var title: AudioStream
+@export var title_loop: AudioStream
+@export var main: AudioStream
+@export var main_loop: AudioStream
+@export var victory: AudioStream
+@export var victory_loop: AudioStream
+@export var cholera: AudioStream
+@export var cholera_loop: AudioStream
+@export var revolte: AudioStream
+@export var revolte_loop: AudioStream
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-var title_audiostream: AudioStream
-var title_with_intro_audiostream: AudioStream
-var main_music_audiostream: AudioStream
-var main_music_with_intro_audiostream: AudioStream
-
-func _ready():
-	title_audiostream = load(title_music)
-	title_with_intro_audiostream = load(title_music_with_intro)
-	main_music_audiostream = load(main_music)
-	main_music_with_intro_audiostream = load(main_music_with_intro)
-
 func PlayMusic(soundtrack: Enums.Soundtrack):
 	audio_stream_player.stop()
-	print("test_outside")
-	
 	match soundtrack:
 		Enums.Soundtrack.TITLE:
-			audio_stream_player.stream = title_with_intro_audiostream
+			audio_stream_player.stream = title
 		Enums.Soundtrack.MAIN:
-			audio_stream_player.stream = main_music_with_intro_audiostream
-			print("test_inside")
+			audio_stream_player.stream = main
+		Enums.Soundtrack.VICTORY:
+			audio_stream_player.stream = victory
+		Enums.Soundtrack.CHOLERA:
+			audio_stream_player.stream = cholera
+		Enums.Soundtrack.REVOLTE:
+			audio_stream_player.stream = revolte
 	audio_stream_player.play()
 
 
 func _on_audio_stream_player_finished():
-	if audio_stream_player.stream == title_with_intro_audiostream:
-		audio_stream_player.stream = title_audiostream
-		audio_stream_player.play()
-	if audio_stream_player.stream == main_music_with_intro_audiostream:
-		audio_stream_player.stream = main_music_audiostream
-		audio_stream_player.play()
+	match audio_stream_player.stream:
+		title:
+			audio_stream_player.stream = title_loop
+		main:
+			audio_stream_player.stream = main_loop
+		victory:
+			audio_stream_player.stream = victory_loop
+		cholera:
+			audio_stream_player.stream = cholera_loop
+		revolte:
+			audio_stream_player.stream = revolte_loop
+	audio_stream_player.play()

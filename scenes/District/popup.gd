@@ -30,6 +30,7 @@ func _process(delta):
 	#SignalManager.AskForEvent.emit(self)
 
 func Init(event: EventResource):
+	SignalManager.PlaySound.emit(Enums.Sound.POPUP)
 	current_event = event
 	texture_progress_bar.texture_under = event.texture
 	#texture_progress_bar.texture_progress = event.texture

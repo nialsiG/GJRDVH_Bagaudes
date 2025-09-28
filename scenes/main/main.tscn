@@ -1,4 +1,5 @@
-[gd_scene load_steps=61 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=71 format=3 uid="uid://bk7rklt41thfd"]
+
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -45,11 +46,21 @@
 [ext_resource type="Resource" uid="uid://w215wbjxo3s5" path="res://resources/events/gentrification.tres" id="22_08tbl"]
 [ext_resource type="Texture2D" uid="uid://dfpuin5devrla" path="res://assets/sprites/menu sans titre.png" id="22_37hlw"]
 [ext_resource type="Texture2D" uid="uid://cp3snlimnx8of" path="res://assets/icones/titre 2.png" id="23_6llfj"]
+[ext_resource type="AudioStream" uid="uid://digrxkcgsbjfo" path="res://assets/music/FINAL-cholera_ending_main_loop_only.mp3" id="23_7ahn0"]
+[ext_resource type="AudioStream" uid="uid://deoboabn4u07g" path="res://assets/music/FINAL-title_screen_intro_and_main_loop.mp3" id="23_62gx1"]
 [ext_resource type="Theme" uid="uid://ywumn8s5bsps" path="res://resources/buttons/menu_button_theme.tres" id="24_0bhws"]
+[ext_resource type="AudioStream" uid="uid://cdxkto4ejkq0e" path="res://assets/music/FINAL-title_screen_main_loop_only.mp3" id="24_ae8n2"]
+[ext_resource type="AudioStream" uid="uid://xb60a3jbrcn5" path="res://assets/music/FINAL-main_theme.mp3" id="25_obdhw"]
+[ext_resource type="AudioStream" uid="uid://dklfhxlhfa0p7" path="res://assets/music/FINAL-main_theme_main_loop.mp3" id="26_budmp"]
+[ext_resource type="AudioStream" uid="uid://p1b7qh0emxso" path="res://assets/music/FINAL-victory_theme_intro_main_loop.mp3" id="27_32ji7"]
 [ext_resource type="Texture2D" uid="uid://cmvmtbkh4ow0" path="res://assets/sprites/defaite revolte.png" id="27_gkmcc"]
 [ext_resource type="Script" uid="uid://co7o2oe1e5n86" path="res://scenes/main/insurection_ending_screen.gd" id="28_7nlll"]
+[ext_resource type="AudioStream" uid="uid://bmfpxi1dit48g" path="res://assets/music/FINAL-victory_theme_main_loop_only.mp3" id="28_sveqe"]
+[ext_resource type="AudioStream" uid="uid://dtlqxmujv1hix" path="res://assets/music/FINAL-cholera_ending_intro_main_loop.mp3" id="29_lakrh"]
+[ext_resource type="AudioStream" uid="uid://cg3bwr41v15k1" path="res://assets/music/FINAL-riot_ending_intro_main_loop.mp3" id="31_2dp8j"]
 [ext_resource type="Texture2D" uid="uid://d8ru5d334mxh" path="res://assets/sprites/dechets.png" id="31_pd34m"]
 [ext_resource type="Texture2D" uid="uid://6angndigwpq7" path="res://assets/sprites/bateau_morgue.png" id="32_qjyke"]
+[ext_resource type="AudioStream" uid="uid://d3tiiggdxs3yq" path="res://assets/music/FINAL-riot_ending_main_loop_only.mp3" id="32_t1gen"]
 [ext_resource type="Texture2D" uid="uid://c4s4tdtyew2iq" path="res://assets/icones/barre contentement frame.png" id="34_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://3pufyewnf6ej" path="res://resources/labels/progressbar_label.tres" id="35_7ahn0"]
 [ext_resource type="Script" uid="uid://n7b11n21rui6" path="res://scenes/main/title_screen.gd" id="47_jucdw"]
@@ -84,10 +95,16 @@ initial_events = Array[ExtResource("5_hujxm")]([ExtResource("5_i7in8"), ExtResou
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("2_iuonh")
-title_music = "uid://cdxkto4ejkq0e"
-title_music_with_intro = "uid://deoboabn4u07g"
-main_music = "uid://dklfhxlhfa0p7"
-main_music_with_intro = "uid://xb60a3jbrcn5"
+title = ExtResource("23_62gx1")
+title_loop = ExtResource("24_ae8n2")
+main = ExtResource("25_obdhw")
+main_loop = ExtResource("26_budmp")
+victory = ExtResource("27_32ji7")
+victory_loop = ExtResource("28_sveqe")
+cholera = ExtResource("29_lakrh")
+cholera_loop = ExtResource("23_7ahn0")
+revolte = ExtResource("31_2dp8j")
+revolte_loop = ExtResource("32_t1gen")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
 volume_db = -10.0
@@ -95,6 +112,8 @@ volume_db = -10.0
 [node name="SoundManager" type="Node" parent="."]
 script = ExtResource("6_62atk")
 angry_crowd_1 = "uid://ckpwjdwundxu1"
+angry_crowd_2 = "res://assets/sound/angry_crowd_2.mp3"
+angry_crowd_3 = "res://assets/sound/angry_crowd_3.mp3"
 cough_1 = "uid://dx7mxv4m2m08q"
 cough_2 = "uid://b6anutay5j6a8"
 popup_1 = "uid://2fm1rv5gqlyu"
@@ -359,9 +378,8 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1.0
 offset_top = -22.5
-offset_right = 45.0
+offset_right = 44.0
 offset_bottom = 22.5
 grow_vertical = 2
 texture = ExtResource("15_p8abn")
