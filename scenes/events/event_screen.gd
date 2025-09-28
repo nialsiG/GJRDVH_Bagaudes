@@ -90,7 +90,7 @@ func FollowUp(follow_up_text: String, time: int):
 	event_deactivate_click_panel.show()
 	event_choice_button_1.hide()
 	event_choice_button_2.hide()
-	follow_up_label.text = follow_up_text
+	event_description_label.text = follow_up_text
 	follow_up_button.show()
 	current_popup.Remove()
 	current_popup = null
