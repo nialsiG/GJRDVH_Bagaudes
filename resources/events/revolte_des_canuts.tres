@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="EventResource" load_steps=3 format=3 uid="uid://btvbgskc7xvyt"]
+[gd_resource type="Resource" script_class="EventResource" load_steps=4 format=3 uid="uid://btvbgskc7xvyt"]
 
 [ext_resource type="Script" uid="uid://bnmy8nr103np7" path="res://resources/events/event_resource.gd" id="1_0j1qx"]
 [ext_resource type="Texture2D" uid="uid://cw24xy3kw3ti8" path="res://assets/icones/icon social 2.png" id="2_kcvx6"]
+[ext_resource type="Resource" uid="uid://dvnh5kd78q1rx" path="res://resources/events/retour_des_canuts.tres" id="2_r2krf"]
 
 [resource]
 script = ExtResource("1_0j1qx")
@@ -15,10 +16,12 @@ choice_1 = "Il faut faire cesser rapidement la révolte. Appeler les forces de l
 choice_1_contentement = -6.0
 choice_1_health = 8.0
 choice_1_time = 6
+choice_1_unlockable_events = Array[ExtResource("1_0j1qx")]([ExtResource("2_r2krf")])
 choice_1_follow_up = "La répression de la révolte et l'augmentation de la surveillance policière fait beaucoup de tension et de blessés. Mais cela met en place une surveillance des rues qui est efficace pour lutter contre la crise sanitaire."
 choice_2 = "Nous devons négocier avec les Canuts."
 choice_2_contentement = 8.0
 choice_2_health = -11.0
 choice_2_time = 5
+choice_2_unlockable_events = Array[ExtResource("1_0j1qx")]([ExtResource("2_r2krf")])
 choice_2_follow_up = "Le préfet a déja servi d'intermédiaire pour une négociation des salaires et ça n'a pas été respecté. Il faudra imposer des mesures sociales cette fois."
 metadata/_custom_type_script = "uid://bnmy8nr103np7"
