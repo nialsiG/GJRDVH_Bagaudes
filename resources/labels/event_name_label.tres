@@ -1,5 +1,10 @@
-[gd_resource type="LabelSettings" load_steps=0 format=3 uid="uid://6ar31ctqkd00"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://6ar31ctqkd00"]
+
+[ext_resource type="FontFile" uid="uid://c4h6wqs04mr0w" path="res://assets/fonts/Aladin-Regular.ttf" id="1_m4iv5"]
 
 [resource]
+font = ExtResource("1_m4iv5")
 font_size = 24
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.58, 0.3573767, 0.2958, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.6156863)

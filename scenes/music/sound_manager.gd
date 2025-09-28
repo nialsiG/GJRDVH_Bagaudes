@@ -40,6 +40,7 @@ func _ready():
 	SignalManager.PlaySound.connect(PlaySound)
 
 func PlaySound(sound: Enums.Sound):
+	audio_stream_player.stop()
 	match sound:
 		Enums.Sound.CROWD:
 			var index = randi_range(0, 2)

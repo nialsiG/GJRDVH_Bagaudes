@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c8dia4w2x8mh0"]
+
+[ext_resource type="FontFile" uid="uid://wqqifn1ibuq2" path="res://assets/fonts/Aubrey-Regular.ttf" id="1_kmji5"]
+
+[resource]
+font = ExtResource("1_kmji5")
+font_size = 36
+font_color = Color(0.9490196, 0.8901961, 0.78431374, 1)
+outline_size = 6
+outline_color = Color(0.4, 0.34509805, 0.24313726, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.8980392)
+shadow_offset = Vector2(2, 2)

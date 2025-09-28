@@ -126,10 +126,10 @@ func ResetYear():
 	UpdateYear()
 
 func UpdateYear():
-	year_counter.text = str(current_year)
+	year_counter.text = str("An ", current_year)
 	var tween = create_tween()
 	tween.tween_property(time_texture_progress_bar, "value", current_year, 1.0)
-	var destination = (current_year - initial_year) * (time_texture_progress_bar.texture_under.get_width() - 10) / (final_year - initial_year) - 15
+	var destination = (current_year - initial_year) * (time_texture_progress_bar.texture_under.get_width() - 10) / (final_year - initial_year) - 50
 	var tween2 = create_tween()
 	tween2.tween_property(time_texture_rect, "position", Vector2(destination, time_texture_rect.position.y), 1.0)
 
