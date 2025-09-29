@@ -14,6 +14,7 @@ class_name EventScreen
 @onready var follow_up_button: TextureButton = %FollowUpButton
 @onready var follow_up_label: Label = %FollowUpLabel
 @onready var event_deactivate_click_panel: Panel = %EventDeactivateClickPanel
+@onready var later_button = %LaterButton
 
 
 var current_event_resource: EventResource
@@ -77,11 +78,13 @@ func UpdateEvent(event_resource: EventResource):
 func CloseEvent():
 	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
 	hide()
+	later_button.show()
 	event_deactivate_click_panel.hide()
 	event_choice_button_1.show()
 	event_choice_button_2.show()
 	follow_up_button.hide()
 	SignalManager.RemoveEvent.emit(current_event_resource)
+	SignalManager.CheckGameOver.emit()
 	for year in time_on_close:
 		await get_tree().create_timer(0.2).timeout
 		SignalManager.AddYear.emit(1)
@@ -90,6 +93,7 @@ func FollowUp(follow_up_text: String, time: int):
 	event_deactivate_click_panel.show()
 	event_choice_button_1.hide()
 	event_choice_button_2.hide()
+	later_button.hide()
 	event_description_label.text = follow_up_text
 	follow_up_button.show()
 	current_popup.Remove()
@@ -125,7 +129,7 @@ func _on_event_choice_button_2_pressed():
 	if current_event_resource.choice_2_health:
 		current_district.AddHealth(current_event_resource.choice_2_health)
 	if current_event_resource.choice_2_unlockable_events.size() > 0:
-		for event in current_event_resource.choice__unlockable_events:
+		for event in current_event_resource.choice_2_unlockable_events:
 			SignalManager.UnlockEvent.emit(event)
 	var follow_up_text = current_event_resource.choice_2_follow_up
 	if current_event_resource.choice_2_health > 0.0:
@@ -142,3 +146,7 @@ func _on_event_choice_button_2_pressed():
 func _on_follow_up_button_pressed():
 	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)
 	CloseEvent()
+
+
+func _on_later_button_pressed():
+	hide()

@@ -20,6 +20,7 @@ func _ready():
 	popup = load(PopupPrefab)
 	#SignalManager.spawn_popup_requested.connect(NewPopup)
 	add_to_group("district")
+	SignalManager.CheckGameOver.connect(CheckGameOver)
 
 #func NewPopup():
 	#PopupSpawn(Vector2(10,10))
@@ -53,10 +54,12 @@ func HideAll():
 
 func AddHealth(amount: float):
 	health += amount
-	health_bar.value = health
+	#health_bar.value = health
+	var tween = create_tween()
+	tween.tween_property(health_bar, "value", health, 1.0)
 	print("health = ", health, '/', max_health)
 	if health <= 0 :
-		SignalManager.EpidemicEnding.emit()
+		health = 0
 	elif health >= max_health:
 		health = max_health
 
@@ -73,6 +76,9 @@ func PopupSpawn(event: EventResource):
 	#instance.init()
 	instance.Init(event)
 
+func CheckGameOver():
+	if health <= 0: 
+		SignalManager.EpidemicEnding.emit()
 
 func _on_area_2d_mouse_entered():
 	pass
