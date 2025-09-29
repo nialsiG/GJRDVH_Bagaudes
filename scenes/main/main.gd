@@ -33,6 +33,7 @@ func _ready():
 	SignalManager.AddContentement.connect(AddContentement)
 	SignalManager.AddYear.connect(AddYear)
 	SignalManager.EpidemicEnding.connect(music_manager.PlayMusic.bind(Enums.Soundtrack.CHOLERA))
+	SignalManager.CheckGameOver.connect(CheckGameOver)
 
 func LoadTitleScreen():
 	title_screen.show()
@@ -95,26 +96,14 @@ func ResetContentement():
 	UpdateContentement()
 
 func UpdateContentement():
-	print("update contentement...")
-	contentement_progress_bar.value = current_contentement
+	#print("update contentement...")
+	var tween = create_tween()
+	tween.tween_property(contentement_progress_bar, "value", current_contentement, 1.0)
+	#contentement_progress_bar.value = current_contentement
 	var range = contentement_progress_bar.max_value - contentement_progress_bar.min_value
-
-	if current_contentement <= 0:
-		SignalManager.RevolutionEnding.emit()
-	#if current_contentement >= range / 2:
-		#contentement_progress_bar.set_modulate(Color.PALE_GREEN)
-	#elif current_contentement < range / 2 and current_contentement >= range / 4:
-		#contentement_progress_bar.set_modulate(Color.ORANGE)
-	#elif current_contentement < range / 4:
-		#contentement_progress_bar.set_modulate(Color.INDIAN_RED)
-	#elif current_contentement <= 0:
-		#SignalManager.RevolutionEnding.emit()
 
 func AddContentement(amount: float):
 	current_contentement += amount
-	if current_contentement <= 0:
-		SignalManager.RevolutionEnding.emit()
-		music_manager.PlayMusic(Enums.Soundtrack.REVOLTE)
 	UpdateContentement()
 #endregion
 
@@ -139,12 +128,16 @@ func AddYear(amount: float):
 		#SignalManager.GoodEnding.emit()
 		#
 	UpdateYear()
-	if current_year >= final_year:
+#endregion 
+
+func CheckGameOver():
+	if current_contentement <= 0:
+		SignalManager.RevolutionEnding.emit()
+		music_manager.PlayMusic(Enums.Soundtrack.REVOLTE)
+	elif current_year >= final_year:
 		SignalManager.GoodEnding.emit()
 		music_manager.PlayMusic(Enums.Soundtrack.VICTORY)
 		victory_screen.show()
-#endregion 
-
 
 func _on_option_button_toggled(toggled_on):
 	SignalManager.PlaySound.emit(Enums.Sound.VALIDATE)

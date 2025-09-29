@@ -66,8 +66,8 @@
 [ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
 [ext_resource type="Texture2D" uid="uid://byn33jkhkkwfk" path="res://assets/sprites/victoiretourradio2.png" id="50_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://8d8cwd8bgy3c" path="res://resources/labels/menu_text_label.tres" id="51_yisfj"]
-[ext_resource type="LabelSettings" uid="uid://c8dia4w2x8mh0" path="res://resources/labels/menu_screen_label.tres" id="62_obdhw"]
 [ext_resource type="LabelSettings" uid="uid://dxog8bbkjr0ox" path="res://resources/labels/FollowUpButtonContinue.tres" id="55_ae8n2"]
+[ext_resource type="LabelSettings" uid="uid://c8dia4w2x8mh0" path="res://resources/labels/menu_screen_label.tres" id="62_obdhw"]
 
 [sub_resource type="Gradient" id="Gradient_o8kno"]
 colors = PackedColorArray(0.49411765, 0.35686275, 0.3764706, 1, 0.49411765, 0.35686275, 0.3764706, 1)
@@ -464,19 +464,60 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 45
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="EventTitleLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EventTitleLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 text = "TITRE"
 label_settings = ExtResource("18_p8abn")
+autowrap_mode = 2
+
+[node name="LaterButton" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/LaterButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ouso4")
+patch_margin_left = 50
+patch_margin_top = 70
+patch_margin_right = 50
+patch_margin_bottom = 70
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/LaterButton/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 10
+
+[node name="FollowUpLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/LaterButton/NinePatchRect/MarginContainer"]
+layout_mode = 2
+text = "Plus tard..."
+label_settings = ExtResource("55_ae8n2")
 autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
@@ -580,7 +621,6 @@ autowrap_mode = 2
 
 [node name="FollowUpButton" type="TextureButton" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
@@ -612,7 +652,6 @@ theme_override_constants/margin_bottom = 10
 [node name="FollowUpLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-
 text = "continuer"
 label_settings = ExtResource("55_ae8n2")
 autowrap_mode = 2
@@ -670,12 +709,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
-
 text = "La montée de l'épidémie de choléra n'a jamais pu être endiguée. Lyon est sous quarantaine et les ouvriers manquent de soins et d'alternatives de vie qui les mettraient à l'abri. Bientôt, l'épidémie se transmettrait à la presqu'île et atteindrait les classes bourgeoises de la population. Il aura fallu une intervention de l'état et une mise sous quarantaine de la ville pour endiguer l'infection, 2 ans plus tard."
 label_settings = ExtResource("62_obdhw")
 horizontal_alignment = 1
 autowrap_mode = 2
-
 
 [node name="InsurectionEndingScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
 visible = false
@@ -712,7 +749,6 @@ offset_right = 1420.0
 offset_bottom = 1021.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
-
 text = "Ignorer les besoins de sa force de travail principale  n'était, contre toute attente, pas une bonne idée. Malgré vos efforts pour moderniser la ville de Lyon, vous avez négligé l’importance de la condition ouvrière. Privilégier uniquement la ville sans considérer suffisament l’aspect humain a  créé une  rancune qui se transforme désormais en révolte. Alors que les foules déferlent sur la préfecture en chantant l'Internationale, vous avez la sensation pregnante d'assister à la fin d'une époque. Votre unique option est d’appeler Paris afin que l’armée française 
 intervienne.
 
@@ -721,7 +757,6 @@ label_settings = ExtResource("62_obdhw")
 autowrap_mode = 2
 
 [node name="VictoryScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -754,11 +789,11 @@ offset_right = 1800.0
 offset_bottom = 487.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
-
-text = "Vous venez de quitter le XIXᵉ siècle et d’entrer fièrement dans le XXᵉ. Bien que la ville ne soit pas encore parfaite, elle reste l’une des rares en France à avoir réussi à mettre en place une véritable politique hygiéniste. Ainsi, en 1914, la ville de Lyon expose ses travaux dans une Exposition Internationale dont le retentissement influencera les politiques sanitaires du monde entier, retransmise dans tout le pays par la nouvelle tour radio"
+text = "Vous venez de quitter le XIXᵉ siècle et d’entrer fièrement dans le XXᵉ. Bien que la ville ne soit pas encore parfaite, elle reste l’une des rares en France à avoir réussi à mettre en place une véritable politique hygiéniste. Ainsi, en 1907, la ville de Lyon expose ses travaux dans une Exposition Internationale dont le retentissement influencera les politiques sanitaires du monde entier, retransmise dans tout le pays par la nouvelle tour radio"
 label_settings = ExtResource("62_obdhw")
 horizontal_alignment = 1
 autowrap_mode = 2
+
 [node name="TutorialScreen" type="TextureRect" parent="CanvasLayer"]
 visible = false
 offset_right = 1082.0
@@ -826,6 +861,7 @@ texture = ExtResource("23_6llfj")
 
 [node name="OptionsMenu" type="Control" parent="CanvasLayer/TitleScreen/BGTextureRect"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -887,6 +923,7 @@ text = "Fermer"
 
 [node name="CreditsMenu" type="Control" parent="CanvasLayer/TitleScreen/BGTextureRect"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -954,7 +991,6 @@ text = "Fermer"
 
 [node name="StartMenu" type="Control" parent="CanvasLayer/TitleScreen/BGTextureRect"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1007,6 +1043,7 @@ script = ExtResource("8_yyfjg")
 
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager" method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/BackToTitleButton" to="." method="_on_back_to_title_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/LaterButton" to="CanvasLayer/EventScreen" method="_on_later_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton1" to="CanvasLayer/EventScreen" method="_on_event_choice_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/EventChoiceButton2" to="CanvasLayer/EventScreen" method="_on_event_choice_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton" to="CanvasLayer/EventScreen" method="_on_follow_up_button_pressed"]
