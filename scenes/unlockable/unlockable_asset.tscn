@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c111eb6e6n0yl"]
+
+[ext_resource type="Script" uid="uid://bdd2he5qtmv8r" path="res://scenes/unlockable/unlockable_asset.gd" id="1_bswtl"]
+
+[node name="UnlockableAsset" type="Sprite2D"]
+script = ExtResource("1_bswtl")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

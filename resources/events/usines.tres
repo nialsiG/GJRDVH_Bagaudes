@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_n3of3")
 name = "Des usines aux portes de la ville"
-description = "Un arreté d'Etat permet de faire interdire aux usines à proximité des villes de rejeter de la fumées noirs denses et épaisses. Mais toutes les villes ne l'appliquent pas."
+description = "Un arrêté d'Etat permet de faire interdire aux usines à proximité des villes de rejeter leur fumée noire, dense et épaisse. Mais toutes les villes ne l'appliquent pas."
 available_on_start = false
 year = 1833
 texture = ExtResource("2_48hly")
@@ -15,10 +15,10 @@ choice_1 = "Forçons les usines à appliquer la règlementation !"
 choice_1_contentement = -5.0
 choice_1_health = 6.0
 choice_1_time = 6
-choice_1_follow_up = " Déplaçons les usines loin des villes ou alors elles doivent apprendre à mieux filtrer leurs fumées. Il  est important de favoriser un bon air en ville. Mais cela forcera les ouvriers à voyager plus loin ou à habiter hors de la ville."
-choice_2 = "Gardons les usines, nous en avons besoin!"
+choice_1_follow_up = "Déplaçons les usines loin des villes, à moins qu'elles n'apprennent à mieux filtrer leurs fumées. Il  est important de favoriser un bon air en ville. Mais cela forcera les ouvriers à voyager plus loin ou à habiter hors de la ville."
+choice_2 = "Gardons les usines, nous en avons besoin !"
 choice_2_contentement = 5.0
 choice_2_health = -12.0
 choice_2_time = 5
-choice_2_follow_up = "Les usines sont déja en périphérie des villes. C'est proche des habitats ouvriers. Ils mettraient encore plus de temps à s'y rendre en les éloignant. Cette réforme n'avantagerait que les bourgeois."
+choice_2_follow_up = "Les usines sont déja en périphérie des villes. C'est proche des habitats ouvriers. Ils mettraient encore plus de temps à s'y rendre si on les éloignait. Cette réforme n'avantagerait que les bourgeois."
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

@@ -5,17 +5,17 @@
 
 [resource]
 script = ExtResource("1_iluug")
-name = "Croissance de la population et gentrification des centres-ville"
+name = "Croissance de la population et gentrification des centres-villes"
 description = "La ville continue à grossir. Les grands travaux du centre chassent peu à peu les classes populaires vers la périphérie. Mais elles s'installent dans des taudis."
 available_on_start = false
 year = 1834
 texture = ExtResource("2_nwwm3")
-choice_1 = "Nous pourrions augmenter les loyers petit à petit et aggrandir le centre."
+choice_1 = "Nous pourrions augmenter les loyers petit à petit et agrandir le centre."
 choice_1_contentement = -8.0
 choice_1_health = 5.0
 choice_1_time = 5
 choice_1_follow_up = "Nous avons besoin de cette main d'oeuvre, maintenant, où s'installent ces ouvriers n'est pas notre problème. S'ils quittent le centre-ville, cela créera des banlieues et favorisera l'expansion."
-choice_2 = "Si on met tous les ouvriers au même endroit, on risque de créer des ghettos ouvrier. Plafonnons les loyers."
+choice_2 = "Si on met tous les ouvriers au même endroit, on risque de créer des ghettos ouvriers. Plafonnons les loyers."
 choice_2_contentement = 5.0
 choice_2_health = 5.0
 choice_2_time = 5

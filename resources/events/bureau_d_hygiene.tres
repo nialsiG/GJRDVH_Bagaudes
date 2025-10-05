@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_ubn8m")
 name = "Bureau d'hygiène"
-description = "Ce qui se passe en France au sujet des épidémies est inquiétant. Nous en avons déjà fait beaucoup et les gens souffrent de cet enchainement de mesures d'austérité. Devons-nous renforcer la surveillance? Nous pouvons créer un bureau d'hygiène par exemple. "
+description = "Ce qui se passe en France au sujet des épidémies est inquiétant. Nous en avons déjà fait beaucoup et les gens souffrent de cet enchainement de mesures d'austérité. Devons-nous renforcer la surveillance ? Nous pouvons créer un bureau d'hygiène par exemple. "
 available_on_start = false
 year = 1879
 texture = ExtResource("2_kvy2e")
@@ -15,10 +15,10 @@ choice_1 = "Oui, créons ce bureau ! C’est un progrès administratif qui perme
 choice_1_contentement = -10.0
 choice_1_health = 15.0
 choice_1_time = 6
-choice_1_follow_up = "Cette décision est historique, nous allons devenir la ville la plus hygiénique de France ! Mais certes, cela a un coût"
+choice_1_follow_up = "Cette décision est historique, nous allons devenir la ville la plus hygiénique de France ! Mais certes, cela a un coût."
 choice_2 = "Non, encore une dépense inutile ! Il y a d'autres urgences à prioriser à présent que l'épidémie est finie."
 choice_2_contentement = 8.0
 choice_2_health = -20.0
 choice_2_time = 5
-choice_2_follow_up = "La ville a déjà ses dispensaires de santé. Nous avons déjà beaucoup investi par le passé, cela suffira. Logement, éducation, travaux public... tant d'autres projets restent à financer!"
+choice_2_follow_up = "La ville a déjà ses dispensaires de santé. Nous avons déjà beaucoup investi par le passé, cela suffira. Logement, éducation, travaux public... tant d'autres projets restent à financer !"
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

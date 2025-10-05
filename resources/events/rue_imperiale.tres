@@ -5,21 +5,21 @@
 
 [resource]
 script = ExtResource("1_hqxnj")
-name = "Percer la rue impériale "
-description = "Une ville moderne est ville avec une grande rue centrale. Les anciennes rues médiévales sont étroites, elles n'offrent pas de lumière aux habitations. Cela permet  aussi d'assainir la ville et de mieux controler la population. Cela facilietera aussi les interventions de l'armée en cas de nouvelle révolte."
+name = "Percer la Rue Impériale "
+description = "Une ville moderne est ville avec une grande rue centrale ! Les anciennes rues médiévales sont étroites, elles n'offrent pas de lumière aux habitations. Une telle rue centrale permettra d'assainir la ville et de mieux contrôler la population. Cela facilitera aussi les interventions de l'armée en cas de nouvelle révolte..."
 available_on_start = false
 district = 3
 year = 1853
 texture = ExtResource("2_8beqx")
 event_sound = 4
-choice_1 = "Nous devons percer une grande rue centrale : la rue Impériale!  C’est essentiel pour aérer la ville"
+choice_1 = "Nous devons percer une grande rue centrale : la Rue Impériale !  C’est essentiel pour aérer la ville."
 choice_1_contentement = -8.0
 choice_1_health = 10.0
 choice_1_time = 5
-choice_1_follow_up = " Cette nouvelle rue est aérée et les appartements recoivent mieux le soleil. C'est sain pour la population. De plus, l'ordre public est plus facile à maintenir sur ces grandes rues."
-choice_2 = "Ces rues sont très bien ainsi ! Les changer, c’est tuer nos commerces ! "
+choice_1_follow_up = "La nouvelle Rue Impériale est aérée et les appartements recoivent mieux le soleil. C'est sain pour la population. De plus, l'ordre public est plus facile à maintenir dans de grandes rues comme celle-ci."
+choice_2 = "Ces rues sont très bien ainsi. Les changer, c’est tuer nos commerces !"
 choice_2_contentement = 8.0
 choice_2_health = -15.0
 choice_2_time = 4
-choice_2_follow_up = "Cette place mêne à une des places centrale de la vie nocturne, si on la change, on tue les espaces de rencontres que sont les cafés et les cabarets. Sans parler des destructions de maisons pour permettre tout ces travaux. "
+choice_2_follow_up = "Ces rues mênent à une des places centrale de la vie nocturne. La changer, ce serait tuer les espaces de rencontre que sont les cafés et les cabarets. Sans parler des destructions de maisons pour permettre tous ces travaux !"
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

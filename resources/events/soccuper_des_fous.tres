@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_uemie")
 name = "S'occuper des fous"
-description = "A l'hôpital de l'Antiquaille, sur la colline de Fourvière sont gérés les fous. Le lieu est sombre, les malades restent enfermés, et aucun médecin ne peut vraiment les prendre en charge. "
+description = "Les fous sont gérés à l'hôpital de l'Antiquaille, sur la colline de Fourvière. Le lieu est sombre, les malades restent enfermés, et aucun médecin ne peut vraiment les prendre en charge."
 available_on_start = false
 district = 0
 year = 1876
@@ -15,10 +15,10 @@ choice_1 = "Sortons les aliénés d'ici, ce n'est pas sain. Il faut les soigner 
 choice_1_contentement = 1.0
 choice_1_health = -5.0
 choice_1_time = 5
-choice_1_follow_up = " La loi oblige désormais les départements d'avoir un espace adapté au soin des aliénés. Il suffit de trouver des hectares en périphérie de la ville pour créer, un lieu moderne, sain et aéré. A Bron, par exemple. Les malades y travailleront les champs gratuitement, cela fait partie de leur traitement. En plus, ils seront loin de la ville."
-choice_2 = "Vous voulez faire sortir les fous dehors? Ou bien les envoyez au loin?"
+choice_1_follow_up = "La loi oblige désormais les départements à avoir un espace adapté au soin des aliénés. Il suffit de trouver des hectares en périphérie de la ville pour créer un lieu moderne, sain et aéré. A Bron, par exemple. Les malades y travailleront les champs gratuitement, cela fait partie de leur traitement. En plus, ils seront loin de la ville."
+choice_2 = "Vous voulez faire sortir les fous dehors ? Ou bien les envoyer au loin ?"
 choice_2_contentement = -8.0
 choice_2_health = 10.0
 choice_2_time = 4
-choice_2_follow_up = "Créer un nouveau bâtiment coûte cher et ils sont dangereux. Surtout que cela ne semble qu'être une manœuvre pour les exclure du centre-ville. "
+choice_2_follow_up = "Créer un nouveau bâtiment coûte cher et ils sont dangereux. Surtout que cela semble n'être qu'une manœuvre pour les exclure du centre-ville. "
 metadata/_custom_type_script = "uid://bnmy8nr103np7"

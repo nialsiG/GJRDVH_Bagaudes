@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bk7rklt41thfd"]
+[gd_scene load_steps=74 format=3 uid="uid://bk7rklt41thfd"]
 
 [ext_resource type="Script" uid="uid://crx700gi0scwg" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Script" uid="uid://4qi8nq22sbyk" path="res://scenes/events/event_manager.gd" id="2_b1x3f"]
@@ -12,7 +12,6 @@
 [ext_resource type="Resource" uid="uid://b8p0m71h3q38l" path="res://resources/events/soccuper_des_fous.tres" id="6_r1bmu"]
 [ext_resource type="Resource" uid="uid://c5bcsxc0tal8q" path="res://resources/events/event_test.tres" id="6_yyfjg"]
 [ext_resource type="Resource" uid="uid://b8ejf4qu0eykj" path="res://resources/events/eloignement_des_abbatoirs.tres" id="7_6w6mm"]
-[ext_resource type="Texture2D" uid="uid://tmaj66ugmk57" path="res://assets/sprites/riviere_campagne.png" id="7_hxu8e"]
 [ext_resource type="Resource" uid="uid://cpqph0gnweck2" path="res://resources/events/creer_un_parc.tres" id="8_os81g"]
 [ext_resource type="Texture2D" uid="uid://bt86ld0x4a3uq" path="res://assets/sprites/croixrousse.png" id="8_th5th"]
 [ext_resource type="Script" uid="uid://c6olv104gjcfm" path="res://scenes/main/year_counter.gd" id="8_yyfjg"]
@@ -44,23 +43,25 @@
 [ext_resource type="Resource" uid="uid://w215wbjxo3s5" path="res://resources/events/gentrification.tres" id="22_08tbl"]
 [ext_resource type="Texture2D" uid="uid://dfpuin5devrla" path="res://assets/sprites/menu sans titre.png" id="22_37hlw"]
 [ext_resource type="Texture2D" uid="uid://cp3snlimnx8of" path="res://assets/icones/titre 2.png" id="23_6llfj"]
-[ext_resource type="AudioStream" uid="uid://digrxkcgsbjfo" path="res://assets/music/FINAL-cholera_ending_main_loop_only.mp3" id="23_7ahn0"]
-[ext_resource type="AudioStream" uid="uid://deoboabn4u07g" path="res://assets/music/FINAL-title_screen_intro_and_main_loop.mp3" id="23_62gx1"]
+[ext_resource type="AudioStream" uid="uid://digrxkcgsbjfo" path="res://assets/music/cholera_ending_loop.mp3" id="23_7ahn0"]
+[ext_resource type="AudioStream" uid="uid://deoboabn4u07g" path="res://assets/music/title_screen.mp3" id="23_62gx1"]
 [ext_resource type="Theme" uid="uid://ywumn8s5bsps" path="res://resources/buttons/menu_button_theme.tres" id="24_0bhws"]
-[ext_resource type="AudioStream" uid="uid://cdxkto4ejkq0e" path="res://assets/music/FINAL-title_screen_main_loop_only.mp3" id="24_ae8n2"]
-[ext_resource type="AudioStream" uid="uid://xb60a3jbrcn5" path="res://assets/music/FINAL-main_theme.mp3" id="25_obdhw"]
-[ext_resource type="AudioStream" uid="uid://dklfhxlhfa0p7" path="res://assets/music/FINAL-main_theme_main_loop.mp3" id="26_budmp"]
-[ext_resource type="AudioStream" uid="uid://p1b7qh0emxso" path="res://assets/music/FINAL-victory_theme_intro_main_loop.mp3" id="27_32ji7"]
+[ext_resource type="AudioStream" uid="uid://cdxkto4ejkq0e" path="res://assets/music/title_screen_loop.mp3" id="24_ae8n2"]
+[ext_resource type="AudioStream" uid="uid://xb60a3jbrcn5" path="res://assets/music/main_theme.mp3" id="25_obdhw"]
+[ext_resource type="AudioStream" uid="uid://dklfhxlhfa0p7" path="res://assets/music/main_theme_loop.mp3" id="26_budmp"]
+[ext_resource type="AudioStream" uid="uid://p1b7qh0emxso" path="res://assets/music/victory_theme.mp3" id="27_32ji7"]
 [ext_resource type="Texture2D" uid="uid://cmvmtbkh4ow0" path="res://assets/sprites/defaite revolte.png" id="27_gkmcc"]
 [ext_resource type="Script" uid="uid://co7o2oe1e5n86" path="res://scenes/main/insurection_ending_screen.gd" id="28_7nlll"]
-[ext_resource type="AudioStream" uid="uid://bmfpxi1dit48g" path="res://assets/music/FINAL-victory_theme_main_loop_only.mp3" id="28_sveqe"]
-[ext_resource type="AudioStream" uid="uid://dtlqxmujv1hix" path="res://assets/music/FINAL-cholera_ending_intro_main_loop.mp3" id="29_lakrh"]
-[ext_resource type="AudioStream" uid="uid://cg3bwr41v15k1" path="res://assets/music/FINAL-riot_ending_intro_main_loop.mp3" id="31_2dp8j"]
+[ext_resource type="AudioStream" uid="uid://bmfpxi1dit48g" path="res://assets/music/victory_theme_loop.mp3" id="28_sveqe"]
+[ext_resource type="AudioStream" uid="uid://dtlqxmujv1hix" path="res://assets/music/cholera_ending.mp3" id="29_lakrh"]
+[ext_resource type="AudioStream" uid="uid://cg3bwr41v15k1" path="res://assets/music/riot_ending.mp3" id="31_2dp8j"]
 [ext_resource type="Texture2D" uid="uid://d8ru5d334mxh" path="res://assets/sprites/dechets.png" id="31_pd34m"]
 [ext_resource type="Texture2D" uid="uid://6angndigwpq7" path="res://assets/sprites/bateau_morgue.png" id="32_qjyke"]
-[ext_resource type="AudioStream" uid="uid://d3tiiggdxs3yq" path="res://assets/music/FINAL-riot_ending_main_loop_only.mp3" id="32_t1gen"]
+[ext_resource type="AudioStream" uid="uid://d3tiiggdxs3yq" path="res://assets/music/riot_ending_loop.mp3" id="32_t1gen"]
 [ext_resource type="Texture2D" uid="uid://c4s4tdtyew2iq" path="res://assets/icones/barre contentement frame.png" id="34_o8kno"]
 [ext_resource type="LabelSettings" uid="uid://3pufyewnf6ej" path="res://resources/labels/progressbar_label.tres" id="35_7ahn0"]
+[ext_resource type="PackedScene" uid="uid://c111eb6e6n0yl" path="res://scenes/unlockable/unlockable_asset.tscn" id="40_obdhw"]
+[ext_resource type="Texture2D" uid="uid://diit4wu2d823g" path="res://assets/sprites/tete_or.png" id="42_budmp"]
 [ext_resource type="Script" uid="uid://n7b11n21rui6" path="res://scenes/main/title_screen.gd" id="47_jucdw"]
 [ext_resource type="LabelSettings" uid="uid://b83ddl08t83ma" path="res://resources/labels/year_label.tres" id="48_ae8n2"]
 [ext_resource type="Texture2D" uid="uid://d2asy54qhpvek" path="res://assets/icones/ecran credit.png" id="50_6miv3"]
@@ -109,6 +110,7 @@ revolte_loop = ExtResource("32_t1gen")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicManager"]
 volume_db = -10.0
+playback_type = 1
 
 [node name="SoundManager" type="Node" parent="."]
 script = ExtResource("6_62atk")
@@ -132,13 +134,9 @@ volume_db = -10.0
 position = Vector2(960, 540)
 texture = ExtResource("6_blune")
 
-[node name="RiverSprite2D" type="Sprite2D" parent="Environment"]
-visible = false
-position = Vector2(960, 540)
-texture = ExtResource("7_hxu8e")
-
 [node name="District1" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
+position = Vector2(2, 2)
 district_color = Color(1, 1, 1, 1)
 district_color_on_hover = Color(0.65882355, 0.5921569, 0.4392157, 1)
 
@@ -164,13 +162,19 @@ offset_right = 1847.0
 offset_bottom = 181.0
 
 [node name="SpawnPosition1" parent="Environment/District1/SpawnPositions" index="0"]
-position = Vector2(1445, 257)
+position = Vector2(1447, 222)
 
 [node name="SpawnPosition2" parent="Environment/District1/SpawnPositions" index="1"]
-position = Vector2(1406, 508)
+position = Vector2(1431, 384)
 
 [node name="SpawnPosition3" parent="Environment/District1/SpawnPositions" index="2"]
-position = Vector2(1695, 512)
+position = Vector2(1734, 457)
+
+[node name="SpawnPosition4" parent="Environment/District1/SpawnPositions" index="3"]
+position = Vector2(1571, 539)
+
+[node name="SpawnPosition5" parent="Environment/District1/SpawnPositions" index="4"]
+position = Vector2(1742, 184)
 
 [node name="District2" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
@@ -200,13 +204,19 @@ offset_right = 631.0
 offset_bottom = 861.0
 
 [node name="SpawnPosition1" parent="Environment/District2/SpawnPositions" index="0"]
-position = Vector2(411, 548)
+position = Vector2(30, 836)
 
 [node name="SpawnPosition2" parent="Environment/District2/SpawnPositions" index="1"]
-position = Vector2(36, 741)
+position = Vector2(50, 691)
 
 [node name="SpawnPosition3" parent="Environment/District2/SpawnPositions" index="2"]
-position = Vector2(690, 703)
+position = Vector2(455, 529)
+
+[node name="SpawnPosition4" parent="Environment/District2/SpawnPositions" index="3"]
+position = Vector2(662, 691)
+
+[node name="SpawnPosition5" parent="Environment/District2/SpawnPositions" index="4"]
+position = Vector2(592, 876)
 
 [node name="District3" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
@@ -236,13 +246,19 @@ offset_right = 1181.0
 offset_bottom = 1060.0
 
 [node name="SpawnPosition1" parent="Environment/District3/SpawnPositions" index="0"]
-position = Vector2(946, 612)
+position = Vector2(878, 575)
 
 [node name="SpawnPosition2" parent="Environment/District3/SpawnPositions" index="1"]
-position = Vector2(1273, 665)
+position = Vector2(1073, 544)
 
 [node name="SpawnPosition3" parent="Environment/District3/SpawnPositions" index="2"]
-position = Vector2(983, 762)
+position = Vector2(1007, 714)
+
+[node name="SpawnPosition4" parent="Environment/District3/SpawnPositions" index="3"]
+position = Vector2(876, 773)
+
+[node name="SpawnPosition5" parent="Environment/District3/SpawnPositions" index="4"]
+position = Vector2(1158, 871)
 
 [node name="District4" parent="Environment" instance=ExtResource("3_k2fmo")]
 unique_name_in_owner = true
@@ -272,23 +288,37 @@ offset_right = 409.0
 offset_bottom = 360.0
 
 [node name="SpawnPosition1" parent="Environment/District4/SpawnPositions" index="0"]
-position = Vector2(718, 464)
+position = Vector2(621, 424)
 
 [node name="SpawnPosition2" parent="Environment/District4/SpawnPositions" index="1"]
-position = Vector2(1113, 473)
+position = Vector2(888, 272)
 
 [node name="SpawnPosition3" parent="Environment/District4/SpawnPositions" index="2"]
-position = Vector2(1255, 136)
+position = Vector2(1122, 37)
 
-[node name="Dechets" type="Sprite2D" parent="Environment"]
-visible = false
-position = Vector2(905, 494)
+[node name="SpawnPosition4" parent="Environment/District4/SpawnPositions" index="3"]
+position = Vector2(1252, 132)
+
+[node name="SpawnPosition5" parent="Environment/District4/SpawnPositions" index="4"]
+position = Vector2(34, 89)
+
+[node name="Unlockables" type="Node2D" parent="Environment"]
+
+[node name="UnlockableTrash" parent="Environment/Unlockables" instance=ExtResource("40_obdhw")]
+unique_name_in_owner = true
+position = Vector2(960, 540)
 texture = ExtResource("31_pd34m")
+is_visible_on_start = true
 
-[node name="BateauMorgue" type="Sprite2D" parent="Environment"]
-visible = false
-position = Vector2(621, 509)
+[node name="UnlockableBoat" parent="Environment/Unlockables" instance=ExtResource("40_obdhw")]
+unique_name_in_owner = true
+position = Vector2(960, 540)
 texture = ExtResource("32_qjyke")
+
+[node name="UnlockableParkEntrance" parent="Environment/Unlockables" instance=ExtResource("40_obdhw")]
+unique_name_in_owner = true
+position = Vector2(960, 540)
+texture = ExtResource("42_budmp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -310,10 +340,10 @@ text = "Menu"
 [node name="ContentementOverlay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 601.0
-offset_top = 97.0
-offset_right = 894.0
-offset_bottom = 200.0
+offset_left = 772.0
+offset_top = 94.0
+offset_right = 1065.0
+offset_bottom = 197.0
 
 [node name="ContentementProgressBar" type="TextureProgressBar" parent="CanvasLayer/ContentementOverlay"]
 unique_name_in_owner = true
@@ -388,7 +418,6 @@ value = 10.0
 nine_patch_stretch = true
 texture_under = ExtResource("13_pg34l")
 texture_progress = ExtResource("14_m4h2d")
-tint_under = Color(0.32, 0.32, 0.32, 1)
 
 [node name="TimeTextureRect" type="TextureRect" parent="CanvasLayer/TimeOverlay/TimeTextureProgressBar"]
 unique_name_in_owner = true
@@ -422,8 +451,19 @@ grow_vertical = 0
 text = "An 1800"
 label_settings = ExtResource("48_ae8n2")
 
-[node name="EventScreen" type="Control" parent="CanvasLayer"]
+[node name="FinalYearLabel" type="Label" parent="CanvasLayer/TimeOverlay"]
 unique_name_in_owner = true
+layout_mode = 0
+offset_left = 711.0
+offset_top = 78.0
+offset_right = 761.0
+offset_bottom = 109.0
+text = "1900"
+label_settings = ExtResource("48_ae8n2")
+
+[node name="EventScreen" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("trash_asset", "boat_asset", "park_asset")]
+unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -433,6 +473,9 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_6q06x")
 events = Array[ExtResource("5_hujxm")]([ExtResource("6_yyfjg")])
+trash_asset = NodePath("../../Environment/Unlockables/UnlockableTrash")
+boat_asset = NodePath("../../Environment/Unlockables/UnlockableBoat")
+park_asset = NodePath("../../Environment/Unlockables/UnlockableParkEntrance")
 
 [node name="EventDeactivateClickPanel" type="Panel" parent="CanvasLayer/EventScreen"]
 unique_name_in_owner = true
@@ -652,7 +695,7 @@ theme_override_constants/margin_bottom = 10
 [node name="FollowUpLabel" type="Label" parent="CanvasLayer/EventScreen/TextureRect/MarginContainer/VBoxContainer/FollowUpButton/NinePatchRect/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "continuer"
+text = "Continuer"
 label_settings = ExtResource("55_ae8n2")
 autowrap_mode = 2
 
@@ -709,7 +752,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
-text = "La montée de l'épidémie de choléra n'a jamais pu être endiguée. Lyon est sous quarantaine et les ouvriers manquent de soins et d'alternatives de vie qui les mettraient à l'abri. Bientôt, l'épidémie se transmettrait à la presqu'île et atteindrait les classes bourgeoises de la population. Il aura fallu une intervention de l'état et une mise sous quarantaine de la ville pour endiguer l'infection, 2 ans plus tard."
+text = "La montée de l'épidémie de choléra n'a jamais pu être endiguée. Lyon est sous quarantaine et les ouvriers manquent de soins et d'alternatives de vie qui les mettraient à l'abri. Bientôt, l'épidémie se transmettra à la presqu'île et atteindra les classes bourgeoises de la population. Il faudra une intervention de l'état et une mise sous quarantaine de la ville pour endiguer l'infection, deux ans plus tard."
 label_settings = ExtResource("62_obdhw")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -749,7 +792,7 @@ offset_right = 1420.0
 offset_bottom = 1021.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
-text = "Ignorer les besoins de sa force de travail principale  n'était, contre toute attente, pas une bonne idée. Malgré vos efforts pour moderniser la ville de Lyon, vous avez négligé l’importance de la condition ouvrière. Privilégier uniquement la ville sans considérer suffisament l’aspect humain a  créé une  rancune qui se transforme désormais en révolte. Alors que les foules déferlent sur la préfecture en chantant l'Internationale, vous avez la sensation pregnante d'assister à la fin d'une époque. Votre unique option est d’appeler Paris afin que l’armée française 
+text = "Ignorer les besoins de sa principale force de travail n'était, contre toute attente, pas une bonne idée. Malgré vos efforts pour moderniser la ville de Lyon, vous avez négligé l’importance de la condition ouvrière. Privilégier uniquement la ville sans considérer suffisament l’aspect humain a créé une rancune qui se transforme désormais en révolte. Alors que les foules déferlent sur la préfecture en chantant l'Internationale, vous avez la sensation pregnante d'assister à la fin d'une époque. Votre unique option est d’appeler Paris afin que l’armée française 
 intervienne.
 
 Mais tout cela est la conséquence de la déconnexion de l'état vis-à-vis de la situation ouvrière. Qu'aurait-on pu faire de mieux ?"
@@ -757,6 +800,7 @@ label_settings = ExtResource("62_obdhw")
 autowrap_mode = 2
 
 [node name="VictoryScreen" type="TextureRect" parent="CanvasLayer/GameOver"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -789,7 +833,8 @@ offset_right = 1800.0
 offset_bottom = 487.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
-text = "Vous venez de quitter le XIXᵉ siècle et d’entrer fièrement dans le XXᵉ. Bien que la ville ne soit pas encore parfaite, elle reste l’une des rares en France à avoir réussi à mettre en place une véritable politique hygiéniste. Ainsi, en 1907, la ville de Lyon expose ses travaux dans une Exposition Internationale dont le retentissement influencera les politiques sanitaires du monde entier, retransmise dans tout le pays par la nouvelle tour radio"
+text = "Vous venez de quitter le XIXème siècle et d’entrer fièrement dans le XXème. Bien que la ville ne soit pas encore parfaite, elle reste l’une des rares en France à avoir réussi à mettre en place une véritable politique hygiéniste. Ainsi, en 1907, la ville de Lyon expose ses travaux dans une Exposition Internationale dont le retentissement influencera les politiques sanitaires du monde entier, retransmise dans tout le pays par la nouvelle tour radio.
+Bravo ! "
 label_settings = ExtResource("62_obdhw")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -800,6 +845,15 @@ offset_right = 1082.0
 offset_bottom = 1080.0
 texture = ExtResource("17_m4h2d")
 
+[node name="Control" type="Control" parent="CanvasLayer/TutorialScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 838.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Label" type="Label" parent="CanvasLayer/TutorialScreen"]
 layout_mode = 0
 offset_left = 69.0
@@ -809,14 +863,13 @@ offset_bottom = 1017.0
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "
-Félicitations pour votre nomination monsieur/madame le préfet
+text = "Félicitations pour votre nomination monsieur/madame le préfet.
 Votre réputation vous précède, je vous prédis une longue carrière
-dans le Rhône! A moins que….
+dans le Rhône ! A moins que….
 
-Sachez-le, la ville de Lyon est en grandes difficultés. Les scientifiques travaillent beaucoup sur les bactéries et nous ont fait comprendre qu’elles peuvent circuler facilement. L’état des rues de France laisse à croire que nous risquons une contamination massive. Surtout qu'avec le progrès qui se développe dans la ville, nous vivons une vraie Révolution industrielle. Des paysans affluent dans la ville et n’avons pas de quoi faire face à toute cette nouvelle population. De plus, la pauvreté est fortement présente.
+Sachez-le, la ville de Lyon est en grande difficulté. Les scientifiques travaillent beaucoup sur les bactéries et nous ont fait comprendre qu’elles peuvent circuler facilement. L’état des rues de France laisse à croire que nous risquons une contamination massive. Surtout qu'avec le progrès qui se développe dans la ville, nous vivons une vraie Révolution industrielle. Des paysans affluent dans la ville et nous n’avons pas de quoi faire face à toute cette nouvelle population. De plus, la pauvreté est fortement présente.
 
-Mettez-vous à l’écart des grandes évolutions nationales et donnez une orientation politique à la ville. Les lyonnais et lyonnaises comptent sur vous !  Transformer cette ville et faites en LA ville moderne et saine du XIXème siècle! "
+A vous de décider des prochains chantiers de la ville. Mais le temps joue contre vous, et il ne vous sera pas possible de tout faire. Mettez-vous à l’écart des grandes évolutions nationales et donnez une orientation politique à la ville. Les lyonnais et lyonnaises comptent sur vous ! Transformez cette ville et faites en LA ville moderne et saine du XIXème siècle ! "
 label_settings = ExtResource("51_yisfj")
 autowrap_mode = 2
 
@@ -831,7 +884,6 @@ text = "Compris !"
 
 [node name="TitleScreen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -972,11 +1024,11 @@ horizontal_alignment = 1
 
 [node name="CreditsLabel" type="Label" parent="CanvasLayer/TitleScreen/BGTextureRect/CreditsMenu/BGTextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Professeure : Laetitia
-Game design : Wilson
-Artistes : Anne-Laure, Julie
-Sound design : Sebastien
-Développement : Charlie, Ghislain"
+text = "Professeure : Laëtitia Veteran-Marie-Catherine
+Game design : Wilson Xhaflaire
+Artistes : Anne-Laure Tuduri , Julie Pynte
+Sound design : Sébastien W
+Développement : Charlie Vincent, Ghislain Thiery"
 label_settings = ExtResource("51_yisfj")
 horizontal_alignment = 1
 autowrap_mode = 2

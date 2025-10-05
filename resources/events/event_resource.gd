@@ -18,6 +18,7 @@ class_name EventResource
 @export var choice_1_health: float
 @export var choice_1_time: int
 @export var choice_1_unlockable_events: Array[EventResource]
+@export var choice_1_unlockable_asset: Enums.UnlockableAssets = Enums.UnlockableAssets.NONE
 @export_multiline var choice_1_follow_up: String
 
 @export_group("Choice2")
@@ -26,4 +27,5 @@ class_name EventResource
 @export var choice_2_health: float
 @export var choice_2_time: int
 @export var choice_2_unlockable_events: Array[EventResource]
+@export var choice_2_unlockable_asset: Enums.UnlockableAssets = Enums.UnlockableAssets.NONE
 @export_multiline var choice_2_follow_up: String

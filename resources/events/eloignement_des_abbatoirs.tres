@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_pj4bq")
-name = "Eloignement des abattoires"
-description = "Certains bouchers viennent se plaindre, inquiets des rumeurs selon lesquelles ils n'auraient plus le droit d'abattre leurs bêtes chez eux. Désormais ils devront utiliser les abattoirs municipaux en périphérie de la ville. Leur mécontentement grandit, nourri par la peur de perdre leur travail."
+name = "Eloignement des abattoirs"
+description = "Certains bouchers viennent se plaindre, inquiets des rumeurs selon lesquelles ils n'auraient plus le droit d'abattre leurs bêtes chez eux. Désormais, ils devraient utiliser les abattoirs municipaux en périphérie de la ville. Leur mécontentement grandit, nourri par la peur de perdre leur travail."
 available_on_start = false
 year = 1858
 texture = ExtResource("2_nppse")
@@ -14,10 +14,10 @@ choice_1 = "Messieurs ! Ces rumeurs sont infondées ! "
 choice_1_contentement = 6.0
 choice_1_health = -15.0
 choice_1_time = 6
-choice_1_follow_up = "Qui serait assez fou pour faire ça ?!  C’est trop risqué de menacer le travail d’autant de personnes. Laissons tout simplement chacun faire ce qu'il veut comme il le veut."
-choice_2 = "Bien qu'impopulaire, j'assume cette décision et déclare que les abattoirs seront désormais hors du centre-ville ! "
+choice_1_follow_up = "Qui serait assez fou pour faire ça ?!  C’est trop risqué de menacer le travail d’autant de personnes. Laissons simplement chacun faire ce qu'il veut, comme il le veut."
+choice_2 = "Bien qu'impopulaire, j'assume cette décision et déclare que les abattoirs seront désormais situés hors du centre-ville ! "
 choice_2_contentement = -15.0
 choice_2_health = 6.0
 choice_2_time = 5
-choice_2_follow_up = " C’est un risque que nous devons prendre. Nous aurons des mécontents, mais le siècle de la propreté doit s’obtenir par des sacrifices."
+choice_2_follow_up = "C’est un risque que nous devons prendre. Nous aurons des mécontents, mais le siècle de la propreté doit s’obtenir par des sacrifices."
 metadata/_custom_type_script = "uid://bnmy8nr103np7"
