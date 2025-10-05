@@ -26,7 +26,7 @@ use_hdr = true
 [node name="District" type="Node2D" node_paths=PackedStringArray("spawn_position")]
 script = ExtResource("1_ienuk")
 PopupPrefab = "uid://btktthbmc6ao7"
-spawn_position = [NodePath("SpawnPositions/SpawnPosition1"), NodePath("SpawnPositions/SpawnPosition2"), NodePath("SpawnPositions/SpawnPosition3")]
+spawn_position = [NodePath("SpawnPositions/SpawnPosition1"), NodePath("SpawnPositions/SpawnPosition2"), NodePath("SpawnPositions/SpawnPosition3"), NodePath("SpawnPositions/SpawnPosition4"), NodePath("SpawnPositions/SpawnPosition5")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -115,5 +115,9 @@ stretch_mode = 5
 [node name="SpawnPosition2" type="Marker2D" parent="SpawnPositions"]
 
 [node name="SpawnPosition3" type="Marker2D" parent="SpawnPositions"]
+
+[node name="SpawnPosition4" type="Marker2D" parent="SpawnPositions"]
+
+[node name="SpawnPosition5" type="Marker2D" parent="SpawnPositions"]
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -24,3 +24,10 @@ enum Sound {
 	SELECT_INGAME,
 	SELECT_TITLESCREEN
 }
+
+enum UnlockableAssets {
+	NONE,
+	PARK,
+	TRASH,
+	BOAT
+}

@@ -21,6 +21,7 @@ extends Node
 @onready var time_texture_progress_bar: TextureProgressBar = %TimeTextureProgressBar
 @onready var time_texture_rect: TextureRect = %TimeTextureRect
 @onready var timer_h_slider = %TimerHSlider
+@onready var final_year_label: Label = %FinalYearLabel
 
 @onready var contentement_progress_bar: TextureProgressBar = %ContentementProgressBar
 @onready var tutorial_screen: TextureRect = $CanvasLayer/TutorialScreen
@@ -33,7 +34,7 @@ func _ready():
 	SignalManager.AddContentement.connect(AddContentement)
 	SignalManager.AddYear.connect(AddYear)
 	SignalManager.EpidemicEnding.connect(music_manager.PlayMusic.bind(Enums.Soundtrack.CHOLERA))
-	SignalManager.CheckGameOver.connect(CheckGameOver)
+	#SignalManager.CheckGameOver.connect(CheckGameOver)
 
 func LoadTitleScreen():
 	title_screen.show()
@@ -45,6 +46,7 @@ func Init():
 	ResetPopup()
 	ResetYear()
 	ResetContentement()
+	ResetUnlockableAssets()
 	pandemic_ending_screen.hide()
 	insurection_ending_screen.hide()
 	victory_screen.hide()
@@ -62,6 +64,10 @@ func Init():
 func ResetPopup():
 	for popup in get_tree().get_nodes_in_group("popup"):
 		popup.queue_free()
+
+func ResetUnlockableAssets():
+	for asset in get_tree().get_nodes_in_group("unlockable_asset"):
+		asset.Reset()
 
 #func _input(event):
 		#if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
@@ -112,6 +118,7 @@ func ResetYear():
 	current_year = initial_year
 	time_texture_progress_bar.min_value = initial_year
 	time_texture_progress_bar.max_value = final_year
+	final_year_label.text = str(final_year)
 	UpdateYear()
 
 func UpdateYear():
@@ -124,17 +131,20 @@ func UpdateYear():
 
 func AddYear(amount: float):
 	current_year += amount
+	CheckGameOver()
+	UpdateYear()
 	#if current_year >= 100:
 		#SignalManager.GoodEnding.emit()
 		#
-	UpdateYear()
 #endregion 
 
 func CheckGameOver():
 	if current_contentement <= 0:
+		await get_tree().create_timer(1.0).timeout
 		SignalManager.RevolutionEnding.emit()
 		music_manager.PlayMusic(Enums.Soundtrack.REVOLTE)
 	elif current_year >= final_year:
+		await get_tree().create_timer(1.0).timeout
 		SignalManager.GoodEnding.emit()
 		music_manager.PlayMusic(Enums.Soundtrack.VICTORY)
 		victory_screen.show()

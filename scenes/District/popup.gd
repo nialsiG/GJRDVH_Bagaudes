@@ -55,4 +55,5 @@ func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed and can_be_clicked:
 		print("Popup clicked !")
 		var district: District = get_parent()
+		district.DisplayColor()
 		SignalManager.OpenEvent.emit(current_event, district, self)

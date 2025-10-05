@@ -7,6 +7,7 @@ class_name District
 @export var district_color_on_hover: Color
 @export var max_health: float = 100.0
 @export var initial_health: float = 25.0
+@onready var health_component = $HealthComponent
 
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -34,23 +35,25 @@ func Init():
 	health = initial_health
 	health_bar.max_value = max_health
 	health_bar.value = health
+	HideColor()
 	## test for the popup 
 	#await get_tree().create_timer(3).timeout
 	#PopupSpawn(Vector2(10, 10))
 	#HideInfo()
-	DisplayInfo()
+	#DisplayInfo()
 
-func DisplayInfo():
-	health_bar.show()
-	#sprite_2d.set_modulate(district_color_on_hover)
+func DisplayColor():
+	HideAll()
+	#health_component.show()
+	sprite_2d.set_modulate(district_color_on_hover)
 
-func HideInfo():
-	health_bar.hide()
+func HideColor():
+	#health_component.hide()
 	sprite_2d.set_modulate(district_color)
 
 func HideAll():
 	for district in get_tree().get_nodes_in_group("district"):
-		district.HideInfo()
+		district.HideColor()
 
 func AddHealth(amount: float):
 	health += amount
