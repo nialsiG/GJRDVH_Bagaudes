@@ -34,7 +34,7 @@ func _ready():
 	SignalManager.AddContentement.connect(AddContentement)
 	SignalManager.AddYear.connect(AddYear)
 	SignalManager.EpidemicEnding.connect(music_manager.PlayMusic.bind(Enums.Soundtrack.CHOLERA))
-	#SignalManager.CheckGameOver.connect(CheckGameOver)
+	SignalManager.CheckGameOver.connect(CheckGameOver)
 
 func LoadTitleScreen():
 	title_screen.show()
