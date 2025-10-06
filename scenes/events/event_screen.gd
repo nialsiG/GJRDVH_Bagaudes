@@ -97,7 +97,7 @@ func CloseEvent():
 	event_choice_button_2.show()
 	follow_up_button.hide()
 	SignalManager.RemoveEvent.emit(current_event_resource)
-	#SignalManager.CheckGameOver.emit()
+	SignalManager.CheckGameOver.emit()
 	for year in time_on_close:
 		await get_tree().create_timer(0.2).timeout
 		SignalManager.AddYear.emit(1)
